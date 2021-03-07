@@ -34,7 +34,7 @@ Agreement that a member who makes no progress on a task for two standups or more
 - Code/feature passes testing if there are any testing requirements specified. <br>
 - Product Owner accepts the changes. <br>
 
-## the Git workflow that the team follows
+## The Git workflow that the team follows
 1. Team members should clone the repository to start working on it: 
 ```
 git clone url
