@@ -8,40 +8,32 @@ Each team must collaboratively draft a [CONTRIBUTING.md](./CONTRIBUTING.md) - a 
 ## Project values and team norms
 
 ### Definition of 'done':
-- Acceptance criteria met (for a user story).
-- Code/feature is peer reviewed. 
-- Code/feature is proofread. 
-- Code/feature is deployed to the test branch and runs successfully with the existing codebase - new increment doesn't compromise existing . 
-- Code/feature passes testing if there are any testing requirements specified. 
-- Code/feature 
+- Acceptance criteria met (for a user story).<br>
+- Code/feature is peer reviewed. <br>
+- Code/feature is proofread. <br>
+- Code is deployed to the test branch and runs successfully with the existing codebase (new feature doesn not compromise the existing functionality unless it is intended to do so). <br>
+- Code/feature passes testing if there are any testing requirements specified. <br>
+- Product Owner accepts the changes. <br>
 
-define a definition of “done” appropriate for the product. If there are multiple Scrum Teams
-working on the system or product release, the development teams on all of the Scrum Teams
-must mutually define the definition of “Done.”
-Each Increment is additive to all prior Increments and thoroughly tested, ensuring that all
-Increments work together.
-
-### Definition of 'done' for a non-coding project:
-- Acceptance criteria met (for a user story)
-- Code/feature is peer reviewed
-- Code/feature is deployed to the test branch and rns
-- Code/feature passes testing if there are any testing requirements 
-
-2. if the task is not coding related, it is 'done' if: 
-- Output (e.g. text/wireframes) has been peer reviewed
-- Output has been deployed 
-- If the task was to learn/research a tool, a brief summary of the learnt knowledge is given
-
-Code is documented
-Help documentation is updated
-Feature is OK’d by stakeholder
+### the Git workflow that the team follows
+- a detailed description of the rules of contributing and any considerations or how and what to contribute
+- Create a branch when working on a task/spike - do not work on a master branch unless it's a .md file 
+- When creating a pull request from a branch, mention issue number of the task/spike in the commit message
+- Always pull from master before pushing
 
 
-2. if the task is a  update, it is 'done' if the update has been tested in the 'test branch'
+1. Never work on ``master``
+2. Pulling ``master`` should never create a merge commit
+3. Tests are run after ``pull`` and before ``commit``
+3. Describe _Features_ in _Issues_
+4. Work on _Issue Specific Feature Branches_
+5. Regularly ``git rebase origin/master`` _Feature Branches_ to updated ``master``
+6. _Interactive Rebase_ before _Creating Pull Request_
+7. _Peer Review Pull Request_
+8. _Delete Feature Branch_ after _Pull Request Approval_
 
 ### the Git workflow that the team follows
 
-- a detailed description of the rules of contributing and any considerations or how and what to contribute
 - how disagreements or conflicts among team members will be resolved
 - instructions for setting up the local development environment in order to work on this project
 - instructions for building and testing the project (update with that information once the project reaches that stage)
