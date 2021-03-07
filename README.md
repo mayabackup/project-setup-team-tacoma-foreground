@@ -28,22 +28,22 @@ The usability and completeness of our product is largely based on the range of l
 ## Team Members
 
 **Adam Ethan** - junior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/AdamEthan" target="_blank">AdamEthan</a>
+Github:  <a href="https://github.com/AdamEthan" target="_blank">Adam Ethan</a>
 
 **Alifa Faruk** - senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/alifafaruk" target="_blank">alifafaruk</a>
+Github:  <a href="https://github.com/alifafaruk" target="_blank">Alifa Faruk</a>
 
 **Almazhan Kapan** - senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/almazhankapan" target="_blank">almazhankapan</a>
+Github:  <a href="https://github.com/almazhankapan" target="_blank">Almazhan Kapan</a>
 
 **Maya Sijaric** - senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/sijaric" target="_blank">sijaric</a>
+Github:  <a href="https://github.com/sijaric" target="_blank">Maya Sijaric</a>
 
 **Rajan Bharaj** - senior at New York University studying Computer Science<br>
 Github:  <a href="https://github.com/RajanBharaj/" target="_blank">RajanBharaj</a>
 
 **Roman Haberli** - senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/rhaberli/" target="_blank">RajanBharaj</a>
+Github:  <a href="https://github.com/rhaberli/" target="_blank">Roman Haberli</a>
 
 
 ## History
