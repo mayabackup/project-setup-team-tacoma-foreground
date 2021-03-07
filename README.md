@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Product Vision Statement
 
 COVID Travel Agent aims to provide prospective travelers with all the information they need to make an informed decision about international travel during the COVID pandemic. Our target market is any traveler, family or individual wanting to know where they can travel, how safe each possible desitnation is and what is required to travel there. It is a one stop shop to make flight booking as simple as finding a destination, reading over COVID related data and travel requirements and booking a flight. Our aim is to take any COVID research a traveler may need to do off their hands and integrate it directly into our website. 
