@@ -40,7 +40,7 @@ Github:  <a href="https://github.com/almazhankapan" target="_blank">Almazhan Kap
 Github:  <a href="https://github.com/sijaric" target="_blank">Maya Sijaric</a>
 
 **Rajan Bharaj** - senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/RajanBharaj/" target="_blank">RajanBharaj</a>
+Github:  <a href="https://github.com/RajanBharaj/" target="_blank">Rajan Bharaj</a>
 
 **Roman Haberli** - senior at New York University studying Computer Science<br>
 Github:  <a href="https://github.com/rhaberli/" target="_blank">Roman Haberli</a>
