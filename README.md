@@ -27,23 +27,23 @@ The usability and completeness of our product is largely based on the range of l
 
 ## Team Members
 
-**Adam Ethan** - junior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/AdamEthan" target="_blank">AdamEthan</a>
+**Adam Ethan** - Junior at New York University studying Computer Science<br>
+Github:  <a href="https://github.com/AdamEthan" target="_blank">Adam Ethan</a>
 
-**Alifa Faruk** - senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/alifafaruk" target="_blank">alifafaruk</a>
+**Alifa Faruk** - Senior at New York University studying Computer Science<br>
+Github:  <a href="https://github.com/alifafaruk" target="_blank">Alifa Faruk</a>
 
-**Almazhan Kapan** - senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/almazhankapan" target="_blank">almazhankapan</a>
+**Almazhan Kapan** - Senior at New York University studying Computer Science<br>
+Github:  <a href="https://github.com/almazhankapan" target="_blank">Almazhan Kapan</a>
 
-**Maya Sijaric** - senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/sijaric" target="_blank">sijaric</a>
+**Maya Sijaric** - Senior at New York University studying Computer Science<br>
+Github:  <a href="https://github.com/sijaric" target="_blank">Maya Sijaric</a>
 
-**Rajan Bharaj** - senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/RajanBharaj/" target="_blank">RajanBharaj</a>
+**Rajan Bharaj** - Senior at New York University studying Computer Science<br>
+Github:  <a href="https://github.com/RajanBharaj/" target="_blank">Rajan Bharaj</a>
 
-**Roman Haberli** - senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/rhaberli/" target="_blank">RajanBharaj</a>
+**Roman Haberli** - Senior at New York University studying Computer Science<br>
+Github:  <a href="https://github.com/rhaberli/" target="_blank">Roman Haberli</a>
 
 
 ## History
