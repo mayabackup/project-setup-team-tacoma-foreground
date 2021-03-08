@@ -8,16 +8,16 @@ Note: the structure of this section follows the structure outlined by Professor 
 - Be polite when discussing the project, addressing questions or concerns. 
 - Attend the Scrum events (Daily Standup, Sprint Planning etc.) on time and notify in advance if cannot attend. 
 - Complete any assigned tasks on time. 
-- Make effort to resolve any project related uncertainty by contacting tutors, graders, Professor. 
-- Regularly communicate using the slack team channel, slack DMs and Zoom meetings for Scrum meetings (Daily Scrum, Sprint Review, etc. ).
+- Make effort to resolve any project related questions by contacting tutors, graders, Professor, posting in the designated slack channels. 
+- Regularly communicate using the slack team channel, slack DMs and Zoom meetings for Scrum meetings (Daily Scrum, Sprint Review, etc.).
 
 **How the team will work together:**<br>
-- Each sprint, the Product Owner and Scrum Master are assigned. The Product Owner creates the Product Backlog by speaking to the stakeholders and their own understanding. Product Backlog is created by creating and adding issues to the project with the tag 'user story'. 
+- Each sprint, the Product Owner and Scrum Master are assigned. The Product Owner creates the Product Backlog by speaking to the stakeholders (tutors, graders, Professor) and their own understanding. Product Backlog is created by creating and adding issues to the project with the tag 'user story'. 
 - Team collaboratively decides what User Stories should be included in the Sprint Backlog (Task Board) and drafts Estimation of Effort and Acceptance Criteria for the selected User Stories. Sprint Task Board is created as a github Project for a given repository. 
 - Team collaboratively drafts the Tasks based on each User Story and any necessary Spikes. Tasks and Spikes are created by creating and adding issues to the project with the tags 'task' and 'spike' respectively. 
 - Team members divide tasks based on their expertise and preference and work independently on their assigned tasks. 
 - Each task or spike can be undertaken only by one team member. Some members can work on identical tasks (e.g. two people can work on 'editing Readme file' task) - in this case two identical github issues should be created to track progress for each member independently. 
-- Once the Tasks related to the User Story are complete, the issue for the User Story is closed. Any remaining User Stories are moved to the Product Backlog. 
+- Once the Tasks related to the User Story are complete, the issue for the User Story is closed. Any remaining open/uncompleted User Stories are moved to the Product Backlog. 
 - During the Sprint, Product Backlog Grooming is undertaken to review the existing and new User Stories. 
 - At the end of a Sprint, Sprint Review is undertaken to review the Sprint as a whole.  
 
@@ -41,7 +41,7 @@ Team members will discuss the problem during daily standup meeting or via chat i
 
 ### Definition of 'done':
 
-- Acceptance criteria met (for a user story).<br>
+- Acceptance criteria are met (for a user story).<br>
 - Code/feature is reviewed by at least 4 other members. <br>
 - Code/feature is proofread. <br>
 - Code is deployed to the test branch and runs successfully with the existing codebase (new feature does not compromise the existing functionality unless it is intended to do so). <br>
@@ -90,6 +90,7 @@ git push origin contributing
 4. To contact the project team members, please refer to the team info in the [README.md](./README.md) file. 
 5. The project will start reviewing contributions starting from the Sprint 2.
 6. Team members will collaboratively decide what contributions they will accept via slack channel or during Scrum events. 
+7. We particularly welcome to contribute COVID related data about any travel destinations not listed on our website. We will later update this document with locations for which the data is already available and contributors are welcome to add data or provide links to the data for the locations not specified in this document. Thank you! 
 
 
 ## Instructions for setting up the local development environment in order to work on this project
