@@ -1,22 +1,25 @@
-## Description of the project and Product Vision Statement
+## Project Description
 
-**Goal.** The COVID Travel Agent app is designed to provide prospective travelers with the most relevant knowledge to help them make a well-informed decision on international travel during the COVID pandemic. Particularly, the app aims at creating a personalized, comprehensive list of safest travel destinations based on the user's inputs (e.g. location, citizenship etc.), allowing the user to choose the most suitable destination for travel.<br>
+#### Product Vision Statement
 
-**Who are the users?** The target user of the app is anyone who wants to learn where he or she can travel, how safe each possible destination is and what are the requirements to travel there. The app facilitates decision making process for a traveler as it breaks the process into steps (steps include finding a safe destination, analyzing its COVID related data, booking a flight etc.) and guides the user through each of the steps. <br>
-For travelers who want to travel only to one specific country, the app does not guarantee that the desired country will appear in the top ranked list. In this case, the traveler can still benefit from using the app by observing if the desired country was included in the top safest list or not and making decisions accordingly. The user can also optionally explore safe countries located in the same continent as the desired country. <br>
+The COVID Travel Agent app is designed to provide prospective travelers with the most relevant information to help them make a well-informed decision on international travel during the COVID pandemic. Particularly, the app aims to create a personalized, comprehensive list of safest travel destinations based on the user information (e.g. location, citizenship etc.), allowing the user to choose the most suitable destination for them. <br>
 
-**Why use the app?** Notably, the COVID Travel Agent app collects and presents the relevant COVID and travel data that travelers, on their own, can usually gather only after a significant amount of research. This is due to the fact that the list of search outcomes (list of safest countries) is based on intersection of a diverse set of non-related user inputs (location, citizenship etc. )- it is usually difficult to find data for a particular intersection.<br>
+**Who are the users?** The target user of the app is anyone who wants to learn where they can travel, how safe each possible destination is and what the requirements to travel there are. The app facilitates the decision making process for a traveler as it breaks the process into steps: finding a safe destination, analyzing its COVID related data, booking a flight. We guide the user seamlessly through each of these steps. <br>
 
-**Main features.** Every location that the app lists has a total safety score and individual scores for various COVID related data categories (number of cases, vaccination rate etc.). This way a user can make a decision based on the data characteristics that are most important to them and find the most suitable travel destination. 
+**Who is not in our target market** For travelers who want to travel only to one specific location, the app does not guarantee that the desired location will appear in the top ranked list. In this case, the traveler can still benefit from using the app if the desired location is included in our index and view specific COVID data for their location. The user can also optionally explore travel resources, generic for all travelers.<br>
+
+**Why use the app?** Notably, the COVID Travel Agent app collects and presents the relevant COVID and travel data that travelers can usually only gather after a significant amount of research. This is due to the fact that the list of search outcomes (list of safest countries) is based user input and we can provide data for a significant portion of possible destinations for each user, complete with corresponding COVID data.<br>
+
+**Main features.** Every location that the app lists has a total safety score and individual scores for various COVID related data categories (number of cases, vaccination rate etc.). This way users can make a decisions based on the data characteristics that are most important to them and find the most suitable travel destination. 
 
 ### Minimum Viable Product
-Generally, for the Minimum Viable Product of the app, the user will be able to enter limited number of inputs and view the top safest locations based on these inputs and COVID related information. The COVID related information will be based on some of the main COVID related data points/categories. The number of countries that potentially can be ranked and for which the scores can be potentially calculated (countries for which the COVID data is available) will be also limited (more details below). <br>
+The user will be able to enter limited number of inputs and view the top safest locations based on these inputs and COVID related information. The COVID related information will be based on some of the main COVID related data points/categories. The number of countries that potentially can be ranked and for which the scores can be potentially calculated (countries for which the COVID data is available) will be also limited (more details below). <br>
 
 1. **User inputs to be collected.**<br>
 For the MVP, the app will allow the user to calculate top safest locations based on the following inputs: current location, citizenship, desired airport. <br>
 After MVP is completed, advanced input options such as desired continent, reason for travel can be also collected. <br>
 
-2. **Data points/categories to be collected.**<br>
+2. **Data points/categories to be collected.** <br>
 In order to provide the safest countries in regards to COVID, we need to collect COVID related data, which can be divided into several categories based on content. For the MVP, the data categories that will be collected and used to calculate the safest locations will include the following categories: 
 - % of general population vaccinated
 - COVID cases registered at the location
@@ -45,7 +48,7 @@ After the MVP is completed, the feature to receive travel updates (based on loca
 - We will need a large database to store all the information and a program that will scrape live data and update our database.
 - We need to build a decision engine that can be fed live data from the database and output top safest locations for each user (based on travel restrictions, COVID data category rankings and 'total score').
 
-### Process after establishing vision. 
+#### Process after establishing vision. 
 The team referred to the [Scrum Framework documentation](https://knowledge.kitchen/Scrum_development_framework#Product_vision_statement) and [Outline for translating Features to User Stories](http://idiacomputing.com/pub/UserStories.pdf) to define themes and features. <br>
 1. **Themes.** According to the Scrum Framework documentation mentioned above, 
 >Themes are categories of user stories that can conceptually be grouped together to indicate a related set of 
@@ -111,15 +114,15 @@ Github: [Roman Haberli](https://github.com/rhaberli)
 
 >I was on a call with an old friend, who for fun had decided to create a website tracking live COVID vaccination 
 > rates across the US. I asked him how readily available that data was and he said that the data is not hard to 
-> find or to keep it updated. Days later, of my own accord, I was scrolling through 
-[skyscanner](https://www.skyscanner.net/) to dream about future holidays. I found that the COVID related info for
->every location was very limited >and really the only thing they provide was the requirements for flights. 
-> As the >summer is approaching, millions of potential travelers are hoping they might be able to travel safely. 
-> For people who travel with their elderly family members, for people who are health conscious and for people 
-> who just want to reduce the chance of catching the infection, I decided to create COVID Travel Agent." 
+> find or to keep it updated. Days later, of my own accord, I was scrolling through [skyscanner](https://www.skyscanner.net/) 
+> to dream about future holidays. I found that the COVID related information for
+> every location was limited and really the only thing they provided was the travel requirements for flyers. 
+> As the summer is approaching, millions of potential travelers are hoping to travel safely. 
+> For people travelling with family, for people who are health conscious and for people 
+> who just want to reduce the chance of infection, I decided to create COVID Travel Agent." 
 > --Rajan
 
-The success of the product is directly related to how well we can incorporate the data for as many travel destinations as possible. My team and I will put our best efforts to provide users with as many travel destination options as possible, but unfortunately, we cannot collect and summarize the data from every known travel destination ourselves. As an open source project, we are looking for developers to submit accurate COVID data about any travel destinations not listed on our website. An index of current locations tracked and more information about contributing can be found at [CONTRIBUTING.md](./CONTRIBUTING.md).
+The success of the product is directly related to how well we can incorporate the data for as many travel destinations as possible. My team and I will provide users with as many travel destination options as possible, but unfortunately, we cannot collect and summarize the data from every known travel destination ourselves. As an open source project, we are looking for developers to submit accurate COVID data about any travel destinations not listed on our website. An index of current locations tracked and more information about contributing can be found at [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## How to contribute? 
 Thank you for your interest! To contribute to the project, please review the [CONTRIBUTING.md](./CONTRIBUTING.md) file. 
