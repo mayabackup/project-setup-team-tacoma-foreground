@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2021-03-01T18:39:22.598Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36" etag="LfTmkIRwbsuCHcDWacmP" version="14.4.3" type="google">
+  <diagram name="Flight-info" id="ONGJsEVrJWyklkHeRI6t">
+    <mxGraphModel dx="1186" dy="589" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="Ofp0Hnd-CA1A3OSV0_1r-0" />
+        <mxCell id="Ofp0Hnd-CA1A3OSV0_1r-1" parent="Ofp0Hnd-CA1A3OSV0_1r-0" />
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-27" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="110" y="70" width="400" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-28" value="" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;strokeColor=#575757;fillColor=#808080;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="430" y="90.32" width="62.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-29" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="210.31999999999994" y="90.01999999999998" width="199.37" height="38.12" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-30" value="&lt;font style=&quot;font-size: 18px&quot;&gt;Covid Travel Agent&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="217.5" y="99.07999999999998" width="185" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-31" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-128.png" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="130.01" y="85.64999999999998" width="49" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-32" value="&lt;font style=&quot;font-size: 11px&quot;&gt;copyright info&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#575757;strokeWidth=1;fillColor=none;fontSize=12;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="250" y="930" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-33" value="logo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="441.25" y="103.76999999999998" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-34" value="" style="endArrow=none;html=1;fontSize=14;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" source="gUYsQXG3gvRRn_eIMIIj-28" target="gUYsQXG3gvRRn_eIMIIj-28" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="320.32" as="sourcePoint" />
+            <mxPoint x="470" y="270.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-35" value="" style="endArrow=none;html=1;fontSize=14;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" source="gUYsQXG3gvRRn_eIMIIj-28" target="gUYsQXG3gvRRn_eIMIIj-28" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="150.32" as="sourcePoint" />
+            <mxPoint x="502.5" y="100.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-36" value="&lt;font style=&quot;font-size: 16px&quot;&gt;From: Location&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="140" y="185" width="115.06" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-37" value="&lt;font style=&quot;font-size: 17px&quot;&gt;Flight Information&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;strokeColor=#575757;fillColor=#FFFFFF;fontSize=14;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="238.75" y="140.32" width="142.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-55" value="&lt;font style=&quot;font-size: 16px&quot;&gt;To: Destination&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="377.44000000000005" y="185" width="115.06" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-56" value="&lt;font style=&quot;font-size: 16px&quot;&gt;Destination: Requirements for travelers&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="137.44000000000005" y="240" width="292.56" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-58" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="135" y="270" width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-59" value="&lt;h1&gt;&lt;br&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=15;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="180" y="300" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-62" value="&lt;span style=&quot;text-align: left&quot;&gt;Some stats on basic requirements-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: left&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit,&amp;nbsp;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="148.75" y="310" width="336.25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-65" value="Flight #1:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;strokeWidth=1;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="135.05999999999995" y="410" width="189.94" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-66" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fontSize=15;fillColor=#FFFFFF;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="135" y="440" width="355.06" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-67" value="&lt;font style=&quot;font-size: 17px&quot;&gt;Book&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="390" y="465" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-71" value="Flight #2:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;strokeWidth=1;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="135.05999999999995" y="550" width="189.94" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-72" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fontSize=15;fillColor=#FFFFFF;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="135" y="580" width="355.06" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-73" value="&lt;font style=&quot;font-size: 17px&quot;&gt;Book&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="390" y="605" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-75" value="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;font style=&quot;font-size: 13px&quot;&gt;recommended flight info from flight api&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;text-align: left&quot;&gt;&amp;nbsp;labore et dolore magna aliqua.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: left&quot;&gt;Lorem ipsum dolor&amp;nbsp;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="148.75" y="465" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-77" value="Flight #3:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;strokeWidth=1;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="135.05999999999995" y="690" width="189.94" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-78" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fontSize=15;fillColor=#FFFFFF;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="135" y="720" width="355.06" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gUYsQXG3gvRRn_eIMIIj-79" value="&lt;font style=&quot;font-size: 17px&quot;&gt;Book&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="390" y="745" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ofjKyG6tqydGaL6-JpAX-0" value="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;font style=&quot;font-size: 13px&quot;&gt;recommended flight info from flight api&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;text-align: left&quot;&gt;&amp;nbsp;labore et dolore magna aliqua.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: left&quot;&gt;Lorem ipsum dolor&amp;nbsp;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="145" y="600" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ofjKyG6tqydGaL6-JpAX-2" value="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;font style=&quot;font-size: 13px&quot;&gt;recommended flight info from flight api&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;text-align: left&quot;&gt;&amp;nbsp;labore et dolore magna aliqua.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: left&quot;&gt;Lorem ipsum dolor&amp;nbsp;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="145" y="745" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UQ6Njc8xaAlA_foBRCf6-0" value="&lt;font style=&quot;font-size: 16px&quot;&gt;return to COVID data&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="120" y="850" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UQ6Njc8xaAlA_foBRCf6-1" value="&lt;font style=&quot;font-size: 16px&quot;&gt;return to top locations&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="260" y="830" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UQ6Njc8xaAlA_foBRCf6-3" value="&lt;font style=&quot;font-size: 16px&quot;&gt;return to top confirmation&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" parent="Ofp0Hnd-CA1A3OSV0_1r-1" vertex="1">
+          <mxGeometry x="390" y="850" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

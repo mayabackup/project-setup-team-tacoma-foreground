@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2021-03-01T18:40:00.417Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36" etag="E2DaVbm5KOuETHWXGUxQ" version="14.4.3" type="google">
+  <diagram name="Travel-resources" id="Y8WlLyZDXjqRvKtEoaLD">
+    <mxGraphModel dx="1186" dy="589" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="rhwrzZ6HOinWcaLP3BS5-0" />
+        <mxCell id="rhwrzZ6HOinWcaLP3BS5-1" parent="rhwrzZ6HOinWcaLP3BS5-0" />
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-0" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="225" y="5" width="400" height="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;strokeColor=#575757;fillColor=#808080;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="545" y="25.319999999999993" width="62.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="325.31999999999994" y="25.019999999999982" width="199.37" height="38.12" as="geometry" />
+        </mxCell>
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-3" value="&lt;font style=&quot;font-size: 18px&quot;&gt;Covid Travel Agent&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="332.5" y="34.079999999999984" width="185" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-4" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-128.png" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="245.01" y="20.649999999999977" width="49" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-5" value="&lt;font style=&quot;font-size: 11px&quot;&gt;copyright info&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#575757;strokeWidth=1;fillColor=none;fontSize=12;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="361.5" y="1065" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-6" value="logo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="556.25" y="38.76999999999998" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-7" value="" style="endArrow=none;html=1;fontSize=14;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="rhwrzZ6HOinWcaLP3BS5-1" source="kTjtJhgzd6pZNBWw_mlH-1" target="kTjtJhgzd6pZNBWw_mlH-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="535" y="255.32" as="sourcePoint" />
+            <mxPoint x="585" y="205.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-8" value="" style="endArrow=none;html=1;fontSize=14;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="rhwrzZ6HOinWcaLP3BS5-1" source="kTjtJhgzd6pZNBWw_mlH-1" target="kTjtJhgzd6pZNBWw_mlH-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="555" y="85.32" as="sourcePoint" />
+            <mxPoint x="617.5" y="35.31999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-10" value="&lt;font style=&quot;font-size: 17px&quot;&gt;Travel resources&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;strokeColor=#575757;fillColor=#FFFFFF;fontSize=14;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="353.75" y="75.32" width="142.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kTjtJhgzd6pZNBWw_mlH-14" value="&lt;h1&gt;&lt;br&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=15;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="295" y="235" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Se-37-BtdKZYdSYHcj37-0" value="&lt;font style=&quot;font-size: 17px&quot;&gt;infographics on world cases&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeColor=#23445d;fillColor=#808080;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="258" y="165" width="327.5" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Se-37-BtdKZYdSYHcj37-1" value="&lt;font style=&quot;font-size: 17px&quot;&gt;Travel Restictions Globally&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="295" y="125" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xbkHNtV2N36-3r7qfIQk-0" value="&lt;font style=&quot;font-size: 17px&quot;&gt;Travel recommendations:&amp;nbsp;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="258" y="335" width="245" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xbkHNtV2N36-3r7qfIQk-1" value="&lt;font style=&quot;font-size: 17px&quot;&gt;iframe of a recommendation page&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;strokeColor=#23445d;fillColor=#808080;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="256.5" y="375" width="328.5" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="t0C2MRJ-yDYs_czIzkv6-12" value="&lt;font style=&quot;font-size: 17px&quot;&gt;Latest travel restrictions:&amp;nbsp;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="256.5" y="545" width="245" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="t0C2MRJ-yDYs_czIzkv6-13" value="iframe with news page" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=1;fillColor=#808080;fontSize=16;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="258" y="815" width="150" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="t0C2MRJ-yDYs_czIzkv6-15" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;strokeColor=#23445d;fillColor=#808080;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="260.75" y="585" width="328.5" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="t0C2MRJ-yDYs_czIzkv6-16" value="&lt;font style=&quot;font-size: 17px&quot;&gt;Latest COVID news:&amp;nbsp;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="260.75" y="773.12" width="245" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OJa1IzqgIsmZIVMSiC-N-0" value="iframe with news page" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=1;fillColor=#808080;fontSize=16;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="439.25" y="815" width="150" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="M0jYz9yom0nWeB5PnmIG-0" value="&lt;span style=&quot;font-size: 17px&quot;&gt;infographics on world travel controls&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="rhwrzZ6HOinWcaLP3BS5-1" vertex="1">
+          <mxGeometry x="290" y="635" width="295" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
