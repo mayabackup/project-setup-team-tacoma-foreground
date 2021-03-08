@@ -1,59 +1,55 @@
 # Guide to Contributing
-This documents allows potential contributors, whether in the open source community or in a private organization, to see the project's rules and processes for contributions. It should be well-formatted with clear headings and subheadings.  
+This documents allows potential contributors, whether in the open source community or in a private organization, to view the project's rules on contributing. 
 
-GitHub provides a link to this document automatically to any user who creates a Pull Request on this project.
+## Project values and team norms
+Note: the structure of this section follows the structure outlined by Professor Bloomberg in the <a href="https://github.com/nyu-software-engineering/scrum-framework/blob/main/team-norms.md" target="_blank">scrum-framework</a> directory. <br>
 
-## Team values and norms
+**General team norms:**
+- Be polite when discussing the project, addressing questions or concerns. 
+- Attend the Scrum events (Daily Standup, Sprint Planning etc.) on time and notify in advance if cannot attend. 
+- Complete any assigned tasks on time. 
+- Make effort to resolve any project related uncertainty by contacting tutors, graders, Professor. 
+- Regularly communicate using the slack team channel, slack DMs and Zoom meetings for Scrum meetings (Daily Scrum, Sprint Review, etc. ).
 
-### How the team will work together:
+**How the team will work together:**<br>
+- Each sprint, the Product Owner and Scrum Master are assigned. The Product Owner creates the Product Backlog by speaking to the stakeholders and their own understanding. Product Backlog is created by creating and adding issues to the project with the tag 'user story'. 
+- Team collaboratively decides what User Stories should be included in the Sprint Backlog (Task Board) and drafts Estimation of Effort and Acceptance Criteria for the selected User Stories. Sprint Task Board is created as a github Project for a given repository. 
+- Team collaboratively drafts the Tasks based on each User Story and any necessary Spikes. Tasks and Spikes are created by creating and adding issues to the project with the tags 'task' and 'spike' respectively. 
+- Team members divide tasks based on their expertise and preference and work independently on their assigned tasks. 
+- Each task or spike can be undertaken only by one team member. Some members can work on identical tasks (e.g. two people can work on 'editing Readme file' task) - in this case two identical github issues should be created to track progress for each member independently. 
+- Once the Tasks related to the User Story are complete, the issue for the User Story is closed. Any remaining User Stories are moved to the Product Backlog. 
+- During the Sprint, Product Backlog Grooming is undertaken to review the existing and new User Stories. 
+- At the end of a Sprint, Sprint Review is undertaken to review the Sprint as a whole.  
 
-We will communicate using the slack team channel, slack DMs and Zoom meetings for daily standups etc.
+**How members can ask for help or advice:**<br>
+Team members bring up their concerns and questions during the daily standup meetings or message the group or specific team members in the team slack channel. 
 
-### How members who need help will solicit it from the others:
+**How quickly team members are expected to respond to the messages directed at them:**<br>
+Within 24 hours of receving the message.
 
-We will bring up during daily standup or message the group in the team slack channel (alternatively: DM specific team members)
-
-### How we'll reach consensus when there are disagreements on direction:
-
-We will bring them up during daily standups or we will message the group in the team slack channel/DM, then do as the tyranny of the majority demands of us. Alternatively, consult Prof. Bloomberg or TAs.
-
-### What to do when a member is failing to deliver on their obligations to the team:
-
-We will try to speak to the person directly (DM), then report to scrum master if that method doesn't prove itself to be successful. Alternatively, if all else fails, we will report to Prof. Bllomberg.
-
-### How quickly team members are expected to respond to messages directed at them:
-
-Upon 24 hours of receving said message.
-
-## Daily standups
-
-### What days/times will standups occur and how long do they last:
-
-Mondays (4:45-5:00) + Wednesdays (4:45-5:00) + Sundays (2:00-2:15).
-
-### Members expected to be present synchronously:
-
-Yes!
-
-### Agreement that members will not cover for other members who do not participate:
-
-Yes - but do let others know as early as possible, if one can not attend due to unforseeable circumstances.
-
-### Agreement that a member who makes no progress on a task for two standups or more in a row will be reported to management:
-
-Scrum master (or developer, if scrum master does not make satisfactory progress) will report to the professor.
+**How members reach consensus when there are disagreements on direction:**<br>
+Team members will discuss the problem during daily standup meeting or via chat in the team slack channel. The members explain and provide justification for their point of view and try to collaboratively come to a decision - as the tyranny of the majority demands of us. If there are any unresolved questions, team members can consult the tutors, graders, Professor to help resolve any uncertainty. 
 
 
-## Definition of 'done':
+### Daily standups
+
+- Daily standup meetings are on Mondays (4:45pm-5:00pm), Wednesdays (4:45pm-5:00pm), Sundays (2:00pm-2:15pm). All the times are in Eastern Standard time. 
+- Members are expected to be present synchronously. 
+- Members agree not to cover for other members who do not participate. If a member cannot participate due to unforseeable circumstances, he/she lets other team members know via slack channel. 
+- Members agree that if a member makes no progress on a task for two standups or more in a row, Scrum master (or developer, if Scrum Master does not make satisfactory progress) will report to the Professor.
+
+
+### Definition of 'done':
+
 - Acceptance criteria met (for a user story).<br>
-- Code/feature is peer reviewed. <br>
+- Code/feature is reviewed by at least 4 other members. <br>
 - Code/feature is proofread. <br>
-- Code is deployed to the test branch and runs successfully with the existing codebase (new feature doesn not compromise the existing functionality unless it is intended to do so). <br>
+- Code is deployed to the test branch and runs successfully with the existing codebase (new feature does not compromise the existing functionality unless it is intended to do so). <br>
 - Code/feature passes testing if there are any testing requirements specified. <br>
 - Product Owner accepts the changes. <br>
 
-## The Git workflow that the team follows
-1. Team members should clone the repository to start working on it: 
+## The Git workflow that the team follows: 
+1. Clone the repository to start working on it: 
 ```
 git clone url
 ```
@@ -62,74 +58,64 @@ git clone url
 git checkout master
 git pull origin master
 ```
-3. Create a new branch (from master) when working on a task/spike (except for .md files) and switch to that branch:
+3. Create a new branch (from master) when working on a task/spike (except for working on .md files) and switch to that branch:
 ```
 git checkout -b newbranch
 ```
 4. Commit your changes and add a short, meaningful message. If you are working on a specific task/spike, mention issue id of the task in the commit message: 
-```git commit -m'some changes for the task/spike for issue id #XX'```
+```
+git commit -m'some changes for the task/spike with issue id #XX'
+```
 
-5. Push your changes to the branch: <br>
-If have not pushed before: 
-```git push --set-upstream origin contributing```
-Otherwise: 
-```git push origin contributing```
+5. Push your changes to the branch. If have not pushed before: 
+```
+git push --set-upstream origin newbranch
+```
+Otherwise: <br>
+```
+git push origin contributing
+```
 
-6. Submit pull request to the master branch and let other team members review your code. Attach the pull request to the task by setting the 'Linked pull requests' in the issue tab. <br>
+6. Submit pull request from the task/spike branch to the master branch and let other team members review your code. Optionally, attach the pull request to the task/spike by setting the 'Linked pull requests' in the issue tab. <br>
 
-7. If changes are approved, merge the branch updates with the master branch and resolve any conficts. <br>
+7. If changes are approved, merge the branch updates with the master branch and resolve any conficts by using the VS code editor. <br>
 
-8. Delete the task/spike related branch after pull request is approved. <br>
+8. Team members can delete the task/spike branch after pull request is approved. <br>
 
 
-## How disagreements or conflicts among team members will be resolved
+## Rules for contributors
+1. If you are an external contributor who does not have admin access to the project, please fork the repository to your account on github by pressing the 'fork' button. <br>
+2. Then, clone the forked folder and pull any recent changes as specified in the git workflow above. 
+3. If you have made any changes and want to contribute them, submit pull request from your active branch with the changes to the master branch of the original folder as explained in the gitworkflow above. 
+4. To contact the project team members, please refer to the team info in the [README.md](./README.md) file. 
+5. The project will start reviewing the contributions starting from the Sprint 2.
+6. Team members will collaboratively decide what contributions they will accept via slack channel or during the Scrum events. 
 
-Team members will discuss the problem and provide justification for their point of view and try to collaboratively make a decision. If there are any unresolved questions, team members can consult the tutors, graders, Professor to help resolve uncertainty. 
 
 ## Instructions for setting up the local development environment in order to work on this project
 
-For building the project, install the following software: <br>
-<a href="https://git-scm.com/" target="_blank">Git</a><br>
-
-<a href="https://nodejs.org/" target="_blank">Node.js</a><br>
-
-<a href="https://reactjs.org/" target="_blank">React.js</a><br>
+To set up the local development environment, please install the following software:   <br>
+- Install <a href="https://git-scm.com/" target="_blank">Git</a> to follow the git workflow specified for team members and external contributors. 
+- Install <a href="https://nodejs.org/" target="_blank">Node.js</a> to contribute to and test the code. 
+- Install <a href="https://reactjs.org/" target="_blank">React.js</a> to contribute to and test the code. 
+- Install <a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a> and recommended linter to standardize the formatting of the code. 
 
 ## Instructions for building and testing the project (update with that information once the project reaches that stage)
-TBD
+Instructions are to be developed. 
 
 ## Coding standards
 
-### Designate a code editor and code linter all team members will use to standardize code formatting:
+We have designated the following code editor and code linter that all team members will use to standardize code formatting:<br>
+Code editor: Visual Studio code. <br>
+Code linter: ESLint. <br>
 
-VS code (tbd: + ESLint).
+We endorse the following coding standards and view them as a reflection of our team's norms and values. 
+These coding standards are outlined by Professor Bloomberg in the <a href="https://github.com/nyu-software-engineering/scrum-framework/blob/main/team-norms.md" target="_blank">scrum-framework</a>  directory. <br>
 
-A page I took straight out of Prof. Bloomberg's playbook, which our team indeed endorsed during a standup meeting and which we feel reflects our team's personality and values:
-
-### Bloomberg Philosophy #1:
-
-Don't over-engineer. Write minimum code to get things working end to end, only then iterate to improve. - Code for each task and spike must be peer-reviewed and pass tests before merging into the main branch of code.
-
-### Bloomberg Philosophy #2:
-
-Always push working code, if you break the pipeline/build then fix it.
-
-### Bloomberg Philosophy #3:
-
-Make granular and small commits, per feature or per bug fix.
-
-### Bloomberg Philosophy #4:
-
-Provide descriptive commit messages.
-
-### Bloomberg Philosophy #5:
-
-Write self documenting code. Use descriptive variable and function names. Avoid unnecessary name shortening.
-
-### Bloomberg Philosophy #5:
-
-Don't leave dead/commented out code behind. If you see such code, delete it.
-
-### Bloomberg Philosophy #6:
-
-Write automated tests to cover critical integration points and functionality.
+1. Don't over-engineer. Write minimum code to get things working end to end, only then iterate to improve. Code for each task and spike must be peer-reviewed and pass tests before merging into the main branch of code.<br>
+2. Always push working code, if you break the pipeline/build then fix it.<br>
+3. Make granular and small commits, per feature or per bug fix.<br>
+4. Provide descriptive commit messages.<br>
+5. Write self documenting code. Use descriptive variable and function names. Avoid unnecessary name shortening.<br>
+6. Don't leave dead/commented out code behind. If you see such code, delete it. <br>
+7. Write automated tests to cover critical integration points and functionality.<br>
