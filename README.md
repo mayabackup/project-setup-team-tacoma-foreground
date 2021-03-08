@@ -60,8 +60,11 @@ The following Theme can be defined for the MVP vision: <br>
  >into multiple User Stories once the Development team starts to dissect them. <br>
 
 The Theme for the MVP vision defined above can be divided into the following Features: <br>
-**Feature 1.** The user should be able to provide inputs and view locations to which he/she can potentially travel.<br>
+
+**Feature 1.** The user should be able to provide inputs and view locations to which he/she can potentially travel. <br>
+
 **Feature 2.** For each country, the user should be able to view the score that indicates how safe the country is. <br>
+
 **Feature 3.** The user should be able to view the overal ranking of the countries based on how safe it is to travel there. <br>
 
 3. These Features can be further divided into **User Stories** as follows: <br>
