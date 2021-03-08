@@ -86,10 +86,10 @@ git push origin contributing
 ## Rules for contributors
 1. If you are an external contributor who does not have admin access to the project, please fork the repository to your account on github by pressing the 'fork' button. <br>
 2. Then, clone the forked folder and pull any recent changes as specified in the git workflow above. 
-3. If you have made any changes and want to contribute them, submit pull request from your active branch with the changes to the master branch of the original folder as explained in the gitworkflow above. 
+3. If you have made changes to the project and want to contribute them, submit pull request from your active branch with the changes to the master branch of the original folder as explained in the gitworkflow above. 
 4. To contact the project team members, please refer to the team info in the [README.md](./README.md) file. 
-5. The project will start reviewing the contributions starting from the Sprint 2.
-6. Team members will collaboratively decide what contributions they will accept via slack channel or during the Scrum events. 
+5. The project will start reviewing contributions starting from the Sprint 2.
+6. Team members will collaboratively decide what contributions they will accept via slack channel or during Scrum events. 
 
 
 ## Instructions for setting up the local development environment in order to work on this project
