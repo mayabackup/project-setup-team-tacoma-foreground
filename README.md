@@ -65,7 +65,7 @@ The Theme for the MVP vision defined above can be divided into the following Fea
 
 **Feature 2.** For each country, the user should be able to view the score that indicates how safe the country is. <br>
 
-**Feature 3.** The user should be able to view the overal ranking of the countries based on how safe it is to travel there. <br>
+**Feature 3.** The user should be able to view the overall ranking of the safest countries and some detailed information about these countries. <br>
 
 3. These Features can be further divided into **User Stories** as follows: <br>
 
@@ -76,15 +76,15 @@ The Theme for the MVP vision defined above can be divided into the following Fea
 
 **Feature 2** can be divided into the following user stories: <br>
 
-**User Story 2.A.** As a user of the app, for each of the top ranked countries, I want to be able to view the score corresponding to each data category (e.g. for the country XX, view the score corresponding to the % of vaccinated population), so that I can rank the countries based on the COVID data metrics that are most important for me.<br>
+**User Story 2.A.** As a user of the app, for each of the top ranked countries, I want to be able to view the score corresponding to each data category (e.g. for the country XX, view the score corresponding to the % of vaccinated population), so that I can rank the countries based on the COVID data metrics that are most important to me.<br>
 **User Story 2.B.** As a user of the app, for each of the top ranked countries, I want to be able to view the total score i.e. sum of scores for all data categories, so that I can rank the countries based on all available COVID data metrics and look at the big picture.<br>
 
 **Feature 3** can be divided into the following user stories: <br>
 
-**Feature 3.** The user should be able to view the final ranking of the countries based on how safe it is to travel there. <br>
-**User Story 3.A.** As a user of the app, I want to view the final list of top ranked travel locations and details for each location, so that I can learn more about the destinations that are most recommended by the app based on overall scores and my personal data. <br>
-**User Story 3.B.** <br>
-
+**User Story 3.A.** As a user of the app, I want to view the final list of top ranked travel locations, so that I can learn myself about the destinations most recommended by the app based on overall scores and my personal data. <br>
+**User Story 3.B.** 
+As a user of the app, I want to view the COVID related data for each of the top ranked travel locations, so that I can analyze the presented data on my own and further decide if I want to travel to that location. 
+<br>
 
 ## Team Members
 
