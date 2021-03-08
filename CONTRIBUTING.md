@@ -86,10 +86,10 @@ git push origin contributing
 ## Rules for contributors
 1. If you are an external contributor who does not have admin access to the project, please fork the repository to your account on github by pressing the 'fork' button. <br>
 2. Then, clone the forked folder and pull any recent changes as specified in the git workflow above. 
-3. If you have made any changes and want to contribute them, submit pull request from your active branch with the changes to the master branch of the original folder as explained in the gitworkflow above. 
+3. If you have made changes to the project and want to contribute them, submit pull request from your active branch with the changes to the master branch of the original folder as explained in the gitworkflow above. 
 4. To contact the project team members, please refer to the team info in the [README.md](./README.md) file. 
-5. The project will start reviewing the contributions starting from the Sprint 2.
-6. Team members will collaboratively decide what contributions they will accept via slack channel or during the Scrum events. 
+5. The project will start reviewing contributions starting from the Sprint 2.
+6. Team members will collaboratively decide what contributions they will accept via slack channel or during Scrum events. 
 
 
 ## Instructions for setting up the local development environment in order to work on this project
@@ -109,13 +109,13 @@ We have designated the following code editor and code linter that all team membe
 Code editor: Visual Studio code. <br>
 Code linter: ESLint. <br>
 
-We endorse the following coding standards and view them as a reflection of our team's norms and values. 
-These coding standards are outlined by Professor Bloomberg in the <a href="https://github.com/nyu-software-engineering/scrum-framework/blob/main/team-norms.md" target="_blank">scrum-framework</a>  directory. <br>
+Furthermore, we endorse the following coding standards and view them as a reflection of our team's norms and values. 
+These coding standards closely follow the standards outlined by Professor Bloomberg in the <a href="https://github.com/nyu-software-engineering/scrum-framework/blob/main/team-norms.md" target="_blank">scrum-framework</a>  directory. <br>
 
-1. Don't over-engineer. Write minimum code to get things working end to end, only then iterate to improve. Code for each task and spike must be peer-reviewed and pass tests before merging into the main branch of code.<br>
-2. Always push working code, if you break the pipeline/build then fix it.<br>
-3. Make granular and small commits, per feature or per bug fix.<br>
-4. Provide descriptive commit messages.<br>
-5. Write self documenting code. Use descriptive variable and function names. Avoid unnecessary name shortening.<br>
-6. Don't leave dead/commented out code behind. If you see such code, delete it. <br>
-7. Write automated tests to cover critical integration points and functionality.<br>
+1. Don't complicate the code. Write minimum code to achieve the desired functionality and only then iterate to improve. Code for each task and spike must be reviewed by other members before merging into master branch. 
+2. Push only working code. 
+3. Make small commits for each new feature or edit. 
+4. Provide meaningful, short commit messages. 
+5. Use descriptive variables and function names to make code more understandable. 
+6. Deleted the code that has been commented out. 
+7. Write automated tests to cover critical integration points and functionality.
