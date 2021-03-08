@@ -1,4 +1,5 @@
 ## Description of the project and Product Vision Statement
+
 **Goal.** The COVID Travel Agent app is designed to provide prospective travelers with the most relevant knowledge to help them make a well-informed decision on international travel during the COVID pandemic. Particularly, the app aims at creating a personalized, comprehensive list of safest travel destinations based on the user's inputs (e.g. location, citizenship etc.), allowing the user to choose the most suitable destination for travel.<br>
 
 **Who are the users?** The target user of the app is anyone who wants to learn where he or she can travel, how safe each possible destination is and what are the requirements to travel there. The app facilitates decision making process for a traveler as it breaks the process into steps (steps include finding a safe destination, analyzing its COVID related data, booking a flight etc.) and guides the user through each of the steps. <br>
@@ -11,11 +12,11 @@ For travelers who want to travel only to one specific country, the app does not 
 ### Minimum Viable Product
 Generally, for the Minimum Viable Product of the app, the user will be able to enter limited number of inputs and view the top safest locations based on these inputs and COVID related information. The COVID related information will be based on some of the main COVID related data points/categories. The number of countries that potentially can be ranked and for which the scores can be potentially calculated (countries for which the COVID data is available) will be also limited (more details below). <br>
 
-**User inputs to be collected:**<br>
+**User inputs to be collected.**<br>
 For the MVP, the app will allow the user to calculate top safest locations based on the following inputs: current location, citizenship, desired airport. <br>
 After MVP is completed, advanced input options such as desired continent, reason for travel can be also collected. <br>
 
-**Data points/categories to be collected:**<br>
+**Data points/categories to be collected.**<br>
 In order to provide the safest countries in regards to COVID, we need to collect COVID related data, which can be divided into several categories based on content. For the MVP, the data categories that will be collected and used to calculate the safest locations will include the following categories: 
 - % of general population vaccinated
 - COVID cases registered at the location
@@ -27,11 +28,11 @@ After MVP is completed, other data categories such as *workplace closures*, *sch
 
 Also, for the MVP, the app will track COVID related entry restrictions worldwide (e.g. whether citizenship is required to enter the country). The value for the variable that stores info about 'entry restrictions' for a specific user and a specific country will be binary - 1 if the user can enter the country and 0 if can't. This value can be calculated based on the country's entry regulations, user's citizenship and current location. Entry restrictions affect what countries will be visible for the users.
 
-**Travel destinations available to be ranked**
+**Travel destinations available to be ranked.**<br>
 The usability and completeness of our product is largely based on the number of potential travel destinations we are able to offer to our users i.e. number of countries for which the app can calculate the total score. For the MVP, the app will be able to potentially rank/calculate score for 60 (roughly 10 per continent) countries. <br>
 After MVP is completed, the final goal for the app is to be able to calculate score for 120 locations (roughy 20 per continent). I do not aim to split our target location numbers evenly between continents due to the fact that the number of countries in each continent can vary. For example, Oceania may not have 10/20 locations that track all the necessary COVID information. <br>
 
-**Functionality.**
+**Functionality.**<br>
 For the MVP, the following functionality will be available: 
 - The user can enter the input values such as location, citizenship and desired airport. 
 - Based on user's inputs and the worldwide entry restrictions, all locations unavailable for the user will be excluded. 
@@ -41,7 +42,7 @@ For the MVP, the following functionality will be available:
 After the MVP is completed, the feature to receive travel updates (based on location) can be added. Also, the following features such as contacting the project team, viewing featured safest locations, viewing flight information etc. can be further added.  
 - Data tracked will be live so that users will consistenly view the most accurate and up-to-date information. Therefore, the recommendations will change as the scores will change based on the newly available data.
 
-**Technical requirements**
+**Technical requirements.**
 - We will need a large database to store all the information and a program that will scrape live data and update our database.
 - We need to build a decision engine that can be fed live data from the database and output top safest locations for each user (based on travel restrictions, COVID data category rankings and 'total score').
 
@@ -87,5 +88,5 @@ Testing instructions will be updated later.
 
 ## Additional resources
 
-If you are interested to view the data sources that power the app, you can visit <a href="https://ourworldindata.org/coronavirus" target="_blank">Our World in Data</a><br>.
+If you are interested to view the data sources that power the app, you can visit <a href="https://ourworldindata.org/coronavirus" target="_blank">Our World in Data.</a>
 
