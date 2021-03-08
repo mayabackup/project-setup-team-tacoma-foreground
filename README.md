@@ -45,30 +45,76 @@ After the MVP is completed, the feature to receive travel updates (based on loca
 - We will need a large database to store all the information and a program that will scrape live data and update our database.
 - We need to build a decision engine that can be fed live data from the database and output top safest locations for each user (based on travel restrictions, COVID data category rankings and 'total score').
 
+### Process after establishing vision. 
+The team referred to the [Scrum Framework documentation](https://knowledge.kitchen/Scrum_development_framework#Product_vision_statement) and [Outline for translating Features to User Stories](http://idiacomputing.com/pub/UserStories.pdf) to define themes and features. <br>
+1. **Themes.** According to the Scrum Framework documentation mentioned above, 
+>Themes are categories of user stories that can conceptually be grouped together to indicate a related set of 
+> requirements. <br>
+
+The following Theme can be defined for the MVP vision: <br>
+
+*The app should be able to calculate top safest locations based on the inputs provided by the user.* 
+
+2.  **Features.** According to the Scrum Framework documentation, 
+>Features are high-level User Stories that are suitable for a Product Backlog, but that will probably be split up
+ >into multiple User Stories once the Development team starts to dissect them. <br>
+
+The Theme for the MVP vision defined above can be divided into the following Features: <br>
+**Feature 1.** The user should be able to provide inputs and view locations to which he/she can potentially travel.<br>
+**Feature 2.** For each country, the user should be able to view the score that indicates how safe the country is. <br>
+**Feature 3.** The user should be able to view the overal ranking of the countries based on how safe it is to travel there. <br>
+
+3. These Features can be further divided into **User Stories** as follows: <br>
+
+**Feature 1** can be divided into the following user stories: <br>
+
+**User Story 1.A.** As a user of the app, I want to be able to provide personal information to calculate the top safest locations, so that the resulting travel destinations will be customized to my background and circumstances. <br>
+**User Story 1.B.** As a user of the app, I want to view top locations that do not have entry restrictions for me, so that I can rank and choose the travel destinations that are possible for me to travel. <br> 
+
+**Feature 2** can be divided into the following user stories: <br>
+
+**User Story 2.A.** As a user of the app, for each of the top ranked countries, I want to be able to view the score corresponding to each data category (e.g. for the country XX, view the score corresponding to the % of vaccinated population), so that I can rank the countries based on the COVID data metrics that are most important for me.<br>
+**User Story 2.B.** As a user of the app, for each of the top ranked countries, I want to be able to view the total score i.e. sum of scores for all data categories, so that I can rank the countries based on all available COVID data metrics and look at the big picture.<br>
+
+**Feature 3** can be divided into the following user stories: <br>
+
+**Feature 3.** The user should be able to view the final ranking of the countries based on how safe it is to travel there. <br>
+**User Story 3.A.** As a user of the app, I want to view the final list of top ranked travel locations and details for each location, so that I can learn more about the destinations that are most recommended by the app based on overall scores and my personal data. <br>
+**User Story 3.B.** <br>
+
+
 ## Team Members
 
 **Adam Ethan** - Junior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/AdamEthan" target="_blank">Adam Ethan</a>
+Github: [Adam Ethan](https://github.com/AdamEthan)
 
 **Alifa Faruk** - Senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/alifafaruk" target="_blank">Alifa Faruk</a>
+Github: [Alifa Faruk](https://github.com/alifafaruk)
 
 **Almazhan Kapan** - Senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/almazhankapan" target="_blank">Almazhan Kapan</a>
+Github: [Almazhan Kapan](https://github.com/almazhankapan)
 
 **Maya Sijaric** - Senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/sijaric" target="_blank">Maya Sijaric</a>
+Github: [Maya Sijaric](https://github.com/sijaric)
 
 **Rajan Bharaj** - Senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/RajanBharaj/" target="_blank">Rajan Bharaj</a>
+Github: [Rajan Bharaj](https://github.com/RajanBharaj)
 
 **Roman Haberli** - Senior at New York University studying Computer Science<br>
-Github:  <a href="https://github.com/rhaberli/" target="_blank">Roman Haberli</a>
+Github: [Roman Haberli](https://github.com/rhaberli)
 
 
 ## History
 
-"I was on a call with an old friend, who for fun had decided to create a website tracking live COVID vaccination rates across the US. I asked him how readily available that data was and he said that the data is not hard to find or to keep it updated. Days later, of my own accord, I was scrolling through <a href="https://www.skyscanner.net/" target="_blank">skyscanner</a> to dream about future holidays. I found that the COVID related info for every location was very limited and really the only thing they provide was the requirements for flights. As the summer is approaching, millions of potential travelers are hoping they might be able to travel safely. For people who travel with their elderly family members, for people who are health conscious and for people who just want to reduce the chance of catching the infection, I decided to create COVID Travel Agent." (Rajan)
+>I was on a call with an old friend, who for fun had decided to create a website tracking live COVID vaccination 
+> rates across the US. I asked him how readily available that data was and he said that the data is not hard to 
+> find or to keep it updated. Days later, of my own accord, I was scrolling through 
+[skyscanner](https://www.skyscanner.net/) to dream about future holidays. I found that the COVID related info for
+>every location was very limited >and really the only thing they provide was the requirements for flights. 
+> As the >summer is approaching, millions of potential travelers are hoping they might be able to travel safely. 
+> For people who travel with their elderly family members, for people who are health conscious and for people 
+> who just want to reduce the chance of catching the infection, I decided to create COVID Travel Agent." 
+> --Rajan
 
 The success of the product is directly related to how well we can incorporate the data for as many travel destinations as possible. My team and I will put our best efforts to provide users with as many travel destination options as possible, but unfortunately, we cannot collect and summarize the data from every known travel destination ourselves. As an open source project, we are looking for developers to submit accurate COVID data about any travel destinations not listed on our website. An index of current locations tracked and more information about contributing can be found at [CONTRIBUTING.md](./CONTRIBUTING.md).
 
