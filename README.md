@@ -113,13 +113,13 @@ Github: [Roman Haberli](https://github.com/rhaberli)
 > rates across the US. I asked him how readily available that data was and he said that the data is not hard to 
 > find or to keep it updated. Days later, of my own accord, I was scrolling through 
 [skyscanner](https://www.skyscanner.net/) to dream about future holidays. I found that the COVID related info for
->every location was very limited >and really the only thing they provide was the requirements for flights. 
-> As the >summer is approaching, millions of potential travelers are hoping they might be able to travel safely. 
+>every location was very limited and really the only thing they provide was the requirements for flights. 
+> As the summer is approaching, millions of potential travelers are hoping they might be able to travel safely. 
 > For people who travel with their elderly family members, for people who are health conscious and for people 
-> who just want to reduce the chance of catching the infection, I decided to create COVID Travel Agent." 
-> --Rajan
+> who just want to reduce the chance of catching the infection, I decided to create COVID Travel Agent. <br>
+> -Rajan
 
-The success of the product is directly related to how well we can incorporate the data for as many travel destinations as possible. My team and I will put our best efforts to provide users with as many travel destination options as possible, but unfortunately, we cannot collect and summarize the data from every known travel destination ourselves. As an open source project, we are looking for developers to submit accurate COVID data about any travel destinations not listed on our website. An index of current locations tracked and more information about contributing can be found at [CONTRIBUTING.md](./CONTRIBUTING.md).
+The success of the product is directly related to how well we can incorporate the data for as many travel destinations as possible. My team and I will put our best efforts to provide users with as many travel destination options as possible, but unfortunately, we cannot collect and summarize the data from every known travel destination ourselves. As an open source project, we are looking for developers to submit accurate COVID data about any travel destinations not listed on our website. An index of current locations tracked and more information about contributing can be found in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## How to contribute? 
 Thank you for your interest! To contribute to the project, please review the [CONTRIBUTING.md](./CONTRIBUTING.md) file. 
