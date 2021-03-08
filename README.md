@@ -65,7 +65,7 @@ The Theme for the MVP vision defined above can be divided into the following Fea
 
 **Feature 2.** For each country, the user should be able to view the score that indicates how safe the country is. <br>
 
-**Feature 3.** The user should be able to view the overal ranking of the countries based on how safe it is to travel there. <br>
+**Feature 3.** The user should be able to view the overall ranking of the safest countries and some detailed information about these countries. <br>
 
 3. These Features can be further divided into **User Stories** as follows: <br>
 
@@ -76,15 +76,15 @@ The Theme for the MVP vision defined above can be divided into the following Fea
 
 **Feature 2** can be divided into the following user stories: <br>
 
-**User Story 2.A.** As a user of the app, for each of the top ranked countries, I want to be able to view the score corresponding to each data category (e.g. for the country XX, view the score corresponding to the % of vaccinated population), so that I can rank the countries based on the COVID data metrics that are most important for me.<br>
+**User Story 2.A.** As a user of the app, for each of the top ranked countries, I want to be able to view the score corresponding to each data category (e.g. for the country XX, view the score corresponding to the % of vaccinated population), so that I can rank the countries based on the COVID data metrics that are most important to me.<br>
 **User Story 2.B.** As a user of the app, for each of the top ranked countries, I want to be able to view the total score i.e. sum of scores for all data categories, so that I can rank the countries based on all available COVID data metrics and look at the big picture.<br>
 
 **Feature 3** can be divided into the following user stories: <br>
 
-**Feature 3.** The user should be able to view the final ranking of the countries based on how safe it is to travel there. <br>
-**User Story 3.A.** As a user of the app, I want to view the final list of top ranked travel locations and details for each location, so that I can learn more about the destinations that are most recommended by the app based on overall scores and my personal data. <br>
-**User Story 3.B.** <br>
-
+**User Story 3.A.** As a user of the app, I want to view the final list of top ranked travel locations, so that I can learn myself about the destinations most recommended by the app based on overall scores and my personal data. <br>
+**User Story 3.B.** 
+As a user of the app, I want to view the COVID related data for each of the top ranked travel locations, so that I can analyze the presented data on my own and further decide if I want to travel to that location. 
+<br>
 
 ## Team Members
 
@@ -113,13 +113,13 @@ Github: [Roman Haberli](https://github.com/rhaberli)
 > rates across the US. I asked him how readily available that data was and he said that the data is not hard to 
 > find or to keep it updated. Days later, of my own accord, I was scrolling through 
 [skyscanner](https://www.skyscanner.net/) to dream about future holidays. I found that the COVID related info for
->every location was very limited >and really the only thing they provide was the requirements for flights. 
-> As the >summer is approaching, millions of potential travelers are hoping they might be able to travel safely. 
+>every location was very limited and really the only thing they provide was the requirements for flights. 
+> As the summer is approaching, millions of potential travelers are hoping they might be able to travel safely. 
 > For people who travel with their elderly family members, for people who are health conscious and for people 
-> who just want to reduce the chance of catching the infection, I decided to create COVID Travel Agent." 
-> --Rajan
+> who just want to reduce the chance of catching the infection, I decided to create COVID Travel Agent. <br>
+> -Rajan
 
-The success of the product is directly related to how well we can incorporate the data for as many travel destinations as possible. My team and I will put our best efforts to provide users with as many travel destination options as possible, but unfortunately, we cannot collect and summarize the data from every known travel destination ourselves. As an open source project, we are looking for developers to submit accurate COVID data about any travel destinations not listed on our website. An index of current locations tracked and more information about contributing can be found at [CONTRIBUTING.md](./CONTRIBUTING.md).
+The success of the product is directly related to how well we can incorporate the data for as many travel destinations as possible. My team and I will put our best efforts to provide users with as many travel destination options as possible, but unfortunately, we cannot collect and summarize the data from every known travel destination ourselves. As an open source project, we are looking for developers to submit accurate COVID data about any travel destinations not listed on our website. An index of current locations tracked and more information about contributing can be found in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## How to contribute? 
 Thank you for your interest! To contribute to the project, please review the [CONTRIBUTING.md](./CONTRIBUTING.md) file. 
@@ -127,14 +127,14 @@ Thank you for your interest! To contribute to the project, please review the [CO
 ## Instructions for building and testing the project
 
 To build the project, please install the following software:   <br>
-- Install <a href="https://git-scm.com/" target="_blank">Git</a> to follow the git workflow specified for team members and external contributors. 
-- Install <a href="https://nodejs.org/" target="_blank">Node.js</a> to contribute to and test the code. 
-- Install <a href="https://reactjs.org/" target="_blank">React.js</a> to contribute to and test the code. 
-- Install <a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a> and recommended linter to standardize the formatting of the code. <br>
+- Install [Git](https://git-scm.com/) to follow the git workflow specified for team members and external contributors. 
+- Install [Node.js](https://nodejs.org/) to contribute to and test the code. 
+- Install [React.js](https://reactjs.org/) to contribute to and test the code. 
+- Install [Visual Studio Code](https://code.visualstudio.com/download) and recommended linter to standardize the formatting of the code. <br>
 To contribute to the project, please refer to the 'Rules for contributors' and 'Git workflow for team members' sections in the [CONTRIBUTING.md](./CONTRIBUTING.md) file. 
 Testing instructions will be updated later.  
 
 ## Additional resources
 
-If you are interested to view the data sources that power the app, you can visit <a href="https://ourworldindata.org/coronavirus" target="_blank">Our World in Data.</a>
+If you are interested to view the data sources that power the app, you can visit [Our World in Data](https://ourworldindata.org/coronavirus).
 
