@@ -127,14 +127,14 @@ Thank you for your interest! To contribute to the project, please review the [CO
 ## Instructions for building and testing the project
 
 To build the project, please install the following software:   <br>
-- Install <a href="https://git-scm.com/" target="_blank">Git</a> to follow the git workflow specified for team members and external contributors. 
-- Install <a href="https://nodejs.org/" target="_blank">Node.js</a> to contribute to and test the code. 
-- Install <a href="https://reactjs.org/" target="_blank">React.js</a> to contribute to and test the code. 
-- Install <a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a> and recommended linter to standardize the formatting of the code. <br>
+- Install [Git](https://git-scm.com/) to follow the git workflow specified for team members and external contributors. 
+- Install [Node.js](https://nodejs.org/) to contribute to and test the code. 
+- Install [React.js](https://reactjs.org/) to contribute to and test the code. 
+- Install [Visual Studio Code](https://code.visualstudio.com/download) and recommended linter to standardize the formatting of the code. <br>
 To contribute to the project, please refer to the 'Rules for contributors' and 'Git workflow for team members' sections in the [CONTRIBUTING.md](./CONTRIBUTING.md) file. 
 Testing instructions will be updated later.  
 
 ## Additional resources
 
-If you are interested to view the data sources that power the app, you can visit <a href="https://ourworldindata.org/coronavirus" target="_blank">Our World in Data.</a>
+If you are interested to view the data sources that power the app, you can visit [Our World in Data](https://ourworldindata.org/coronavirus).
 
