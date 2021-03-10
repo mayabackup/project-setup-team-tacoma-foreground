@@ -2,7 +2,7 @@
 This documents allows potential contributors, whether in the open source community or in a private organization, to view the project's rules on contributing. 
 
 ## Project values and team norms
-Note: the structure of this section follows the structure outlined by Professor Bloomberg in the <a href="https://github.com/nyu-software-engineering/scrum-framework/blob/main/team-norms.md" target="_blank">scrum-framework</a> directory. <br>
+Note: the structure of this section follows the structure outlined by Professor Bloomberg in the [scrum-framework](https://github.com/nyu-software-engineering/scrum-framework/blob/main/team-norms.md) directory. <br>
 
 **General team norms:**
 - Be polite when discussing the project, addressing questions or concerns. 
@@ -43,6 +43,8 @@ Team members will discuss the problem during daily standup meeting or via chat i
 ### Daily standups
 
 - Daily standup meetings are on Mondays (4:45pm-5:00pm), Wednesdays (4:45pm-5:00pm), Sundays (2:00pm-2:15pm). All the times are in Eastern Standard time. 
+- Zoom link for [Mon/Wed](https://nyu.zoom.us/j/98890210551): 
+- Zoom link for [Sunday](https://nyu.zoom.us/j/96123800869): 
 - Members are expected to be present synchronously. 
 - Members agree not to cover for other members who do not participate. If a member cannot participate due to unforseeable circumstances, he/she lets other team members know via slack channel. 
 - Members agree that if a member makes no progress on a task for two standups or more in a row, Scrum master (or developer, if Scrum Master does not make satisfactory progress) will report to the Professor.
@@ -105,10 +107,11 @@ git push origin contributing
 ## Instructions for setting up the local development environment in order to work on this project
 
 To set up the local development environment, please install the following software:   <br>
-- Install <a href="https://git-scm.com/" target="_blank">Git</a> to follow the git workflow specified for team members and external contributors. 
-- Install <a href="https://nodejs.org/" target="_blank">Node.js</a> to contribute to and test the code. 
-- Install <a href="https://reactjs.org/" target="_blank">React.js</a> to contribute to and test the code. 
-- Install <a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a> and recommended linter to standardize the formatting of the code. 
+- Install [Git](https://git-scm.com/) to follow the git workflow specified for team members and external contributors. 
+- Install [Node.js](https://nodejs.org/) to contribute to and test the code. 
+- Install [React.js](https://reactjs.org/) to contribute to and test the code. 
+- Install [Visual Studio Code](https://code.visualstudio.com/download) and recommended linter to standardize the formatting of the code. <br>
+Additional instructions will be added later. <br>
 
 ## Instructions for building and testing the project (update with that information once the project reaches that stage)
 Instructions are to be developed. 
@@ -116,6 +119,7 @@ Instructions are to be developed.
 ## Coding standards
 
 We have designated the following code editor and code linter that all team members will use to standardize code formatting:<br>
+
 Code editor: Visual Studio code. <br>
 Code linter: ESLint. <br>
 
