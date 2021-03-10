@@ -30,6 +30,15 @@ Within 24 hours of receving the message.
 **How members reach consensus when there are disagreements on direction:**<br>
 Team members will discuss the problem during daily standup meeting or via chat in the team slack channel. The members explain and provide justification for their point of view and try to collaboratively come to a decision - as the tyranny of the majority demands of us. If there are any unresolved questions, team members can consult the tutors, graders, Professor to help resolve any uncertainty. 
 
+### Specific Conflict-Resolution Algorithm
+
+- Hold daily standups synchronously at least 3 times per week, and make sure responsibilities are clear during these meetings and reflected on the Sprint Task Board - everyone should know who is responsible for each unit of work.  If you don’t hold synchronous standups on a regular schedule, I assure you that everything will fall apart.
+- Make sure you have at least one daily standup a full day or two before a big deadline, so everyone can see whether the work is getting completed on time or not.
+- If a team member has not made sufficient progress on their assigned tasks within 1 daily standup, other team members should offer to help resolve the issue.
+- If a team member has not made sufficient progress on their assigned tasks within 2 daily standups, this becomes an urgent full team problem and the team should take actions to remedy it, including notifying the stakeholders (professor, tutors, course assistant) and doing the work themselves if possible.
+- While team members are primarily responsible for their own tasks, as a default, team members should feel free to modify any aspect of the team’s collective work.  But they should do so following the Feature Branch git workflow, where they make changes in an isolated branch and issue pull requests to the main branch.  Those pull requests must be reviewed and approved by another member of the team before they can be merged into the main branch.
+- One of the Product Owner’s tasks is maintaining the Product Backlog and Sprint Task Boards.  But that does not mean they have to do so in isolation.  Other team members should point out any problems with it and can fix them as long as the Product Owner and any other affected team members are notified.
+- If there are disagreements among team members, they should be decided upon democratically by the group as a whole, when there is time to do so.  If not all team members are available for an urgent vote because of time differences or other time conflicts, the vote can involve just those who are available.  All parties must agree to respect these decisions.
 
 ### Daily standups
 
