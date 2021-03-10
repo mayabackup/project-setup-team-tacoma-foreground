@@ -35,7 +35,7 @@ Team members will discuss the problem during daily standup meeting or via chat i
 
 - Daily standup meetings are on Mondays (4:45pm-5:00pm), Wednesdays (4:45pm-5:00pm), Sundays (2:00pm-2:15pm). All the times are in Eastern Standard time. 
 - Zoom link for [Mon/Wed](https://nyu.zoom.us/j/98890210551): 
-- Zoom link for [Sunday](https://nyu.zoom.us/j/96123800869): 
+- Zoom link for [Friday](https://nyu.zoom.us/j/96123800869): 
 - Members are expected to be present synchronously. 
 - Members agree not to cover for other members who do not participate. If a member cannot participate due to unforseeable circumstances, he/she lets other team members know via slack channel. 
 - Members agree that if a member makes no progress on a task for two standups or more in a row, Scrum master (or developer, if Scrum Master does not make satisfactory progress) will report to the Professor.
