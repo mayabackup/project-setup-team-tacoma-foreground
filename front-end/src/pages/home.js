@@ -31,15 +31,13 @@ const HomePage=({props})=>{
        console.log(evt.target.checked)
         isAdvanced=evt.target.checked
         setAdvanced(evt.target.checked)
-
       }
-
       useEffect(()=>{
           if (advanced===true){
             setFeedback(
                 <div>
-                <label>
-                <input
+                <label >
+                <input className="input-field"
                     name="continent"
                     type="text"
                     placeholder="Enter desired continent"
@@ -49,7 +47,7 @@ const HomePage=({props})=>{
               </label>
               <br></br>
               <label>
-              <input
+              <input className="input-field"
                   name="reason"
                   type="text"
                   placeholder="Enter reason for traveling"
@@ -60,7 +58,7 @@ const HomePage=({props})=>{
             <br></br>
 
             <label>
-            <input
+            <input className="input-field"
                 name="name"
                 type="text"
                 placeholder="Enter your name"
@@ -71,7 +69,7 @@ const HomePage=({props})=>{
           <br></br>
 
           <label>
-          <input
+          <input className="input-field"
               name="email"
               type="text"
               placeholder="Enter your email"
@@ -79,16 +77,17 @@ const HomePage=({props})=>{
               onChange={e=>setEmail(e.target.value) }
           />
         </label>
-        <br></br>
-        <label>
-          recieve updates
-        <input
+ 
+        
+        <input className="checkbox-1"
           type="checkbox"
           name="updates"
           checked={updates}
           onChange={(e=>setUpdates(e.target.checked)) }
-        />
-      </label>
+        /><label className='check'>
+        recieve updates
+        </label>
+      
         </div>   
             )
           }
@@ -103,9 +102,9 @@ const HomePage=({props})=>{
       <h1>Welcome to the Coivd Travel Agent</h1>
    <img src={logo} alt="World Map"></img>
       
-    <form class="inputs" onSubmit={handleSubmit}>
-      <label>
-        <input
+    <form className="inputs" onSubmit={handleSubmit}>
+      <label >
+        <input className="input-field"
             name="citizenship"
             type="text"
             placeholder="Enter your citizenship"
@@ -116,7 +115,7 @@ const HomePage=({props})=>{
 <br></br>
 
       <label>
-        <input
+        <input className="input-field"
             name="location"
             type="text"
             placeholder="Enter your location"
@@ -130,7 +129,7 @@ const HomePage=({props})=>{
 
       <br></br>
       <label>
-        <input
+        <input className="input-field"
             name="airport"
             type="text"
             placeholder="Enter desired airport"
@@ -138,23 +137,24 @@ const HomePage=({props})=>{
             onChange={e=>setAirport(e.target.value) }
         />
       </label>
-      <br></br>
-      <label>
-          advanced
-        <input
+
+
+        <input  className="checkbox"
           type="checkbox"
           name="advanced"
           checked={advanced}
-          onChange={(e=>setAdvance(e)) }
-        />
-      </label>
-      
+          onChange={(e=>setAdvance(e))}
+        />       <label   className='check'> 
+         advanced
+          </label>
       {feedback}
     <br></br>
       <input type="submit" value="CALCULATE" />
+      
     </form>
+    
   </div>
+
 );
 }
-
 export default HomePage;

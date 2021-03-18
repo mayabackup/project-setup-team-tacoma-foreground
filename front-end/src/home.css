@@ -30,16 +30,24 @@ section {
     width: 50%;
  
     margin: 8px 0;
-    box-sizing: border-box;
+ 
     margin-left: auto;
     margin-right: auto;
     text-align:center;
     height:50px;
     font-size:14pt;
     position: relative;
+    
 
   }
+ 
+  label.check {
+    color: blueviolet;
+    display: inline-block;
+ 
+    display: block;
 
+  }
 img{
     height: 50%;
     width: 50%;
