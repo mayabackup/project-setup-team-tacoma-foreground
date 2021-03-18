@@ -3,6 +3,7 @@ import { slide as Menu } from 'react-burger-menu';
 import {useState, useEffect} from "react"
 import "../home.css"
 import logo from '../worldmap.jpg'; // with import
+import { useHistory } from "react-router-dom"; 
 
 
 
@@ -20,11 +21,15 @@ const HomePage=({props})=>{
         const [email, setEmail] = useState(null);
 
     let isAdvanced=true;
+    let history = useHistory();
+
       const handleSubmit= (evt)=>  {
         evt.preventDefault();
         alert("SUBMITTED" + citizenship)
         alert("SUBMITTED" + location)
         alert("SUBMITTED" + airport)
+      
+        history.push("/here");
       }
  
       const setAdvance= (evt)=>  {
