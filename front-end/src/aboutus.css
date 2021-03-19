@@ -1,0 +1,29 @@
+.title{
+    text-align: center;
+}
+ img{
+ 
+
+    max-height: 500px;
+    max-width: 1000px;
+    margin: auto;
+}
+.carousel-inner{
+    color: black;
+    background-color: cadetblue;
+}
+.purpose{
+    text-align: center;
+    margin: auto;
+    max-height: 500px;
+    max-width: 1000px;
+}
+.media, h2, iframe{
+    text-align: center;
+    margin: auto;
+    max-height: 500px;
+    max-width: 1000px;
+}
+body{
+    background-color: cadetblue;
+}
