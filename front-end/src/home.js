@@ -4,9 +4,12 @@ import { useState, useEffect } from "react";
 import "./home.css";
 import { useHistory } from "react-router-dom";
 
+<<<<<<< HEAD
 const Mockaroo = require("mockaroo");
 
 
+=======
+>>>>>>> master
 const HomePage = ({ props }) => {
   //states
   const [citizenship, setCitizenship] = useState();
@@ -34,6 +37,10 @@ const HomePage = ({ props }) => {
     localStorage.setItem('reason',reason)
     localStorage.setItem('name',name)
     localStorage.setItem('email',email)
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     history.push("/confirmation");
   };
 

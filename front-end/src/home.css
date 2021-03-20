@@ -1,0 +1,61 @@
+section {
+    border: 1px solid red;
+    display: flex;
+    padding: 20px;
+  }
+  
+  article {
+    flex: auto;
+    border: 1px dotted green;
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  h1 {
+    display: block;
+ 
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    text-align: center;
+ 
+  }
+  iframe{
+ 
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ 
+  }
+ 
+
+.inputs,input{
+    width: 50%;
+ 
+    margin: 8px 0;
+ 
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    height:50px;
+    font-size:14pt;
+    position: relative;
+    
+
+  }
+ 
+  label.check {
+    display: inline-block;
+    display: block;
+
+  }
+img{
+    height: 50%;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
