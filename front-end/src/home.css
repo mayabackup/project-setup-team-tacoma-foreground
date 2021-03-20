@@ -13,18 +13,24 @@ section {
   
   h1 {
     display: block;
-    font-size: 2em;
+ 
     margin-top: 0.67em;
     margin-bottom: 0.67em;
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
     text-align: center;
+ 
   }
-  
-  p {
-    color: red;
+  iframe{
+ 
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ 
   }
+ 
 
 .inputs,input{
     width: 50%;
@@ -42,9 +48,7 @@ section {
   }
  
   label.check {
-    color: blueviolet;
     display: inline-block;
- 
     display: block;
 
   }
@@ -55,7 +59,3 @@ img{
     margin-left: auto;
     margin-right: auto;
 }
-body{
-background-color:slategrey;
-}
- 
