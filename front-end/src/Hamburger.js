@@ -12,7 +12,7 @@ export const HamburgerMenu = [
   },
   {
     title: 'About Us',
-    path: '/',
+    path: '/aboutus',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
