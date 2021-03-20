@@ -24,6 +24,14 @@ const HomePage = ({ props }) => {
   //after submit--> prevent defualt and go to confirmation page
   const handleSubmit = evt => {
     evt.preventDefault();
+    localStorage.setItem('citizenship',citizenship)
+    localStorage.setItem('location',location)
+    localStorage.setItem('airport',airport)
+    localStorage.setItem('continent',continent)
+    localStorage.setItem('reason',reason)
+    localStorage.setItem('name',name)
+    localStorage.setItem('email',email)
+
     history.push("/confirmation");
   };
 
@@ -103,7 +111,7 @@ const HomePage = ({ props }) => {
   //initial return with iframe and forms
   return (
     <div>
-      <h1>Welcome to the Coivd Travel Agent</h1>
+      <h1>Welcome to the Covid Travel Agent</h1>
       <div>
         <iframe
           ondblclick="window.location='http://www.google.com'"
@@ -145,7 +153,7 @@ const HomePage = ({ props }) => {
               className="input-field"
               name="airport"
               type="text"
-              placeholder="Enter desired airport"
+              placeholder="Desired departure airport"
               value={airport}
               onChange={e => setAirport(e.target.value)}
             />
