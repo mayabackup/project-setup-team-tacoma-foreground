@@ -1,10 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import {BrowserRouter as Router, Route, Switch, Link, Redirect} from 'react-router-dom'
 // pages
 import HomePage from "./home"
-import FlightInfo from "./flight_info"
 
 function App() {
   return (
