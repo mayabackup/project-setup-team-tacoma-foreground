@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import "./home.css";
 import { useHistory } from "react-router-dom";
 
-const Mockaroo = require("mockaroo");
-
 const HomePage = ({ props }) => {
   //states
   const [citizenship, setCitizenship] = useState();
