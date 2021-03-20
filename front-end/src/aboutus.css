@@ -23,3 +23,7 @@
     max-height: 500px;
     max-width: 1000px;
 }
+.legend{
+    background-color: transparent!important;
+    color: black !important;
+}
