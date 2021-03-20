@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { HamburgerMenu } from './Hamburger';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
-import logo from './Media/CovidTravelAgentLogo.png';
 //run command "npm install react-icons --save" in terminal for icons
 
 //function to toggle/show or hide Hamburger Menu
@@ -23,7 +22,7 @@ function Navbar() {
           </Link>
           <h1>Covid Travel Agent</h1>
           <Link to = './'>
-          <img className="LogoPic" src={logo} alt="logo"/> 
+          <img className="LogoPic" src={'./img/CovidTravelAgentLogo.jpg'} alt="logo"/> 
           </Link>
         </div>
         <nav className={Hamburger ? 'nav-menu active' : 'nav-menu'}>
