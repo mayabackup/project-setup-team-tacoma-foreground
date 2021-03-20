@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import {BrowserRouter as Router, Route, Switch, Link, Redirect} from 'react-router-dom'
 // pages
-import AboutUs from "./pages/aboutus"
+import AboutUs from "./aboutus"
 
 function App() {
   return (

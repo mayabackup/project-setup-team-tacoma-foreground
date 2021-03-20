@@ -1,7 +1,7 @@
 import React from 'react';
  
 import {useState, useEffect} from "react"
-import '../aboutus.css';
+import './aboutus.css';
  
 import { useHistory } from "react-router-dom"; 
 import Carousel from 'react-bootstrap/Carousel' 
