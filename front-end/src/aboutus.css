@@ -16,14 +16,21 @@
     margin: auto;
     max-height: 500px;
     max-width: 1000px;
+    display: block;
 }
-.media, h2, iframe{
-    text-align: center;
-    margin: auto;
-    max-height: 500px;
-    max-width: 1000px;
-}
+
 .legend{
     background-color: transparent!important;
     color: black !important;
+}
+.redirect{
+    background-color: #555555; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: auto;
+    display: block;
 }

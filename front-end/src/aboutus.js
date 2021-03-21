@@ -6,23 +6,31 @@ import './aboutus.css';
 import { useHistory } from "react-router-dom"; 
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import img1 from './img/spain.jpeg';
+import img2 from './img/paris.jpeg';
+import img3 from './img/turkey.jpeg';
+
 
 const AboutUs=({props})=>{
+    let history = useHistory();
+    function redirectPage(){
+        history.push('./meettheteam')
+    }
     return(
         <div >
             <h1 className='title'>About Us</h1>
-            <Carousel>
+            <Carousel className='carousel-about'>
                 <div>
-                    <img src="https://www.fodors.com/wp-content/uploads/2018/08/Hero-Ultimate-Thing-To-Do-Spain-shutterstock_362200070.jpg" />
-                    <p className="legend">Legend 1</p>
+                    <img src={img2} />
+                    <p className="legend">Paris</p>
                 </div>
                 <div>
-                    <img src="https://www.fodors.com/wp-content/uploads/2018/08/Hero-Ultimate-Thing-To-Do-Spain-shutterstock_362200070.jpg" />
-                    <p className="legend">Legend 2</p>
+                    <img src={img1} />
+                    <p className="legend">Spain</p>
                 </div>
                 <div>
-                    <img src="https://www.fodors.com/wp-content/uploads/2018/08/Hero-Ultimate-Thing-To-Do-Spain-shutterstock_362200070.jpg" />
-                    <p className="legend">Legend 3</p>
+                    <img src={img3} />
+                    <p className="legend">Turkey</p>
                 </div>
             </Carousel> 
 <br></br>
@@ -32,15 +40,12 @@ const AboutUs=({props})=>{
         <p>COVID Travel Agent app collects and presents the relevant COVID and travel data that travelers, on their own, can usually gather only after a significant amount of research. This is due to the fact that the list of search outcomes (list of safest countries) is based on intersection of a diverse set of non-related user inputs (location, citizenship etc. )- it is usually difficult to find data for a particular intersection.</p>
     </div>
     <br></br>
-    <h2>About us in the Media:</h2>
-    <br></br>
-    <div className="media"> 
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/lFjIVIIcCvc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
-        &nbsp;&nbsp;&nbsp;
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/lFjIVIIcCvc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
+    <div >
+    <button   onClick={e => redirectPage(e)} className="redirect" type="button">Meet The Team</button>
     </div>
+    <br></br>
+    
         </div>
     )
 }
