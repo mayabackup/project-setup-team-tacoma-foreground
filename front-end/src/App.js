@@ -13,8 +13,6 @@ import MeetTheTeam from './MeetTheTeam.js'
 function App() {
   return (
     <Router>
-      
-      
       <Navbar />
       <Route exact path='/' component={HomePage}></Route>
       <Route path='/aboutus' component={AboutUs}></Route>
