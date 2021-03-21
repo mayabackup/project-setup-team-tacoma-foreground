@@ -13,7 +13,6 @@ function App() {
       <Navbar />
       <Route exact path='/' component={HomePage}></Route>
       <Route exact path='/confirmation' component={confirmation}></Route>
-      <Route exact path='/' component={HomePage}></Route>
       <Route path='/MeetTheTeam' component={MeetTheTeam}></Route>
     </Router>
   );
