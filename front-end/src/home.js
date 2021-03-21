@@ -108,7 +108,7 @@ const HomePage = ({ props }) => {
 
   //initial return with iframe and forms
   return (
-    <div>
+    <div class="HomeCSS">
       <h1>Welcome to the Covid Travel Agent</h1>
       <div>
         <iframe

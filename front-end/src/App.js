@@ -13,6 +13,7 @@ import FlightInfo from './flight_info.js'
 import TopLocations from './top_locations.js'
 import CovidInfo from './covid_info';
 import MeetTheTeam from './MeetTheTeam.js'
+import TravelResources from './TravelResources';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route exact path='/covid_info' component={CovidInfo}></Route>
       <Route exact path='/flight_info' component={FlightInfo}></Route>
       <Route path='/MeetTheTeam' component={MeetTheTeam}></Route>
+      <Route path='/TravelResources' component={TravelResources}></Route>
     </Router>
   );
 }
