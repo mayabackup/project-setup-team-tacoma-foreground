@@ -31,7 +31,7 @@ const Confirmation = ({ props }) => {
 
   // transfer pages after confirmation 
   function setConfirm() {
-    history.push("/toplocations");
+    history.push("/top_locations");
   }
 
   // go back to home
