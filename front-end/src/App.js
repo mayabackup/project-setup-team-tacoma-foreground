@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, Switch, Link, Redirect} from 'react-rout
 import HomePage from "./home"
 import Navbar from './Navbar.js'
 import confirmation from './confirmation.js'
+import MeetTheTeam from './MeetTheTeam.js'
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Navbar />
       <Route exact path='/' component={HomePage}></Route>
       <Route exact path='/confirmation' component={confirmation}></Route>
+      <Route exact path='/' component={HomePage}></Route>
+      <Route path='/MeetTheTeam' component={MeetTheTeam}></Route>
     </Router>
   );
 }
