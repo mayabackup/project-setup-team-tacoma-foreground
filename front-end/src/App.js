@@ -15,14 +15,9 @@ function App() {
       
       
       <Navbar />
-<<<<<<< HEAD
       <Route exact path='/' component={HomePage}></Route>
       <Route path='/aboutus' component={AboutUs}></Route>
-=======
-      <Route exact path='/' component={HomePage}>
-      </Route>
       <Route path='/MeetTheTeam' component={MeetTheTeam}></Route>
->>>>>>> master
     </Router>
   );
 }
