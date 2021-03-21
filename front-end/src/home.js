@@ -3,7 +3,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./home.css";
 import { useHistory } from "react-router-dom";
-
 const HomePage = ({ props }) => {
   //states
   const [citizenship, setCitizenship] = useState();
@@ -31,7 +30,6 @@ const HomePage = ({ props }) => {
     localStorage.setItem('reason',reason)
     localStorage.setItem('name',name)
     localStorage.setItem('email',email)
-
     history.push("/confirmation");
   };
 
