@@ -6,12 +6,25 @@ import "./confirmation.css";
 //confirmation component
 const Confirmation = ({ props }) => {
     // get local variables for usr data
-  const citizenship = localStorage.getItem("citizenship");
-  const location = localStorage.getItem("location");
-  const airport = localStorage.getItem("airport");
+  let citizenship = localStorage.getItem("citizenship");
+  let location = localStorage.getItem("location");
+  let locationMap=location;
+  let airport = localStorage.getItem("airport");
+
+  console.log(location=='undefined')
+  if(citizenship=='undefined'){
+    citizenship="Data not entered"
+  }
+  if(location=='undefined'){
+    location="Data not entered"
+    locationMap=''
+  }
+  if(airport=='undefined'){
+    airport="Data not entered"
+  }
   const loc =
     "https://maps.google.com/maps?q=" +
-    location +
+    locationMap +
     "&t=&z=13&ie=UTF8&iwloc=&output=embed";
   console.log(loc);
   let history = useHistory();
