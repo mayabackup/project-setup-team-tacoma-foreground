@@ -71,9 +71,10 @@ const FlightInfo = ({ props }) => {
             </div>
             <div>
                 <ul id="nav">
-                    <li><a href="./confirmation.js">Confirmation</a></li>
-                    <li><a href="./top_locations.js">Top Locations</a></li>
-                    <li><a href="#">Covid Information</a></li>
+                    <li><a href="./">Calculator</a></li>
+                    <li><a href="./confirmation">Confirmation</a></li>
+                    <li><a href="./top_locations">Top Locations</a></li>
+                    <li><a href="./covid_info">Covid Information</a></li>
                 </ul>
             </div>
         </div>

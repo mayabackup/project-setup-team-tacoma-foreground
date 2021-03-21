@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import "./top_locations.css";
 
 // Page Output
-const TopLocations = ({ props }) => {
+const CovidInfo = ({ props }) => {
     //user info
     let citizenship = localStorage.getItem('citizenship');
     let location = localStorage.getItem('location');
@@ -57,32 +57,20 @@ const TopLocations = ({ props }) => {
     //page output HTML
     return (
         <div>
-            <h2>My Top Locations</h2>
-            <div id = "to_sort">
+            <h2>Covid Information</h2>
+            <div id = "to_from">
                 <button className="button">From: {location}</button>
-                <div class="dropdown">
-                    <button class="dropbtn">Overall</button>
-                    <div class="dropdown-content">
-                        <button>% Vaccinated</button>
-                        <button># Cases</button>
-                        <button>Quarantine Period</button>
-                        <button>Mortality Risk</button>
-                        <button>Price</button>
-                    </div>
-                </div>
+                <button className="button">To: {destination}</button>
             </div>
-            <div className= "locations">
-                <h6>Location #{count}: {destination}</h6>
-                <h6>Score: {destination_score}</h6>
-                <button className="cbutton">Covid Information</button>
-            </div>
+            
             <div>
                 <ul id="nav">
                     <li><a href="./">Calculator</a></li>
                     <li><a href="./confirmation">Confirmation</a></li>
+                    <li><a href="./top_locations">Top Locations</a></li>
                 </ul>
             </div>
         </div>
       );
     };
-    export default TopLocations;
+    export default CovidInfo;
