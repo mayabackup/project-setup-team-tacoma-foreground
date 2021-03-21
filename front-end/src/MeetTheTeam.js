@@ -6,9 +6,8 @@ const MeetTheTeam = () => {
 
     return (
   <div className="MeetTheTeam">
+    <section className="TeamCSS">
       <h1>Meet The Team</h1>
-      <section className="main-content">
-
           <h2>Raj Bharaj</h2>
           <img alt="Raj" src={samplepics} />  
           <p>

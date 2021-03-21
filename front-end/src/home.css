@@ -1,17 +1,17 @@
-section {
+  .HomeCSS section {
     border: 1px solid red;
     display: flex;
     padding: 20px;
   }
   
-  article {
+  .HomeCSS article {
     flex: auto;
     border: 1px dotted green;
     margin: 20px;
     padding: 20px;
   }
   
-  h1 {
+  .HomeCSS h1 {
     display: block;
  
     margin-top: 0.67em;
@@ -22,7 +22,7 @@ section {
     text-align: center;
  
   }
-  iframe{
+  .HomeCSS iframe{
  
     width: 50%;
     display: block;
@@ -52,10 +52,10 @@ section {
     display: block;
 
   }
-img{
+.HomeCSS img{
     height: 50%;
     width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
+} 
