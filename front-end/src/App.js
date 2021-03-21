@@ -7,6 +7,7 @@ import AboutUs from "./aboutus"
 // pages
 import HomePage from "./home"
 import Navbar from './Navbar.js'
+import MeetTheTeam from './MeetTheTeam.js'
 
 function App() {
   return (
@@ -14,8 +15,14 @@ function App() {
       
       
       <Navbar />
+<<<<<<< HEAD
       <Route exact path='/' component={HomePage}></Route>
       <Route path='/aboutus' component={AboutUs}></Route>
+=======
+      <Route exact path='/' component={HomePage}>
+      </Route>
+      <Route path='/MeetTheTeam' component={MeetTheTeam}></Route>
+>>>>>>> master
     </Router>
   );
 }
