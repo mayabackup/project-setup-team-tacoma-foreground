@@ -1,0 +1,36 @@
+.title{
+    text-align: center;
+}
+.img-car{
+
+
+    max-height: 500px;
+    max-width: 1000px;
+    margin: auto;
+}
+.carousel-inner{
+    color: black;
+}
+.purpose{
+    text-align: center;
+    margin: auto;
+    max-height: 500px;
+    max-width: 1000px;
+    display: block;
+}
+
+.legend{
+    background-color: transparent!important;
+    color: black !important;
+}
+.redirect{
+    background-color: #555555; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: auto;
+    display: block;
+}
