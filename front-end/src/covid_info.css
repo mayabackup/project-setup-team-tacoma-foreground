@@ -1,0 +1,27 @@
+h2 {
+    text-align: center;
+}
+#to_from {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+}
+#nav {
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+#nav li {
+    display: inline;
+    padding: 15px;
+    float: left; 
+}
+#nav a {
+    color: white;
+    text-decoration: none;
+}
