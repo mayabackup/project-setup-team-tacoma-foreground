@@ -11,7 +11,7 @@ import img2 from "./img/paris.jpeg";
 import img3 from "./img/turkey.jpeg";
 
 // about us page
-const AboutUs = ({ props }) => {
+function AboutUs (props) {
   let history = useHistory();
   // will redirect to the meet the team page when useer clicks on the button
   function redirectPage() {
@@ -20,23 +20,24 @@ const AboutUs = ({ props }) => {
   return (
     <div>
       <h1 className="title">About Us</h1>
-      <Carousel className="carousel-about">
-        <div>
+      <Carousel width='50pc' autoPlay interval="5000" transitionTime="5000" className='car'>
+        <div className="carousel-about">
           <img className='img-car' src={img2} />
           <p className="legend">Paris</p>
         </div>
-        <div>
+        <div className="carousel-about">
           <img className='img-car' src={img1} />
           <p className="legend">Spain</p>
         </div>
-        <div>
+        <div className="carousel-about">
           <img className='img-car' src={img3} />
           <p className="legend">Turkey</p>
         </div>
       </Carousel>
       <br></br>
       <div className="purpose">
-        <h2>Our Purpose and philosophy</h2>
+        <h2>Our Purpose and Philosophy</h2>
+        
         <p>
           The COVID Travel Agent app is designed to provide prospective
           travelers with the most relevant knowledge to help them make a
@@ -62,8 +63,7 @@ const AboutUs = ({ props }) => {
         <button
           onClick={e => redirectPage(e)}
           className="redirect"
-          type="button"
-        >
+          type="button">
           Meet The Team
         </button>
       </div>
