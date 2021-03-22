@@ -6,9 +6,6 @@ import "./aboutus.css";
 import { useHistory } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import img1 from "./img/spain.jpeg";
-import img2 from "./img/paris.jpeg";
-import img3 from "./img/turkey.jpeg";
 
 // about us page
 function AboutUs (props) {
@@ -22,15 +19,15 @@ function AboutUs (props) {
       <h1 className="title">About Us</h1>
       <Carousel width='50pc' autoPlay interval="5000" transitionTime="5000" className='car'>
         <div className="carousel-about">
-          <img className='img-car' src={img2} />
+          <img className='img-car' src={"https://picsum.photos/300/200?random=11"} />
           <p className="legend">Paris</p>
         </div>
         <div className="carousel-about">
-          <img className='img-car' src={img1} />
+          <img className='img-car' src={"https://picsum.photos/300/200?random=12"} />
           <p className="legend">Spain</p>
         </div>
         <div className="carousel-about">
-          <img className='img-car' src={img3} />
+          <img className='img-car' src={"https://picsum.photos/300/200?random=13"} />
           <p className="legend">Turkey</p>
         </div>
       </Carousel>
