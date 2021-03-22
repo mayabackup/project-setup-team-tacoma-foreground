@@ -1,6 +1,11 @@
 .user-input {
     font-weight: normal;
   }
+  .page-title{
+    display: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
   
   .user-data {
     margin-left: auto;
@@ -52,4 +57,13 @@
   .back {
     background-color: red; /* Green */
   }
-  
+  .flex-container{
+    width: 50pc;
+    display: flex !important; 
+    align-items: center !important;
+    justify-content: center !important;
+    text-align:center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+  }
