@@ -42,7 +42,7 @@ const Confirmation = ({ props }) => {
   return (
     <div>
       <div className="user-data">
-        <h1>Confirmation</h1>
+        <h1 className='page-title'>Confirmation</h1>
         <h3>
           Your Citizenship: <span className="user-input"> {citizenship}</span>
         </h3>
@@ -54,7 +54,7 @@ const Confirmation = ({ props }) => {
           <span className="user-input"> {airport}</span>
         </h3>
       </div>
-      <div>
+      <div class="flex-container">
         <iframe
           width="100%"
           height="600"
@@ -62,6 +62,7 @@ const Confirmation = ({ props }) => {
           scrolling="no"
           marginheight="0"
           marginwidth="0"
+         
           src={loc}
         ></iframe>
       </div>
