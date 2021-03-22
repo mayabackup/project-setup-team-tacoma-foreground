@@ -4,7 +4,9 @@ h2 {
 #to_sort {
     display: flex;
     width: 80%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
     justify-content: space-between;
 }
 .button {
@@ -17,15 +19,28 @@ h2 {
     text-decoration: none;
     display: inline-block;
 }
+select {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    font-size: 18px;
+}
 .locations {
     width: 80%;
     border: 2px solid black;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
     padding: 10px;
-    display: flex;
-    justify-content: space-between;
+    font-size: 18px;
+}
+.img_loc {
+    width: 40%;
+    padding: 5px;
+    margin: auto;
+    float: left;
 }
 .cbutton {
     background-color: #448bc5; 
