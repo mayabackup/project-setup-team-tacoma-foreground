@@ -5,10 +5,6 @@ import { useHistory } from "react-router-dom";
 // CSS
 import "./flight_info.css";
 
-// fetch some mock data about animals for sale
-const response = await axios("https://my.api.mockaroo.com/flight_api.json?key=64e1b920");
-// extract the data from the server response
-const data = response.data;
 // Page Output
 const FlightInfo = ({ props }) => {
 
