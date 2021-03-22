@@ -103,6 +103,7 @@ const CovidInfo = ({ props }) => {
                 <ul id="nav">
                     <li><a href="./top_locations">Top Locations</a></li>
                     <li><a href="./confirmation">Confirmation</a></li>
+                    <li><a href="./flight_info">Flight Information</a></li>
                 </ul>
             </div>
         </div>
