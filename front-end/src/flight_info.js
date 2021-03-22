@@ -80,7 +80,7 @@ function FlightInfo() {
 
     //page output HTML
     return (
-        <div id="flight_info">
+        <div id="flight_info" className="flex-container">
             <h2>Flight Information</h2>
             <div id = "to_from">
                 <button className="button">From: {location}</button>

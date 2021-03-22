@@ -1,3 +1,7 @@
+.flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+}  
 .flight_format {
     width: 80%;
     border: 2px solid black;

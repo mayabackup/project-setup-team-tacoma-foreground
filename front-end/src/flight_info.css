@@ -1,3 +1,7 @@
+.flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+}  
 #flight_info h2 {
     text-align: center;
 }
