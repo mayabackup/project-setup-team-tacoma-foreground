@@ -132,6 +132,27 @@ To build the project, please install the following software:   <br>
 - Install [React.js](https://reactjs.org/) to contribute to and test the code. 
 - Install [Visual Studio Code](https://code.visualstudio.com/download) and recommended linter to standardize the formatting of the code. <br>
 To contribute to the project, please refer to the 'Rules for contributors' and 'Git workflow for team members' sections in the [CONTRIBUTING.md](./CONTRIBUTING.md) file. 
+
+To run the project, ensure all of the dependencies are added, which include node and react. On your local machine do the following command:<br>
+- git clone (Repository link). <br>
+
+After, change your current directory to the Covid project repository by running: <br>
+- cd (directory name) <br>
+
+Within the project folder, change the directory to front-end by doing the following command: <br>
+- cd front-end <br>
+
+Before starting the react-app run the following npm commands in the ./front-end path: <br>
+ - npm install --save <br>
+ - npm install react react-dom --save <br>
+ - npm install react install react-icons --save  <br>
+- npm install mockaroo --save  <br>
+ - npm install react-responsive-carousel --save <br>
+
+To start the react-app: <br>
+- npm start <br>
+
+
 Testing instructions will be updated later.  
 
 ## Additional resources
