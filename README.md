@@ -148,6 +148,7 @@ Before starting the react-app run the following npm commands in the ./front-end 
  - npm install react install react-icons --save  <br>
 - npm install mockaroo --save  <br>
  - npm install react-responsive-carousel --save <br>
+ - npm install axios --save <br>
 
 To start the react-app: <br>
 - npm start <br>
