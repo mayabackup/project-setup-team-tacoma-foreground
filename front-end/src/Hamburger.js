@@ -18,7 +18,7 @@ export const HamburgerMenu = [
   },
   {
     title: 'Featured Locations',
-    path: '/products',
+    path: '/FeaturedLocations',
     icon: <AiIcons.AiOutlineGlobal />,
     cName: 'nav-text'
   },

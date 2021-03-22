@@ -1,0 +1,8 @@
+.FeaturedCSS {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    max-width:100% !important;
+    text-align: center !important;
+    object-fit: contain;
+}
