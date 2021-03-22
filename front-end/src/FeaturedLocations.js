@@ -2,19 +2,7 @@ import React, { useEffect , useState} from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './FeaturedLocations.css'; 
-<<<<<<< HEAD
-import img1 from "./img/spain.jpeg";
-import img2 from "./img/paris.jpeg";
-import img3 from "./img/turkey.jpeg";
 import axios from "axios";
-
-    const Mockaroo = require('mockaroo');
-=======
->>>>>>> master
-
-    const client = new Mockaroo.Client({
-      apiKey: 'ad35b1f0' // see http://mockaroo.com/api/docs to get your api key
-    })
 const Featured = ({ props }) => {
   let [FLocation1, setFLocation1] = useState([]);
   let [FLocation2, setFLocation2] = useState([]);
@@ -99,7 +87,7 @@ const Featured = ({ props }) => {
         </Carousel>
         <h3> Location 3: <span className="FLocation3"> {FLocation3}</span></h3>
         <h3> Score: <span className="Fscore3"> {Fscore3}</span></h3>
-        <h3> Number of Covid Cases: <span className="Fscore2"> {covid3}</span></h3>
+        <h3> Number of Covid Cases: <span className="Fscore3"> {covid3}</span></h3>
         </section>
  </div>
  );
