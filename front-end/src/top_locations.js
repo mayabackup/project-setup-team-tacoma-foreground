@@ -90,7 +90,7 @@ function TopLocations() {
 
     //page output HTML
     return (
-        <div id="top_locations">
+        <div id="top_locations" className="flex-container">
             <h2>My Top Locations</h2>
             <div id = "to_sort">
                 <button className="button">From: {location}</button>
