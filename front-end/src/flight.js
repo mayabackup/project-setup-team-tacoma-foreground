@@ -13,7 +13,7 @@ function book(){
 function Flight(props) {
     return (
         <article className="flight">
-            <div className="flight_format">
+            <div className="flight_format" className="flex-container">
                 <h4>Flight #{props.details.flight}</h4>
                 <h4>From: {location}</h4>
                 <h4>To: {destination}</h4>
