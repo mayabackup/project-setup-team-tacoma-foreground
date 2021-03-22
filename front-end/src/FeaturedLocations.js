@@ -2,10 +2,6 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './FeaturedLocations.css'; 
-import img1 from "./img/spain.jpeg";
-import img2 from "./img/paris.jpeg";
-import img3 from "./img/turkey.jpeg";
-
 
 const Featured = ({ props }) => {
  
@@ -22,16 +18,13 @@ const Featured = ({ props }) => {
         <section className="Location1">
         <Carousel className="FCaoursel1" showArrows={false} isPLaying={true} width='50pc' autoPlay interval="5000" transitionTime="5000">
           <div>
-            <img className='img-car' src={img2} />
-            <p className="legend">Paris</p>
+            <img className='img-car' src={ "https://picsum.photos/300/200?random=1"} />
           </div>
           <div>
-            <img className='img-car' src={img1} />
-            <p className="legend">Spain</p>
+            <img className='img-car' src={"https://picsum.photos/300/200?random=2"} />
           </div>
           <div>
-            <img className='img-car' src={img3} />
-            <p className="legend">Turkey</p>
+            <img className='img-car' src={"https://picsum.photos/300/200?random=3"} />
           </div>
         </Carousel >
           <h3> Location1: <span className="FLocation1"> {FLocation1}</span></h3>
@@ -41,16 +34,13 @@ const Featured = ({ props }) => {
         <section classname="Location2">
         <Carousel className="FCaoursel2" showArrows={false} isPLaying={true} width='50pc' autoPlay interval="5000" transitionTime="5000">
           <div>
-            <img className='img-car' src={img2} />
-            <p className="legend">Paris</p>
+            <img className='img-car' src={"https://picsum.photos/300/200?random=4"} />
           </div>
           <div>
-            <img className='img-car' src={img1} />
-            <p className="legend">Spain</p>
+            <img className='img-car' src={"https://picsum.photos/300/200?random=5"} />
           </div>
           <div>
-            <img className='img-car' src={img3} />
-            <p className="legend">Turkey</p>
+            <img className='img-car' src={"https://picsum.photos/300/200?random=6"} />
           </div>
         </Carousel>
         <h3> Location2: <span className="FLocation2"> {FLocation2}</span></h3>
@@ -60,16 +50,13 @@ const Featured = ({ props }) => {
         <section classname="Location3">
         <Carousel className="FCaoursel3" showArrows={false} isPLaying={true} width='50pc' autoPlay interval="5000" transitionTime="5000">
           <div>
-            <img className='img-car' src={img2} />
-            <p className="legend">Paris</p>
+            <img className='img-car' src={"https://picsum.photos/300/200?random=7"} />
           </div>
           <div>
-            <img className='img-car' src={img1} />
-            <p className="legend">Spain</p>
+            <img className='img-car' src={"https://picsum.photos/300/200?random=8"} />
           </div>
           <div>
-            <img className='img-car' src={img3} />
-            <p className="legend">Turkey</p>
+            <img className='img-car' src={"https://picsum.photos/300/200?random=9"} />
           </div>
         </Carousel>
         <h3> Location3: <span className="FLocation3"> {FLocation3}</span></h3>
