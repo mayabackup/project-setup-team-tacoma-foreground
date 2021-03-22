@@ -2,23 +2,24 @@
     text-align: center;
 }
 .img-car{
-
-
     max-height: 500px;
     max-width: 1000px;
     margin: auto;
+    display: flex;
 }
 .carousel-inner{
     color: black;
 }
 .purpose{
-    text-align: center;
+    text-align:justify;
     margin: auto;
     max-height: 500px;
     max-width: 1000px;
-    display: block;
+    display: flex !important; 
+    align-items: center !important;
+    justify-content: center !important; 
+    flex-wrap:wrap;
 }
-
 .legend{
     background-color: transparent!important;
     color: black !important;
@@ -32,5 +33,12 @@
     display: inline-block;
     font-size: 20px;
     margin: auto;
-    display: block;
+    display: flex;
+}
+
+.car{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
