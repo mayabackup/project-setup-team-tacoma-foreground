@@ -2,11 +2,15 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
+// Mock Data
+import axios from "axios";
+import Flight from "./flight";
+
 // CSS
 import "./flight_info.css";
 
 // Page Output
-const FlightInfo = ({ props }) => {
+function FlightInfo() {
 
     //history
     let history = useHistory();
@@ -56,43 +60,42 @@ const FlightInfo = ({ props }) => {
 
     //variables
     let count = 1;
+    const [data, setData] = useState([]);
 
-    //functions
-    function book(){
-        window.open("https://www.skyscanner.com/", "_blank");
-    }
+
+    //mock data
+    useEffect(()=>{
+        async function fetchData() {
+            const result = await axios.get("https://my.api.mockaroo.com/flight_api.json?key=64e1b920");
+
+            console.log(result.data)
+            console.log(result.data[1].price)
+            console.log(result.data[2])  
+            // set the state variable
+            // this will cause a re-render of this component
+            setData(result.data);     
+        }
+        fetchData();
+    },[])
 
     //page output HTML
     return (
-        <div>
+        <div id="flight_info">
             <h2>Flight Information</h2>
             <div id = "to_from">
                 <button className="button">From: {location}</button>
                 <button className="button">To: {destination}</button>
             </div>
-            <div id= "travel_req">
+            <div id="travel_req">
                 <h4>{destination}: Requirements for Travelers</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             </div>
-            <div className= "flights">
-                <h4>Flight #{count++}</h4>
-                <button button onClick={e => book(e)} className="fbutton">BOOK</button>
-            </div>
-            <div className= "flights">
-                <h4>Flight #{count++}</h4>
-                <button button onClick={e => book(e)} className="fbutton">BOOK</button>
-            </div>
-            <div className= "flights">
-                <h4>Flight #{count++}</h4>
-                <button button onClick={e => book(e)} className="fbutton">BOOK</button>
-            </div>
-            <div className= "flights">
-                <h4>Flight #{count++}</h4>
-                <button button onClick={e => book(e)} className="fbutton">BOOK</button>
-            </div>
-            <div className= "flights">
-                <h4>Flight #{count++}</h4>
-                <button button onClick={e => book(e)} className="fbutton">BOOK</button>
+            <div className="flights">
+                <section className="flight">
+                    {data.map(item => (
+                    <Flight key={item.id} details={item} />
+                    ))}
+                </section>
             </div>
             <div>
                 <ul id="nav">
@@ -102,6 +105,7 @@ const FlightInfo = ({ props }) => {
                 </ul>
             </div>
         </div>
-      );
-    };
-    export default FlightInfo;
+    );
+};
+    
+export default FlightInfo;
