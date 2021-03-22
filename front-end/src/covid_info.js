@@ -59,15 +59,50 @@ const CovidInfo = ({ props }) => {
         <div>
             <h2>Covid Information</h2>
             <div id = "to_from">
-                <button className="button">From: {location}</button>
-                <button className="button">To: {destination}</button>
+                <button className="button">Location: {location}</button>
             </div>
-            
+            <div id = "to_sort">
+                <h4>                                </h4>
+            </div>
+            <div id = "to_sort">
+                <h4>Current number of cases:</h4>
+                <button># Cases</button>
+            </div>
+            <div id = "to_sort">
+                <h4>% of population vaccinated:</h4>
+                <button>Vaccination</button>
+            </div>
+            <div id = "to_sort">
+                <h4>Mortality risk:</h4>
+                <button>Mortality</button>
+            </div>
+            <div id = "to_sort">
+                <h4>Quarantine periods:</h4>
+                <button>Quarantine Periods</button>
+            </div>
+            <div id = "to_sort">
+                <h4>Governmental stringency index:</h4>
+                <button>Gov stringency index</button>
+            </div>
+            <div id = "to_sort">
+                <h4>                                                   </h4>
+            </div>
+            <div id= "travel_req">
+                <h4> Workplace Closures:</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div id= "travel_req">
+                <h4> International Travel Control:</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div id= "travel_req">
+                <h4> Internal Movement Restrictions:</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
             <div>
                 <ul id="nav">
-                    <li><a href="./">Calculator</a></li>
-                    <li><a href="./confirmation">Confirmation</a></li>
                     <li><a href="./top_locations">Top Locations</a></li>
+                    <li><a href="./confirmation">Confirmation</a></li>
                 </ul>
             </div>
         </div>
