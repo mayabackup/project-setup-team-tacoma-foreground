@@ -7,8 +7,9 @@
   }
 
   .navbar h1{
+    display: flex;
     color: white;
-    font-size: 300%;
+    font-size: 250%;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -21,7 +22,7 @@
     text-align: flex-end;
     height: 90px;
     width: 90px;
-    transform: translate(-50%);
+    transform: translate(-15%);
     border-radius: 10px;
     border-color: whitesmoke;
   }
@@ -47,6 +48,7 @@
   .nav-menu.active {
     left: 0;
     transition: 350ms;
+    position: fixed;
   }
   
   .nav-text {

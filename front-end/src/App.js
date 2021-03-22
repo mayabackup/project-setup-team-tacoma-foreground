@@ -14,6 +14,7 @@ import TopLocations from './top_locations.js'
 import CovidInfo from './covid_info';
 import MeetTheTeam from './MeetTheTeam.js'
 import TravelResources from './TravelResources';
+import Featured from './FeaturedLocations';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route exact path='/flight_info' component={FlightInfo}></Route>
       <Route path='/MeetTheTeam' component={MeetTheTeam}></Route>
       <Route path='/TravelResources' component={TravelResources}></Route>
+      <Route path='/FeaturedLocations' component={Featured}></Route>
     </Router>
   );
 }
