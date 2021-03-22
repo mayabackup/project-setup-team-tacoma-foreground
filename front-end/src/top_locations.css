@@ -1,4 +1,4 @@
-h2 {
+#top_locations h2 {
     text-align: center;
 }
 #to_sort {
@@ -19,37 +19,12 @@ h2 {
     text-decoration: none;
     display: inline-block;
 }
-select {
+#top_locations select {
     background-color: black;
     color: white;
     padding: 15px;
     margin: 5px;
     font-size: 18px;
-}
-.locations {
-    width: 80%;
-    border: 2px solid black;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 18px;
-}
-.img_loc {
-    width: 40%;
-    padding: 5px;
-    margin: auto;
-    float: left;
-}
-.cbutton {
-    background-color: #448bc5; 
-    border: none;
-    color: white;
-    font-size: 16px;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
 }
 #nav {
     background-color: black;
