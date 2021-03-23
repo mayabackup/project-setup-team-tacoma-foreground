@@ -1,22 +1,25 @@
 .flex-container {
     display: flex;
+    flex-grow: 1;
+    margin-bottom: 50px;
 }  
-#flight_info h2 {
-    text-align: center;
-}
 #flight_info p {
+    padding: 15px;
+}
+#travel_p {
     border: 2px solid black;
     padding: 15px;
 }
-#to_from {
+#to_from_fi {
     display: flex;
     width: 100%;
     margin: auto;
     justify-content: space-between;
 }
-.button {
+.fi_button {
     background-color: #448bc5; 
     border: none;
+    border-radius: 5px;
     color: white;
     font-size: 16px;
     padding: 15px 32px;

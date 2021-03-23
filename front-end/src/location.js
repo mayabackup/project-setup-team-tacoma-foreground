@@ -20,7 +20,7 @@ function Location(props) {
                 <h4>Country: {props.details.country}</h4>
                 <h4>City: {props.details.city}</h4>
                 <h4>Score: {props.details.overall}</h4>
-                <button button onClick={e => CovidInfo(props)} className="fbutton">Covid Information</button>  
+                <button button onClick={e => CovidInfo(props)} className="l_button">Covid Information</button>  
         </article>
     );
 }

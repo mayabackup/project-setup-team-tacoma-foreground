@@ -1,10 +1,12 @@
 .flex-container {
-    display: flex;  
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: 50px;  
 }  
 #top_locations h2 {
     text-align: center;
 }
-#to_sort {
+#to_sort_tl {
     display: flex;
     width: 100%;
     margin-left: auto;
@@ -12,7 +14,7 @@
     margin-bottom: 20px;
     justify-content: space-between;
 }
-.button {
+.button_tl {
     background-color: #448bc5; 
     border: none;
     color: white;
@@ -29,7 +31,7 @@
     margin: 5px;
     font-size: 18px;
 }
-.locations {
+.locations_tl {
     width: 100%;
     border: 2px solid black;
     overflow: hidden;

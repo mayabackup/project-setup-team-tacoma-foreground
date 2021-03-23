@@ -14,10 +14,10 @@ function Flight(props) {
     return (
         <article className="flight">
                 <h4 className="left">Flight #{props.details.flight}</h4>
-                <p className="loc">From: {location}</p>
-                <p className="loc">To: {destination}</p>
+                <p className="loc"><b>From: {location}</b></p>
+                <p className="loc"><b>To: {destination}</b></p>
                 <h4 className="right">Price: {props.details.price}</h4>
-                <button button onClick={e => book(e)} className="fbutton">BOOK</button>
+                <button button onClick={e => book(e)} className="fs_button">BOOK</button>
         </article>
     );
 }

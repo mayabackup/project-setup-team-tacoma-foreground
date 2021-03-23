@@ -1,24 +1,55 @@
 .flex-container {
     display: flex;
+    flex-grow: 1;
+    margin-bottom: 50px;
 } 
 #covid_info h2 {
     text-align: center;
 }
-#to_from {
-    display: flex;
-    width: 100%;
-    margin: auto;
-    justify-content: space-between;
-}
-.button {
+#ci_button {
     background-color: #448bc5; 
-    border: none;
+    border: 2px black;
+    border-radius: 5px;
     color: white;
     font-size: 16px;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
+}
+.space_between {
+    display: flex;
+    width: 100%;
+    margin: 10px;
+    justify-content: space-between;
+}
+.data {
+    background-color:#F9DF84; 
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+.format_ci {
+    margin: 10px;
+    flex-grow: 1;
+}
+.p_left_ci {
+    text-align: left;
+}
+#margin {
+    background-color: #448bc5; 
+    border: 2px solid black;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 60px;
 }
 #nav {
     background-color: black;

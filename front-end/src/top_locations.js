@@ -87,9 +87,9 @@ function TopLocations() {
         <div id="top_locations">
             <div className="flex-container">
                 <h2>My Top Locations</h2>
-                <div id = "to_sort">
-                    <button className="button">From: {location}</button>
-                    <button className="button">
+                <div id = "to_sort_tl">
+                    <button className="button_tl">From: {location}</button>
+                    <button className="button_tl">
                         <label for="sort">Sort By: </label>
                         <select name="sort" id="sort">
                             <option onClick={e => Sort(e)} value="overall">Overall</option>
@@ -101,7 +101,7 @@ function TopLocations() {
                         </select>
                     </button>
                 </div>
-                <div className= "locations">
+                <div className= "locations_tl">
                     <section className="location">
                         {data.map(item => (<Location key={item.id} details={item} />))}
                     </section>
