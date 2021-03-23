@@ -83,13 +83,13 @@ function FlightInfo() {
         <div id="flight_info">
             <div className="flex-container">
                 <h2>Flight Information</h2>
-                <div id = "to_from">
-                    <button className="button">From: {location}</button>
-                    <button className="button">To: {destination}</button>
+                <div id = "to_from_fi">
+                    <button className="fi_button">From: {location}</button>
+                    <button className="fi_button">To: {destination}</button>
                 </div>
                 <div id="travel_req">
-                    <h4>{destination}: Requirements for Travelers</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <h3>{destination}: Requirements for Travelers</h3>
+                    <p id="travel_p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </div>
                 <div className="flights">
                     <section className="flight">
