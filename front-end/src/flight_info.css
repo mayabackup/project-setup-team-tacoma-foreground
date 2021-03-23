@@ -1,6 +1,7 @@
 .flex-container {
     display: flex;
-    background-color: DodgerBlue;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
 }  
 #flight_info h2 {
     text-align: center;
@@ -29,9 +30,11 @@
     width: 80%;
     margin: auto;
 }
+#space {
+    margin: 10px;
+}
 #nav {
     background-color: black;
-    position: fixed;
     bottom: 0;
     margin-bottom: 0;
     width: 100%;
