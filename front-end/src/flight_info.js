@@ -94,7 +94,7 @@ function FlightInfo() {
                 <div className="flights">
                     <section className="flight">
                         {data.map(item => (
-                        <Flight key={item.id} details={item} />
+                            <Flight key={item.id} details={item} />
                         ))}
                     </section>
                 </div>
