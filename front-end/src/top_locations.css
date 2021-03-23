@@ -1,6 +1,8 @@
 .flex-container {
     display: flex;
-    background-color: DodgerBlue;
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-wrap: wrap;
 }  
 #top_locations h2 {
     text-align: center;
@@ -30,9 +32,11 @@
     margin: 5px;
     font-size: 18px;
 }
+#space {
+    margin: 10px;
+}
 #nav {
     background-color: black;
-    position: fixed;
     bottom: 0;
     margin-bottom: 0;
     width: 100%;

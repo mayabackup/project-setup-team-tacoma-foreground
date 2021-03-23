@@ -8,12 +8,6 @@ import Location from "./location";
 
 // CSS
 import "./top_locations.css";
-// img
-import img1 from "./img/sydney.jpg";
-import img2 from "./img/paris.jpg";
-import img3 from "./img/london.jpg";
-import img4 from "./img/shanghai.jpg";
-import img5 from "./img/nyc.jpg";
 
 // Page
 function TopLocations() {
@@ -90,26 +84,28 @@ function TopLocations() {
 
     //page output HTML
     return (
-        <div id="top_locations" className="flex-container">
-            <h2>My Top Locations</h2>
-            <div id = "to_sort">
-                <button className="button">From: {location}</button>
-                <button className="button">
-                    <label for="sort">Sort By: </label>
-                    <select name="sort" id="sort">
-                        <option onClick={e => Sort(e)} value="overall">Overall</option>
-                        <option onClick={e => Sort(e)} value="vaccinated">% Vaccinated</option>
-                        <option onClick={e => Sort(e)} value="cases"># Covid Cases</option>
-                        <option onClick={e => Sort(e)} value="quarantine">Quarantine Period</option>
-                        <option onClick={e => Sort(e)} value="death">Mortality Risk</option>
-                        <option onClick={e => Sort(e)} value="price">Price</option>
-                    </select>
-                </button>
-            </div>
-            <div className= "locations">
-                <section className="location">
-                    {data.map(item => (<Location key={item.id} details={item} />))}
-                </section>
+        <div id="top_locations">
+            <div className="flex-container">
+                <h2>My Top Locations</h2>
+                <div id = "to_sort">
+                    <button className="button">From: {location}</button>
+                    <button className="button">
+                        <label for="sort">Sort By: </label>
+                        <select name="sort" id="sort">
+                            <option onClick={e => Sort(e)} value="overall">Overall</option>
+                            <option onClick={e => Sort(e)} value="vaccinated">% Vaccinated</option>
+                            <option onClick={e => Sort(e)} value="cases"># Covid Cases</option>
+                            <option onClick={e => Sort(e)} value="quarantine">Quarantine Period</option>
+                            <option onClick={e => Sort(e)} value="death">Mortality Risk</option>
+                            <option onClick={e => Sort(e)} value="price">Price</option>
+                        </select>
+                    </button>
+                </div>
+                <div className= "locations">
+                    <section className="location">
+                        {data.map(item => (<Location key={item.id} details={item} />))}
+                    </section>
+                </div>
             </div>
             <div>
                 <ul id="nav">

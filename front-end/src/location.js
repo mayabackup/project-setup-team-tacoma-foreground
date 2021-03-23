@@ -3,7 +3,6 @@ import "./location.css";
 
 // variables
 let i = 1;
-let location = localStorage.getItem('location');
 let destination = localStorage.getItem('destination');
 
 // functions
@@ -17,7 +16,7 @@ function Location(props) {
     i++;
     return (
         <article className="location">
-            <div className="location_format" className="flex-container">
+            <div className="location_format">
                 <img src={"https://picsum.photos/300/200?random=" + i}></img>
                 <h4>Country: {props.details.country}</h4>
                 <h4>City: {props.details.city}</h4>
