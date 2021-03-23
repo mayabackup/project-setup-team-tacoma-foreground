@@ -1,11 +1,24 @@
-h2 {
+.flex-container {
+    display: flex;
+} 
+#covid_info h2 {
     text-align: center;
 }
 #to_from {
     display: flex;
-    width: 80%;
+    width: 100%;
     margin: auto;
     justify-content: space-between;
+}
+.button {
+    background-color: #448bc5; 
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 #nav {
     background-color: black;

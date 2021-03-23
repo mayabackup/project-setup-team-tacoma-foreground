@@ -1,7 +1,5 @@
 .flex-container {
     display: flex;
-    flex: 0 0 100%;
-    flex-wrap: wrap;
 }  
 #flight_info h2 {
     text-align: center;
@@ -12,7 +10,7 @@
 }
 #to_from {
     display: flex;
-    width: 80%;
+    width: 100%;
     margin: auto;
     justify-content: space-between;
 }
@@ -27,7 +25,7 @@
     display: inline-block;
 }
 #travel_req {
-    width: 80%;
+    width: 100%;
     margin: auto;
 }
 #space {
