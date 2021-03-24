@@ -1,0 +1,19 @@
+{
+  "name": "project-setup-team-tacoma-foreground",
+  "version": "1.0.0",
+  "description": "**Goal.** The COVID Travel Agent app is designed to provide prospective travelers with the most relevant knowledge to help them make a well-informed decision on international travel during the COVID pandemic. Particularly, the app aims at creating a personalized, comprehensive list of safest travel destinations based on the user's inputs (e.g. location, citizenship etc.), allowing the user to choose the most suitable destination for travel.<br>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agile-dev-assignments/project-setup-team-tacoma-foreground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agile-dev-assignments/project-setup-team-tacoma-foreground/issues"
+  },
+  "homepage": "https://github.com/agile-dev-assignments/project-setup-team-tacoma-foreground#readme"
+}
