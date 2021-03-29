@@ -9,9 +9,9 @@ const MeetTheTeam = () => {
     <section className="TeamCSS">
       <h1>Meet The Team</h1>
           <h2>Raj Bharaj</h2>
-          <img alt="Raj" src={/img/raj_pic.jpeg} />  
+          <img alt="Raj" src="./img/raj_pic.jpeg" />  
           <p>
-            Senior at NYU CAS majoring in Computer Science, with minors in Math, Cybersecurity and 'Web Development and Programming'.
+            Senior at NYU CAS majoring in Computer Science, with minors in Mathematics, Cybersecurity and 'Web Development and Programming'.
           </p>
 
           <h2>Alifa Faruk</h2>
