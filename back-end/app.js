@@ -1,5 +1,4 @@
 // import and instantiate express
-<<<<<<< HEAD
 const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
 const api = require('./home_api');
@@ -72,25 +71,6 @@ app.post('/', (req,res)=>{
   res.redirect('/confirmation');
 })
 
-=======
-const express = require("express"); // CommonJS import style!
-const app = express(); // instantiate an Express object
-const axios = require("axios");
-const covid = require("./covid.js");
-const cron = require('node-cron');
-
-// we will put some server logic here later...
-app.get("/", (req, res) => {
-  console.log("results" , covid.getCovid());
-  res.send("Hello!");
-  
-});
-app.post("/", (req, res) => {
-  console.log("results" , covid.getCovid());
-  res.send(covid.getCovid());
-  
-});
->>>>>>> master
 
 app.post("/toplocations", (req, res) => {
   
