@@ -1,9 +1,13 @@
 import React from "react";
-
+import Axios from "axios";
 import { useState, useEffect } from "react";
 import "./home.css";
 import { useHistory } from "react-router-dom";
+import axios from "axios/lib/axios";
+import WindowedSelect from "react-windowed-select";
+
 const HomePage = ({ props }) => {
+
   //states
   const [citizenship, setCitizenship] = useState();
   const [location, setLocation] = useState();
@@ -17,8 +21,10 @@ const HomePage = ({ props }) => {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
 
-  let isAdvanced = true;
-  let history = useHistory();
+  const [data, setData] = useState(10);
+
+
+   let history = useHistory();
 
   //after submit--> prevent defualt and go to confirmation page
   const handleSubmit = evt => {
@@ -31,14 +37,40 @@ const HomePage = ({ props }) => {
     localStorage.setItem('name',name)
     localStorage.setItem('email',email)
     history.push("/confirmation");
+    let formData={
+      citizenship,
+      location,
+      airport,
+      advanced,
+      feedback,
+      updates,
+  
+      //advanced
+      continent,
+      reason,
+      name,
+      email
+    }
+    console.log(formData)
+    const post= async() => await axios
+    .post('http://localhost:5000/',formData)
+    .then(() => console.log('Book Created',formData))
+    .catch(err => {
+      console.error(err);
+    });
+    post()
+  };
+  const handleChange = selectedOption => {
+    setAirport({ selectedOption });
+    console.log(`Option selected:`, selectedOption);
   };
 
   //advanced checkbox clicked
   const setAdvance = evt => {
-    isAdvanced = evt.target.checked;
     setAdvanced(evt.target.checked);
   };
 
+ 
   // if advanced click add forms and rerender page
   useEffect(() => {
     if (advanced === true) {
@@ -91,7 +123,7 @@ const HomePage = ({ props }) => {
           </label>
 
           <input
-            className="checkbox-1"
+            className="input-field"
             type="checkbox"
             name="updates"
             checked={updates}
@@ -106,12 +138,33 @@ const HomePage = ({ props }) => {
     }
   }, [advanced]);
 
+  useEffect(() => {
+    const getItems= async()=>{
+     const resp= await axios.get("http://localhost:5000/")
+     //console.log(resp.data.message)
+     let optionItems;
+     
+       optionItems = Object.keys(resp.data.message).map((el) => ({
+        value: resp.data.message[el].name,
+        label: resp.data.message[el].name,
+      }));
+     
+    // console.log(optionItems)
+
+     setData(optionItems)
+     console.log(data)
+    } 
+    getItems();
+
+  }, [])
+
   //initial return with iframe and forms
   return (
     <div class="HomeCSS">
-      <h1>Welcome to the Covid Travel Agent</h1>
+      <h1>Welcome to the Covid Travel Agent </h1>
       <div>
         <iframe
+          title='covid-map'
           ondblclick="window.location='http://www.google.com'"
           src="https://public.domo.com/cards/bWxVg"
           width="100%"
@@ -122,7 +175,7 @@ const HomePage = ({ props }) => {
         ></iframe>
       </div>
       <div>
-        <form className="inputs" onSubmit={handleSubmit}>
+        <form  className="inputs" onSubmit={handleSubmit}>
           <label>
             <input
               className="input-field"
@@ -147,17 +200,15 @@ const HomePage = ({ props }) => {
           </label>
           <br></br>
           <label>
-            <input
-              className="input-field"
-              name="airport"
-              type="text"
-              placeholder="Desired departure airport"
-              value={airport}
-              onChange={e => setAirport(e.target.value)}
-            />
+          <WindowedSelect className="input-field"
+           
+          onChange={handleChange}
+          options={data}
+         />
           </label>
           <input
-            className="checkbox"
+      
+            className="input-field"
             type="checkbox"
             name="advanced"
             checked={advanced}
@@ -166,7 +217,7 @@ const HomePage = ({ props }) => {
           <label className="check">advanced</label>
           {feedback}
           <br></br>
-          <input type="submit" value="CALCULATE" />
+          <input className="input-field" type="submit" value="CALCULATE" />
         </form>
       </div>
     </div>

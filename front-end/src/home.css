@@ -30,7 +30,7 @@
   }
  
 
-.inputs,input{
+.inputs,.input-field, .drop-down{
     width: 50%;
  
     margin: 8px 0;
@@ -40,9 +40,15 @@
     text-align:center;
     height:50px;
     font-size:14pt;
-    position: relative;
+ 
     
 
+  }
+  .drop-down{
+    border-color: black !important;
+    height:40px;
+    position: absolute;
+    size: 0pc;
   }
  
   label.check {
