@@ -8,49 +8,50 @@ import axios from "axios";
 
 //confirmation component
 const Confirmation = ({ props }) => {
+  
   let [citizenship, setCitizenship] = useState();
   let [location, setLocation] = useState();
   let [airport, setAirport] = useState();
  
-
-    // get local variables for usr data
-  //let citizenship = localStorage.getItem("citizenship");
-  //let location = localStorage.getItem("location");
-  let locationMap=location;
-  //let airport = localStorage.getItem("airport");
-
+  let locationMap;;
   useEffect(() => {
     const getItems= async()=>{
-     const resp= await axios.get("http://localhost:5000/confirmation")
-     //console.log(resp.data.message)
-
-    
+    const resp= await axios.get("http://localhost:5000/confirmation")
+   
+      if ( resp.data.message.citizenship!=null){
         setCitizenship(resp.data.message.citizenship)
+      }
+      else{
+        setCitizenship("Data Not Entered")
+      }
+
+      if(resp.data.message.location!==null){
         setLocation(resp.data.message.location)
+      }
+      else{
+        setLocation("Data Not Entered" )
+      }
+      if(resp.data.message.airport!==null){
         setAirport(resp.data.message.airport)
+      }
+      
+      else{
+        setAirport("Data Not Entered")
+      }
+
+      
     
     } 
+
     getItems();
 
   }, [])
-  console.log(location==='undefined')
-  if(citizenship==='undefined'){
-    citizenship="Data not entered"
-  }
-  if(location==='undefined'){
-    location="Data not entered"
-    locationMap=''
-  }
-  if(airport==='undefined'){
-    airport="Data not entered"
-  }
+  locationMap=location;
   const loc =
     "https://maps.google.com/maps?q=" +
     locationMap +
     "&t=&z=13&ie=UTF8&iwloc=&output=embed";
-  console.log(loc);
   let history = useHistory();
-
   // transfer pages after confirmation 
   function setConfirm() {
     history.push("/top_locations");

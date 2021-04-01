@@ -49,12 +49,24 @@ app.get("/", async(req, res) => {
  //air=JSON.stringify(air.data)
  //air= JSON.parse(air.data)
   res.send({ message:air.data})
+  userData={
+    citizenship:null,
+    location:null,
+    airport:null,
 
+    //advanced; may be null
+    advanced: null,
+    continent: null,
+    reason: null,
+    name:null,
+    email: null,
+     
+  }
 })
 
 app.post('/', (req,res)=>{
-  console.log("entering", Object.keys(req.body))
   userData={
+    // do error checkings
     citizenship:req.body.citizenship,
     location: req.body.location,
     airport:req.body.airport.selectedOption.value,
@@ -67,20 +79,15 @@ app.post('/', (req,res)=>{
     email: req.body.email,
      
   }
-  console.log(userData)
   res.redirect('/confirmation');
 })
 
-
-app.post("/toplocations", (req, res) => {
-  
-});
 
 app.get('/confirmation',(req,res)=>{
   console.log("sending info to the confirmation page")
   res.send({message:userData})
 })
 
+
 // export the express app we created to make it available to other modules
 module.exports = app;
-
