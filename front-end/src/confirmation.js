@@ -2,24 +2,46 @@ import React from "react";
 
 import { useHistory } from "react-router-dom";
 import "./confirmation.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 
 //confirmation component
 const Confirmation = ({ props }) => {
-    // get local variables for usr data
-  let citizenship = localStorage.getItem("citizenship");
-  let location = localStorage.getItem("location");
-  let locationMap=location;
-  let airport = localStorage.getItem("airport");
+  let [citizenship, setCitizenship] = useState();
+  let [location, setLocation] = useState();
+  let [airport, setAirport] = useState();
+ 
 
-  console.log(location=='undefined')
-  if(citizenship=='undefined'){
+    // get local variables for usr data
+  //let citizenship = localStorage.getItem("citizenship");
+  //let location = localStorage.getItem("location");
+  let locationMap=location;
+  //let airport = localStorage.getItem("airport");
+
+  useEffect(() => {
+    const getItems= async()=>{
+     const resp= await axios.get("http://localhost:5000/confirmation")
+     //console.log(resp.data.message)
+
+    
+        setCitizenship(resp.data.message.citizenship)
+        setLocation(resp.data.message.location)
+        setAirport(resp.data.message.airport)
+    
+    } 
+    getItems();
+
+  }, [])
+  console.log(location==='undefined')
+  if(citizenship==='undefined'){
     citizenship="Data not entered"
   }
-  if(location=='undefined'){
+  if(location==='undefined'){
     location="Data not entered"
     locationMap=''
   }
-  if(airport=='undefined'){
+  if(airport==='undefined'){
     airport="Data not entered"
   }
   const loc =
@@ -56,6 +78,7 @@ const Confirmation = ({ props }) => {
       </div>
       <div class="flex-container">
         <iframe
+          title='map'
           width="100%"
           height="600"
           frameborder="0"
