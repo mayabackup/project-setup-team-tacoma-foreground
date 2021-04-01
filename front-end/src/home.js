@@ -54,7 +54,7 @@ const HomePage = ({ props }) => {
     console.log(formData)
     const post= async() => await axios
     .post('http://localhost:5000/',formData)
-    .then(() => console.log('Book Created',formData))
+    .then(() => console.log('Sent form data')
     .catch(err => {
       console.error(err);
     });
