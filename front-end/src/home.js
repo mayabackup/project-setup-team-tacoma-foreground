@@ -7,11 +7,13 @@ import axios from "axios/lib/axios";
 import WindowedSelect from "react-windowed-select";
 
 const HomePage = ({ props }) => {
-
+  let selectedOption={
+    value:"Data Not Entered"
+  };
   //states
-  const [citizenship, setCitizenship] = useState();
-  const [location, setLocation] = useState();
-  const [airport, setAirport] = useState();
+  const [citizenship, setCitizenship] = useState(null);
+  const [location, setLocation] = useState(null);
+  const [airport, setAirport] = useState({selectedOption});
   const [advanced, setAdvanced] = useState(null);
   const [feedback, setFeedback] = useState();
   const [updates, setUpdates] = useState(null);
@@ -51,7 +53,6 @@ const HomePage = ({ props }) => {
       name,
       email
     }
-    console.log(formData)
     const post= async() => await axios
     .post('http://localhost:5000/',formData)
     .then(() => console.log('Sent form data'))
@@ -62,7 +63,6 @@ const HomePage = ({ props }) => {
   };
   const handleChange = selectedOption => {
     setAirport({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
   };
 
   //advanced checkbox clicked
@@ -141,18 +141,14 @@ const HomePage = ({ props }) => {
   useEffect(() => {
     const getItems= async()=>{
      const resp= await axios.get("http://localhost:5000/")
-     //console.log(resp.data.message)
      let optionItems;
      
        optionItems = Object.keys(resp.data.message).map((el) => ({
         value: resp.data.message[el].name,
         label: resp.data.message[el].name,
       }));
-     
-    // console.log(optionItems)
-
+    
      setData(optionItems)
-     console.log(data)
     } 
     getItems();
 
