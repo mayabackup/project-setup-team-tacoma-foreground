@@ -48,7 +48,7 @@ app.get("/", async(req, res) => {
  let air= await axios.get('https://raw.githubusercontent.com/mwgg/Airports/master/airports.json')
  //air=JSON.stringify(air.data)
  //air= JSON.parse(air.data)
-  res.send({ message:air.data})
+  res.send({ status:'success', message:air.data})
   userData={
     citizenship:null,
     location:null,
@@ -65,6 +65,7 @@ app.get("/", async(req, res) => {
 })
 
 app.post('/', (req,res)=>{
+  console.log("entering ", req.body.airport)
   userData={
     // do error checkings
     citizenship:req.body.citizenship,
@@ -79,6 +80,8 @@ app.post('/', (req,res)=>{
     email: req.body.email,
      
   }
+
+  res.send({ status:201})
   res.redirect('/confirmation');
 })
 
