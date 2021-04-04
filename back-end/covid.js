@@ -1,3 +1,6 @@
+import {data2} from 'deathrate';
+import {data3} from 'stringency';
+
 const axios = require("axios");
 const cron = require("node-cron");
 const csv=require('csv-parser');
