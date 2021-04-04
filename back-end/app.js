@@ -63,7 +63,7 @@ app.get("/", async(req, res) => {
     email: null,
      
   }
-  console.log(api2.getWebScrape());
+  //console.log(api2.getWebScrape());
 })
 
 app.post('/', (req,res)=>{
