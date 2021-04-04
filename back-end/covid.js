@@ -97,7 +97,7 @@ function api2() {
 
   let today = new Date();
   let dd = today.getDate() - 1;
-  //NOTE: this will get last month's Date because government policies are not updated frequently
+  //NOTE: this will get last month's Date because government policies are not updated frequently.
   let mm = today.getMonth();
   let yyyy = today.getFullYear();
   console.log("entering");
@@ -119,13 +119,10 @@ function api2() {
       const csv1=response.data
       fs.writeFile('response.csv', csv1, function(err){
         console.log(err);
-        console.log("COULDNT READ FILE")
     });
 
    const filepath='./response.csv'
-   fs.createReadStream(filepath).on('error', ()=>{
-      console.log("WELL SHIT")
-   })
+   fs.createReadStream(filepath).on('error', ()=>{})
   .pipe(csv())
   .on('data', (row) => {
     if(row["Date"]==lastMonth){
