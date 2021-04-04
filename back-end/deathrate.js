@@ -1,7 +1,31 @@
 // MORTALITY LINK
 
+
 const papa = require("papaparse");
 const request = require("request");
+
+
+let date = new Date();
+
+function api() {
+    // use date mod
+  
+    // let date = new Date();
+    let dd = date.getDate();
+    let mm = date.getMonth(); // is actually last month not today's month !
+    let yyyy = date.getFullYear();
+    // console.log("entering");
+  
+    if (dd < 10) {
+      dd = "0" + dd;
+    }
+  
+    if (mm < 10) {
+      mm = "0" + mm;
+    }
+    date = yyyy + "-" + mm + "-" + (dd);
+    // console.log(date);
+}
 
 const options = {/* options */};
 
@@ -19,7 +43,7 @@ parseStream.on("data", chunk => {
 let data2 = [];
 dataStream.on("finish", () => {
     for(var i = 1; i < data.length; i++){
-        if((data[i][3]== "2021-03-20") 
+        if((data[i][3]== date)  // used to be "2021-03-20"
         && (data[i][2] != 'World')
         && (data[i][2] != 'North America')
         && (data[i][2] != 'International')
@@ -53,3 +77,18 @@ dataStream.on("finish", () => {
     // console.log(data2);
     data2;
 });
+
+
+function getdeath() {
+    return data2;
+  }
+  
+  
+  // export the express app we created to make it available to other modules
+  
+  // export the express app we created to make it available to other modules
+  
+  module.exports = {
+    getdeath: getdeath
+  };
+  
