@@ -10,6 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "all-countries-and-cities-json": "^1.0.0",
+<<<<<<< Updated upstream
+=======
+    "axios": "^0.21.1",
+    "circular-json": "^0.5.9",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "csvtojson": "^2.0.10",
+>>>>>>> Stashed changes
     "express": "^4.17.1",
     "jsdom": "^16.5.1",
     "node-cron": "^3.0.0",
