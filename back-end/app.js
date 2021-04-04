@@ -49,7 +49,7 @@ app.get("/", async(req, res) => {
  let air= await axios.get('https://raw.githubusercontent.com/mwgg/Airports/master/airports.json')
  //air=JSON.stringify(air.data)
  //air= JSON.parse(air.data)
-  res.send({ message:air.data})
+  res.send({ status:'success', message:air.data})
   userData={
     citizenship:null,
     location:null,
@@ -81,13 +81,15 @@ app.post('/', (req,res)=>{
     email: req.body.email,
      
   }
+
+  
   res.redirect('/confirmation');
 })
 
 
 app.get('/confirmation',(req,res)=>{
-  console.log("sending info to the confirmation page")
-  res.send({message:userData})
+  console.log("sending info to the confirmation page", )
+  res.send({status:'success', message:userData})
 })
 
 //Get request for flight info
