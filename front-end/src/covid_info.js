@@ -10,48 +10,121 @@ import "./covid_info.css";
 
 // Page Output
 const CovidInfo = ({ props }) => {
-    //user info
-    let citizenship = localStorage.getItem('citizenship');
-    let location = localStorage.getItem('location');
-    let airport = localStorage.getItem('airport');
-    let continent = localStorage.getItem('continent');
-    let reason = localStorage.getItem('reason');
-    let name = localStorage.getItem('name');
-    let email = localStorage.getItem('email');
-    let destination = localStorage.getItem('destination');
-    let travel_date = localStorage.getItem('travel_date');
-    let return_date = localStorage.getItem('return_date');
+    let [citizenship, setCitizenship] = useState();
+    let [location, setLocation] = useState();
+    let [airport, setAirport] = useState();
+    let [continent, setContinent] = useState();
+    let [reason, setReason] = useState();
+    let [name, setName] = useState();
+    let [email, setEmail] = useState();
+    let [destination, setDestination] = useState();
+    let [travel_date, setTravel_date] = useState();
+    let [return_date, setReturn_date] = useState();
 
-    if(citizenship=='undefined'){
-        citizenship="Data not entered";
-    }
-    if(location=='undefined'){
-        location="Data not entered";
-    }
-    if(airport=='undefined'){
-        airport="Data not entered";
-    }
-    if(continent=='undefined'){
-        continent="Data not entered";
-    }
-    if(reason=='undefined'){
-        reason="Data not entered";
-    }
-    if(name=='undefined'){
-        name="Data not entered";
-    }
-    if(email=='undefined'){
-        email="Data not entered";
-    }
-    if(destination=='undefined'){
-        destination="Data not entered";
-    }
-    if(travel_date=='undefined'){
-        travel_date="Data not entered";
-    }
-    if(return_date=='undefined'){
-        return_date="Data not entered";
-    }
+    useEffect(() => {
+        const getItems= async()=>{
+        const resp= await axios.get("http://localhost:5000/covid_info");
+        
+        if(resp.data.message.citizenship!=null){
+            setCitizenship(resp.data.message.citizenship)
+        }
+        else{
+            setCitizenship("Data Not Entered")
+        }
+
+        if(resp.data.message.location!=null){
+            setLocation(resp.data.message.location)
+        }
+        else{
+            setLocation("Data Not Entered")
+        }
+
+        if(resp.data.message.airport!=null){
+            setAirport(resp.data.message.airport)
+        }
+        else{
+            setAirport("Data Not Entered")
+        }
+
+        if(resp.data.message.continent!=null){
+            setContinent(resp.data.message.continent)
+        }
+        else{
+            setContinent("Data Not Entered")
+        }
+
+        if(resp.data.message.reason!=null){
+            setReason(resp.data.message.reason)
+        }
+        else{
+            setReason("Data Not Entered")
+        }
+
+        if(resp.data.message.name!=null){
+            setName(resp.data.message.name)
+        }
+        else{
+            setName("Data Not Entered")
+        }
+
+        if(resp.data.message.email!=null){
+            setEmail(resp.data.message.email)
+        }
+        else{
+            setEmail("Data Not Entered")
+        }
+
+        if(resp.data.message.destination!=null){
+            setDestination(resp.data.message.destination)
+        }
+        else{
+            setDestination("Data Not Entered")
+        }
+
+
+        if(resp.data.message.travel_date!=null){
+            setTravel_date(resp.data.message.travel_date)
+        }
+        else{
+            setTravel_date("Data Not Entered")
+        }
+
+
+        if(resp.data.message.return_date!=null){
+            setReturn_date(resp.data.message.return_date)
+        }
+        else{
+            setReturn_date("Data Not Entered")
+        }
+
+        //if(continent=='undefined'){
+          //  continent="Data not entered";
+       // }
+        /*
+        if(reason=='undefined'){
+            reason="Data not entered";
+        }
+        if(name=='undefined'){
+            name="Data not entered";
+        }
+        if(email=='undefined'){
+            email="Data not entered";
+        }
+        if(destination=='undefined'){
+            destination="Data not entered";
+        }
+        if(travel_date=='undefined'){
+            travel_date="Data not entered";
+        }
+        if(return_date=='undefined'){
+            return_date="Data not entered";
+        }*/
+
+        }
+        getItems();
+
+    }, [])
+
 
     //variables
     const [data, setData] = useState([]);
