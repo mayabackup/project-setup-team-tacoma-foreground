@@ -156,16 +156,10 @@ function getWebScrape() {
 }
 
 function combineData(){
-  console.log("ENTERING THE COMBINE DATA")
   const covid=getCovid()
   const web=  getWebScrape()
   const arrayOfData={...covid, ...web}
 
-
-  //console.log(arrayOfData)
-
-
-  
     for(key in covid){
        if(resultWeb[key]){
          const combined={...covid[key], ...web[key]} 
@@ -175,9 +169,9 @@ function combineData(){
        
     }
     const allData={...covid, ...web}
-    console.log(allData)
-    return;
+    return allData;
 }
+
 // export the express app we created to make it available to other modules
 
 // export the express app we created to make it available to other modules
@@ -186,5 +180,6 @@ module.exports = {
   api: api,
   getCovid: getCovid,
   api2: api2,
-  getWebScrape: getWebScrape
+  getWebScrape: getWebScrape,
+  combineData:combineData
 };
