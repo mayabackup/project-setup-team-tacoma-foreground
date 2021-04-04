@@ -158,11 +158,6 @@ function getWebScrape() {
   return resultWeb;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
 function combineData(){
   const covid=getCovid()
   const web=  getWebScrape()
@@ -179,10 +174,6 @@ function combineData(){
     const allData={...covid, ...web}
     return allData;
 }
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
 
 // export the express app we created to make it available to other modules
 
