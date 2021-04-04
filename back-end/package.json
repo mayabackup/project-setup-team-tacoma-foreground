@@ -9,13 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "request": "^2.81.0",
     "all-countries-and-cities-json": "^1.0.0",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "csvtojson": "^2.0.10",
     "express": "^4.17.1",
     "jsdom": "^16.5.1",
     "node-cron": "^3.0.0",
+    "request": "^2.81.0",
     "stream-json": "^1.7.1"
   },
   "devDependencies": {
