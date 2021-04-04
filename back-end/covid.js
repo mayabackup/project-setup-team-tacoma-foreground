@@ -1,5 +1,5 @@
-import {data2} from 'deathrate';
-import {data3} from 'stringency';
+const getdeath = require('./deathrate');
+const getStringency = require('./stringency');
 
 const axios = require("axios");
 const cron = require("node-cron");
@@ -156,6 +156,8 @@ function api2() {
 function getWebScrape() {
   return resultWeb;
 }
+
+
 // export the express app we created to make it available to other modules
 
 // export the express app we created to make it available to other modules
