@@ -15,9 +15,9 @@ console.log(modulePath);
 
 describe('GET /', function ()  {
     this.timeout(15000);
+    
     it('check the status of the get request', function(done) {
-        this.timeout(15000);
-        setTimeout(done, 15000);
+   
         console.log('running the test')
       chai
         .request(host)
@@ -32,8 +32,7 @@ describe('GET /', function ()  {
     });
 
     it('check the keys of the airports api', function(done) {
-        this.timeout(15000);
-    setTimeout(done, 15000);
+ 
         console.log('running the test')
         chai
           .request(host)
@@ -55,8 +54,7 @@ describe('GET /', function ()  {
         });
     });
     it('check the length of the api to make sure it make ALL airports', function(done ) {
-        this.timeout(15000);
-    setTimeout(done, 15000);
+
         console.log('running the test')
       chai
         .request(host)

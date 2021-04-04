@@ -65,7 +65,6 @@ app.get("/", async(req, res) => {
 })
 
 app.post('/', (req,res)=>{
-  console.log("entering ", req.body.airport)
   userData={
     // do error checkings
     citizenship:req.body.citizenship,
@@ -81,7 +80,7 @@ app.post('/', (req,res)=>{
      
   }
 
-  res.send({ status:201})
+  
   res.redirect('/confirmation');
 })
 
