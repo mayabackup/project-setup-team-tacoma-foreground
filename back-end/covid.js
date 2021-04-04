@@ -1,13 +1,16 @@
 const axios = require("axios");
 const cron = require("node-cron");
+const csv=require('csv-parser');
+const fs = require('fs');
+const { Console } = require("console");
 /*
-Cron scheduler, runs every day at 4pm EST.
+Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("* * * * *", function() {
+const task = cron.schedule("7 8 * * *", function() {
     api();
-    api2();
-    console.log("Running a job at 08:00 pm at NYC EST timezone");
+    //api2();
+    console.log("Running a job at 08:07 pm at NYC EST timezone");
   },
   {
     scheduled: true
@@ -37,32 +40,38 @@ function api() {
   if (mm < 10) {
     mm = "0" + mm;
   }
-  today = yyyy + "-" + mm + "-" + dd;
+  today = yyyy + "-" + mm + "-" + (dd);
   console.log(today);
 
   // sxios to retrieve online data
   axios
     .get("https://covid.ourworldindata.org/data/owid-covid-data.json")
     .then(response => {
-      const v = JSON.stringify(response);
-      const data = JSON.parse(v);
-      const filtered = JSON.parse(JSON.stringify(data["data"]));
+      const v = JSON.stringify(response.data);
+      const filtered = JSON.parse(v);
+      //console.log(data)
+      //const filtered = JSON.parse(JSON.stringify(data["data"]));
       for (let x in filtered) {
-        const country = JSON.parse(JSON.stringify(data["data"][x]));
-        const filt = country.data.filter(function(entry) {
+       // console.log("the x value" , x,filtered[x])
+        const country = JSON.parse(JSON.stringify(filtered[x]['data']));
+        //console.log(country)
+        const filt = country.filter(function(entry) {
+         // console.log('the entry ', entry)
         const date = new Date(entry.date);
         const date1 = new Date(today);
-        if (date.getTime() === date1.getTime()) return entry;
+
+        if (date.getTime() == date1.getTime()){
+          return entry;
+        } 
         });
 
-        result[country.location] = {
+        result[filtered[x].location] = {
           data: filt[0],
-          continent: country.continent,
-          location: country.location
+          continent: filtered[x].continent,
+          location: filtered[x].location
         };
       }
 
-      console.log("lisenting");
       console.log(result);
       return result;
     })
@@ -75,19 +84,9 @@ function api() {
 function getCovid() {
   return result;
 }
-// export the express app we created to make it available to other modules
-
-module.exports = {
-  api: api,
-  getCovid: getCovid
-};
 
 
 //Code for WebScraping Internal and International Movement Controls:
-
-const csv=require('csv-parser');
-const fs = require('fs');
-const { Console } = require("console");
 
 const resultWeb = {};
 
@@ -156,7 +155,11 @@ function getWebScrape() {
 }
 // export the express app we created to make it available to other modules
 
+// export the express app we created to make it available to other modules
+
 module.exports = {
+  api: api,
+  getCovid: getCovid,
   api2: api2,
   getWebScrape: getWebScrape
 };
