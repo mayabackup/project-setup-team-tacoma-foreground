@@ -3,6 +3,7 @@ const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
 const api = require('./home_api');
 const axios = require('axios');
+const api2=require('./covid.js');
 
 cors = require("cors");
 //use cors to allow cross origin resource sharing
@@ -62,6 +63,7 @@ app.get("/", async(req, res) => {
     email: null,
      
   }
+  console.log(api2.getWebScrape());
 })
 
 app.post('/', (req,res)=>{
@@ -89,6 +91,13 @@ app.get('/confirmation',(req,res)=>{
   console.log("sending info to the confirmation page", )
   res.send({status:'success', message:userData})
 })
+
+//Get request for flight info
+app.get('/flight_info',(req,res)=>{
+  console.log("sending info to the Flight Information page")
+  res.send({message:userData})
+})
+
 
 // export the express app we created to make it available to other modules
 module.exports = app;
