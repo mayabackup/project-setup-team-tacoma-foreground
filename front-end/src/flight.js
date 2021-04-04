@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./flight.css";
 
 // variables
-let [location, setLocation] = useState();
-let [destination, setDestination] = useState();
+let location = localStorage.getItem('location');
+let destination = localStorage.getItem('destination');
 
 // functions
 function book(){
