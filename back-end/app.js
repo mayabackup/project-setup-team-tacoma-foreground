@@ -86,10 +86,9 @@ app.post('/', (req,res)=>{
 
 
 app.get('/confirmation',(req,res)=>{
-  console.log("sending info to the confirmation page")
-  res.send({message:userData})
+  console.log("sending info to the confirmation page", )
+  res.send({status:'success', message:userData})
 })
-
 
 // export the express app we created to make it available to other modules
 module.exports = app;
