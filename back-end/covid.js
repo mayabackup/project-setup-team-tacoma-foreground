@@ -6,13 +6,14 @@ const cron = require("node-cron");
 const csv=require('csv-parser');
 const fs = require('fs');
 const { Console } = require("console");
+const { get } = require("https");
 /*
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("7 8 * * *", function() {
+const task = cron.schedule("* * * * *", function() {
     api();
-    //api2();
+    api2();
     console.log("Running a job at 08:07 pm at NYC EST timezone");
   },
   {
@@ -74,8 +75,8 @@ function api() {
           location: filtered[x].location
         };
       }
-
-      console.log(result);
+      combineData()
+      //console.log(result);
       return result;
     })
     .catch(error => {
@@ -139,7 +140,7 @@ function api2() {
   .on('end', () => {
     console.log("Parsed through CSV File");
     
-    console.log(resultWeb)
+    //console.log(resultWeb)
 
   });
       return resultWeb;
@@ -156,6 +157,24 @@ function api2() {
 function getWebScrape() {
   return resultWeb;
 }
+
+function combineData(){
+  const covid=getCovid()
+  const web=  getWebScrape()
+  const arrayOfData={...covid, ...web}
+
+    for(key in covid){
+       if(resultWeb[key]){
+         const combined={...covid[key], ...web[key]} 
+         covid[key] = combined
+        delete web[key];
+       }
+       
+    }
+    const allData={...covid, ...web}
+    return allData;
+}
+
 // export the express app we created to make it available to other modules
 
 // export the express app we created to make it available to other modules
@@ -164,5 +183,6 @@ module.exports = {
   api: api,
   getCovid: getCovid,
   api2: api2,
-  getWebScrape: getWebScrape
+  getWebScrape: getWebScrape,
+  combineData:combineData
 };
