@@ -63,7 +63,7 @@ app.get("/", async(req, res) => {
     email: null,
      
   }
-  console.log(api2.getWebScrape());
+  //console.log(api2.getWebScrape());
 })
 
 app.post('/', (req,res)=>{
@@ -95,9 +95,13 @@ app.get('/confirmation',(req,res)=>{
 //Get request for flight info
 app.get('/flight_info',(req,res)=>{
   console.log("sending info to the Flight Information page")
-  res.send({message:userData})
+  // res.send({message:userData})
 })
 
+app.get('/covid_info',(req,res)=>{
+  console.log("sending info to the covid_info page")
+  // res.send({message:userData})  
+})
 
 // export the express app we created to make it available to other modules
 module.exports = app;
