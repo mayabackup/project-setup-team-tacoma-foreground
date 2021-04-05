@@ -4,7 +4,8 @@ const papa = require("papaparse");
 const request = require("request");
 
 let date = new Date(); // use date mod
-
+let data3 = [];
+let obj = {};
 function api() {
     
   
@@ -23,7 +24,7 @@ function api() {
     }
     date = (yyyy)+ (mm)+ (dd);
     // console.log(date);
-}
+
 
 
 const options = {/* options */};
@@ -39,24 +40,23 @@ parseStream.on("data", chunk => {
     data.push(chunk);
 });
 
-let data3 = [];
 dataStream.on("finish", () => {
-    for(var i = 1; i < data.length; i++){
+    for(let i = 1; i < data.length; i++){
         if((data[i][5]== date) && (data[i][4]=="NAT_TOTAL")){
-            var country = (data[i][0]);
+            let country = (data[i][0]);
             //console.log(country);
-            var date = data[i][5];
+            let date = data[i][5];
             //console.log(date);
-            var stayatHome = data[i][16];
+            let stayatHome = data[i][16];
             if(stayatHome==''){
                 stayatHome='NaN';
             }
             //console.log(stayatHome);
             //console.log("\n");
-            var dict = {
+            let dict = {
                 "Stringency" : stayatHome
             };
-            var obj = {};
+ 
             obj[country] = dict;
             data3.push(obj);
         }
@@ -64,10 +64,10 @@ dataStream.on("finish", () => {
     //console.log(data3);
     data3;
 });
-
+}
 
 function getStringency() {
-    return data3;
+    return obj;
 }
   
   
@@ -76,5 +76,6 @@ function getStringency() {
   // export the express app we created to make it available to other modules
   
 module.exports = {
-    getStringency:getStringency
+    getStringency:getStringency,
+    api:api
     };
