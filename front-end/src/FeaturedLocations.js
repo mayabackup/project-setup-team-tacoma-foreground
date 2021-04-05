@@ -4,37 +4,91 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './FeaturedLocations.css'; 
 import axios from "axios";
 const Featured = ({ props }) => {
-  let [FLocation1, setFLocation1] = useState([]);
-  let [FLocation2, setFLocation2] = useState([]);
-  let [FLocation3, setFLocation3] = useState([]);
+  let [FLocation1, setFLocation1] = useState();
+  let [FLocation2, setFLocation2] = useState();
+  let [FLocation3, setFLocation3] = useState();
   
-  let [Fscore1, setFscore1] = useState([]);
-  let [Fscore2, setFscore2] = useState([]);
-  let [Fscore3, setFscore3] = useState([]);
+  let [Fscore1, setFscore1] = useState();
+  let [Fscore2, setFscore2] = useState();
+  let [Fscore3, setFscore3] = useState();
 
-  let [covid1, setcovid1] = useState([]);
-  let [covid2, setcovid2] = useState([]);
-  let [covid3, setcovid3] = useState([]);
+  let [covid1, setcovid1] = useState();
+  let [covid2, setcovid2] = useState();
+  let [covid3, setcovid3] = useState();
 
-    useEffect(()=>{
-      async function fetchData() {
+  
+  useEffect(()=>{
+    const getItems = async() => {
         const results = await axios.get(
-          // retrieving some mock data about animals for sale
-          "https://api.mockaroo.com/api/819cf460?count=1000&key=ad35b1f0"
-        );
-        console.log(results.data[0])
-        setFLocation1(results.data[0].country)
-        setFLocation2(results.data[1].country)
-        setFLocation3(results.data[2].country)
-        setFscore1(results.data[0].score)
-        setFscore2(results.data[1].score)
-        setFscore3(results.data[2].score)
-        setcovid1(results.data[0].covid)
-        setcovid2(results.data[1].covid)
-        setcovid3(results.data[2].covid)
-      }
-      fetchData();
-    },[])
+    "http://localhost:5000/FeaturedLocations"
+    );
+
+    if(results.data.message.FLocation1!=null) {
+      setFLocation1(results.data.FLocation1);
+    }
+    else {
+      setFLocation1("Please Enter Data");
+    }
+
+    if(results.data.message.FLocation2!=null) {
+      setFLocation2(results.data.FLocation2);
+    }
+    else {
+      setFLocation2("Please Enter Data");
+    }
+
+    if(results.data.message.FLocation3!=null) {
+      setFLocation3(results.data.FLocation3);
+    }
+    else {
+      setFLocation3("Please Enter Data");
+    }
+
+    if(results.data.message.Fscore1!=null) {
+      setFscore1(results.data.Fscore1);
+    }
+    else {
+      setFscore1("Please Enter Data");
+    }
+    
+    if(results.data.message.Fscore2!=null) {
+      setFscore1(results.data.Fscore2);
+    }
+    else {
+      setFscore2("Please Enter Data");
+    }
+    
+    if(results.data.message.Fscore3!=null) {
+      setFscore3(results.data.Fscore1);
+    }
+    else {
+      setFscore3("Please Enter Data");
+    }
+
+    if(results.data.message.covid1!=null) {
+      setcovid1(results.data.covid1);
+    }
+    else {
+      setcovid1("Please Enter Data");
+    }
+    
+    if(results.data.message.covid2!=null) {
+      setcovid2(results.data.covid2);
+    }
+    else {
+      setcovid2("Please Enter Data");
+    }
+
+    if(results.data.message.covid3!=null) {
+      setcovid3(results.data.covid3);
+    }
+    else {
+      setcovid3("Please Enter Data");
+    }
+  }
+
+  getItems();
+  },[])
  
     return (
         <div className="FeaturedCSS">
