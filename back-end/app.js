@@ -103,5 +103,9 @@ app.get('/covid_info',(req,res)=>{
   // res.send({message:userData})  
 })
 
+app.get('/Featured Locations', (req,res)=>{
+  console.log("Sending info to the Featured Location page")
+  res.send({message:userData})
+})
 // export the express app we created to make it available to other modules
 module.exports = app;
