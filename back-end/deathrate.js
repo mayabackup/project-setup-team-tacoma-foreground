@@ -6,8 +6,10 @@ const request = require("request");
 
 
 let date = new Date();
-
+let data2 = [];
+var obj = {};
 function api() {
+    console.log("entering the death rate")
     // use date mod
   
     // let date = new Date();
@@ -25,7 +27,6 @@ function api() {
     }
     date = yyyy + "-" + mm + "-" + (dd);
     // console.log(date);
-}
 
 const options = {/* options */};
 
@@ -34,14 +35,13 @@ const parseStream = papa.parse(papa.NODE_STREAM_INPUT, options);
 const dataStream = request
     .get("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv")
     .pipe(parseStream);
-
 let data = [];
 parseStream.on("data", chunk => {
     data.push(chunk);
 });
 
-let data2 = [];
 dataStream.on("finish", () => {
+    
     for(var i = 1; i < data.length; i++){
         if((data[i][3]== date)  // used to be "2021-03-20"
         && (data[i][2] != 'World')
@@ -67,20 +67,22 @@ dataStream.on("finish", () => {
             var dict = {
                 "Death_Rate" : deathrate
             };
-            var obj = {};
+            
             obj[location] = dict;
             //console.log(dict);
             data2.push(obj);
-            //console.log("\n");
+ 
         }
     }
     // console.log(data2);
     data2;
+    //console.log(obj)
 });
+}
 
 
 function getdeath() {
-    return data2;
+    return obj;
   }
   
   
@@ -89,6 +91,7 @@ function getdeath() {
   // export the express app we created to make it available to other modules
   
   module.exports = {
-    getdeath: getdeath
+    getdeath: getdeath,
+    api:api
   };
   

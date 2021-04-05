@@ -5,8 +5,7 @@ const axios = require("axios");
 const cron = require("node-cron");
 const csv=require('csv-parser');
 const fs = require('fs');
-const { Console } = require("console");
-const { get } = require("https");
+
 /*
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
@@ -14,6 +13,8 @@ API funuction retrieves master covid data and returns.
 const task = cron.schedule("* * * * *", function() {
     api();
     api2();
+    getdeath.api();
+    getStringency.api();
     console.log("Running a job at 08:07 pm at NYC EST timezone");
   },
   {
@@ -161,21 +162,62 @@ function getWebScrape() {
 function combineData(){
   const covid=getCovid()
   const web=  getWebScrape()
+  const stringency= getStringency.getStringency()
+  const death= getdeath.getdeath()
+
   const arrayOfData={...covid, ...web}
 
     for(key in covid){
-       if(resultWeb[key]){
-         const combined={...covid[key], ...web[key]} 
+       if(web[key] && stringency[key] && death[key]){
+         const combined={...covid[key], ...web[key], ...death[key],...stringency[key]} 
          covid[key] = combined
         delete web[key];
+        delete death[key];
+        delete stringency[key];
        }
-       
+       else if(web[key] && stringency[key]){
+        const combined={...covid[key], ...web[key],...stringency[key]} 
+        covid[key] = combined
+       delete web[key];
+       delete stringency[key];
+   
+       }
+       else if(web[key] && death[key]){
+        const combined={...covid[key], ...web[key],...stringency[key]} 
+        covid[key] = combined
+       delete web[key];
+       delete death[key];
+   
+       }
+       else if(stringency[key] && death[key]){
+        const combined={...covid[key], ...death[key],...stringency[key]} 
+        covid[key] = combined
+       delete death[key];
+       delete stringency[key];
+   
+       }
+       else if(death[key]){
+        const combined={...covid[key], ...death[key]} 
+        covid[key] = combined
+       delete death[key];
+   
+       }
+       else if(stringency[key]){
+        const combined={...covid[key], ...stringency[key]} 
+        covid[key] = combined
+       delete stringency[key];
+   
+       }
+       else if(web[key]){
+        const combined={...covid[key], ...web[key]} 
+        covid[key] = combined
+       delete web[key];
+   
+       }      
     }
-    const allData={...covid, ...web}
+    const allData={...covid, ...web,...death,...stringency}
     return allData;
 }
-
-// export the express app we created to make it available to other modules
 
 // export the express app we created to make it available to other modules
 
