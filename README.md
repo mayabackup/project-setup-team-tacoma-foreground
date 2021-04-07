@@ -94,9 +94,6 @@ Github: [Adam Ethan](https://github.com/AdamEthan)
 **Alifa Faruk** - Senior at New York University studying Computer Science<br>
 Github: [Alifa Faruk](https://github.com/alifafaruk)
 
-**Almazhan Kapan** - Senior at New York University studying Computer Science<br>
-Github: [Almazhan Kapan](https://github.com/almazhankapan)
-
 **Maya Sijaric** - Senior at New York University studying Computer Science<br>
 Github: [Maya Sijaric](https://github.com/sijaric)
 
@@ -153,6 +150,22 @@ Before starting the react-app run the following npm commands in the ./front-end 
 To start the react-app: <br>
 - npm start <br>
 
+- Before starting the back-end server, navigate within the project folder in a different terminal and change the directory to back-end by doing the following command: <br>
+- cd back-end <br>
+
+Before starting the back-end server run the following commands in the ./back-end path: <br>
+ - npm install --save <br>
+ - npm install express --save <br>
+ - npm install all-countries-and-cities-json --save <br>
+ - npm install axios chai-http cors csv-parser csvtojson --save <br>
+ - npm dotenv jsdom node-cron papaparse request stream-json --save<br>
+ - npm install mocha chai nodemon eslint-plugin-react --save<br>
+
+To start the server: <br>
+- nodemon server <br>
+
+To run the tests: <br>
+- npm run test <br> 
 
 Testing instructions will be updated later.  
 
