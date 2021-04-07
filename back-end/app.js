@@ -51,6 +51,7 @@ app.get("/", async(req, res) => {
  //air= JSON.parse(air.data)
   res.send({ status:'success', message:air.data})
   userData={
+    entered:false,
     citizenship:null,
     location:null,
     airport:null,
@@ -60,14 +61,14 @@ app.get("/", async(req, res) => {
     continent: null,
     reason: null,
     name:null,
-    email: null,
-     
+    email: null
   }
   //console.log(api2.getWebScrape());
 })
 
 app.post('/', (req,res)=>{
   userData={
+    entered:true,
     // do error checkings
     citizenship:req.body.citizenship,
     location: req.body.location,
@@ -78,17 +79,14 @@ app.post('/', (req,res)=>{
     continent: req.body.continent,
     reason: req.body.reason,
     name:req.body.name,
-    email: req.body.email,
-     
+    email: req.body.email,  
   }
-
-  
   res.redirect('/confirmation');
 })
 
 
 app.get('/confirmation',(req,res)=>{
-  console.log("sending info to the confirmation page", )
+  console.log("sending info to the confirmation page", userData)
   res.send({status:'success', message:userData})
 })
 
