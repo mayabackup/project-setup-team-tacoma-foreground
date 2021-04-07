@@ -4,6 +4,7 @@ const app = express() // instantiate an Express object
 const api = require('./home_api');
 const axios = require('axios');
 const api2=require('./covid.js');
+const algorithm = require('./algorithm.js');
 
 cors = require("cors");
 //use cors to allow cross origin resource sharing

@@ -10,7 +10,7 @@ const fs = require('fs');
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("* * * * *", function() {
+const task = cron.schedule("15 * * * * *", function() {
     api();
     api2();
     getdeath.api();
