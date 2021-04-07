@@ -4,8 +4,14 @@ const app = express() // instantiate an Express object
 const api = require('./home_api');
 const axios = require('axios');
 const api2=require('./covid.js');
+const dataBase=require('./db.js')
+const mongoose = require("mongoose");
+
+const User = mongoose.model("user_data");
 
 cors = require("cors");
+
+console.log(dataBase)
 //use cors to allow cross origin resource sharing
 app.use(
   cors({
@@ -63,7 +69,7 @@ app.get("/", async(req, res) => {
     email: null,
      
   }
-  //console.log(api2.getWebScrape());
+
 })
 
 app.post('/', (req,res)=>{
