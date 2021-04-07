@@ -9,7 +9,7 @@ let vaccination_selected = false;
 let mortality_selected = false;
 let price_selected = false;
 
-function sortyBy () {
+function sortBy () {
     unsorted_data = algorithm.algorithm();
 
     for (var country in unsorted_data) {
