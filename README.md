@@ -150,7 +150,7 @@ Before starting the react-app run the following npm commands in the ./front-end 
 To start the react-app: <br>
 - npm start <br>
 
-To start the back end, in a different terminal navigate within the project folde and change the directory to back-end by doing the following command: <br>
+- Before starting the back-end server, navigate within the project folder in a different terminal and change the directory to back-end by doing the following command: <br>
 - cd back-end <br>
 
 Before starting the back-end server run the following commands in the ./back-end path: <br>
