@@ -65,6 +65,7 @@ app.get("/", async(req, res) => {
      
   }
   //console.log(api2.getWebScrape());
+  algorithm.algorithm()
 })
 
 app.post('/', (req,res)=>{

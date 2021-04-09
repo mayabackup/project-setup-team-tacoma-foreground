@@ -1,17 +1,18 @@
 const cron = require("node-cron");
 const covid = require('./covid.js');
+const fs = require('fs');
 
 let algo_data = {};
 let overall = 0;
 let cases = 0, max_cases = 0;
 let vaccination = 0, max_vaccination = 0;
 let mortality = 0, max_mortality = 0;
-let ranking = {overall, cases, vaccination, mortality};
+
 /*
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("30 * * * * *", function() {
+const task = cron.schedule("30 8 * * *", function() {
     console.log("algorithm.js cron started...");
     algorithm();
   },
@@ -24,13 +25,22 @@ task.start();
 
 function algorithm() {
     console.log('algorithm function started...');
-    algo_data = covid.combineData();
 
+    fs.readFile('./combine.json', 'utf8', (err, algo_data) => {
+      if (err) {
+          console.log("File read failed:", err)
+          return
+      }
+ 
+     
+      algo_data=JSON.parse(algo_data)
     // add ranking
-    for (var country in algo_data) {
+    for (let country in algo_data) {
       if (algo_data[country].hasOwnProperty('data')) {
-        algo_data[country].ranking = ranking; 
+       
+        //algo_data[country].ranking = ranking; 
       } else {
+        
         delete algo_data[country];
       }
     }
@@ -38,6 +48,7 @@ function algorithm() {
     // calculate max
     for (var country in algo_data) {
       if (algo_data[country].data.total_cases_per_million > max_cases) {
+
         max_cases = algo_data[country].data.total_cases_per_million;
       }
       if (algo_data[country].data.total_vaccinations_per_hundred > max_vaccination) {
@@ -49,15 +60,28 @@ function algorithm() {
     }
 
     // calculate rank
-    for (var country in algo_data) {
-      algo_data[country].ranking.cases = 100 - ( (algo_data[country].data.total_cases_per_million / max_cases) * 100 );
-      algo_data[country].ranking.vaccination = (algo_data[country].data.total_vaccinations_per_hundred / max_vaccination) * 100;
-      algo_data[country].ranking.mortality = 100 - ( (algo_data[country].data.total_deaths_per_million / max_mortality) * 100 );
-    }
-  
+    for (let country in algo_data) {
+      console.log("entering the ranK", country)
+      algo_data[country].ranking={}
+      algo_data[country].ranking.cases = 100 - ( (algo_data[country].data.total_cases_per_million /parseFloat( max_cases)) * 100 );
+      console.log(algo_data[country].ranking.cases )
+      if(typeof algo_data[country].data.total_vaccinations_per_hundred  !== 'undefined' && algo_data[country].data.total_vaccinations_per_hundred !== null){
+        console.log("undef",(algo_data[country].data.total_vaccinations_per_hundred / parseFloat(max_vaccination)) * 100)
+        algo_data[country].ranking.vaccination = (algo_data[country].data.total_vaccinations_per_hundred / parseFloat(max_vaccination)) * 100;
 
-    console.log(algo_data);
-    console.log(max_cases, max_vaccination, max_mortality);
+      }
+      else{
+        console.log("NOT")
+        algo_data[country].ranking.vaccination = 0;
+
+      }
+      algo_data[country].ranking.mortality = 100 - ( (algo_data[country].data.total_deaths_per_million / parseFloat(max_mortality)) * 100 );
+      algo_data[country].ranking.overall=parseFloat(algo_data[country].ranking.mortality) +parseFloat(algo_data[country].ranking.vaccination) +parseFloat(algo_data[country].ranking.cases )   
+      
+      //console.log( algo_data)
+    } //console.log(algo_data)
+    //console.log(algo_data)
+    //console.log(max_cases, max_vaccination, max_mortality);
 
     //check JSON keys
     if (algo_data['Zimbabwe'].hasOwnProperty('data')) {
@@ -74,8 +98,26 @@ function algorithm() {
     }
     
     console.log((algo_data['Zimbabwe'].ranking.cases));
+    const json=Object.values(algo_data)
+    const result=json.sort(function(a, b){
+      return a.ranking.overall - b.ranking.overall;
+  });
+ // result.forEach(e => console.log(e))
+ let dataArray={}
+  for (let x in result){
+   // console.log(Object.keys(result[x]))
+    let res={}
+    res[result[x].location]=result[x]
+    //console.log(res)
+    let loc=result[x].location
+    dataArray[loc]=result[x]
 
-    return algo_data;
+  
+}
+    console.log(dataArray)
+    return dataArray;
+  })
+
     }
 
 module.exports = {
