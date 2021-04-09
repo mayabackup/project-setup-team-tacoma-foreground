@@ -10,7 +10,7 @@ const fs = require('fs');
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("* * * * *", function() {
+const task = cron.schedule("*/2 * * * *", async function() {
     api();
     api2();
     getdeath.api();
@@ -23,6 +23,22 @@ const task = cron.schedule("* * * * *", function() {
 );
 // Start task cron
 task.start();
+
+
+/*
+Cron scheduler, runs every day at 8pm EST.
+API funuction retrieves master covid data and returns.
+*/
+const task2 = cron.schedule("*/7 * * * *", async function() {
+ algorithm()
+  console.log("Running after");
+},
+{
+  scheduled: true
+}
+);
+// Start task cron
+task2.start();
 
 
 // RESULT WILL HOLD MASTER COVID DATA
@@ -46,7 +62,6 @@ function api() {
     mm = "0" + mm;
   }
   today = yyyy + "-" + mm + "-" + (dd);
-  console.log(today);
 
   // sxios to retrieve online data
   axios
@@ -76,7 +91,6 @@ function api() {
           location: filtered[x].location
         };
       }
-      combineData()
       //console.log(result);
       return result;
     })
@@ -90,6 +104,13 @@ function getCovid() {
   return result;
 }
 
+function algorithm(){
+  const data=combineData()
+
+  let output = data.filter(obj => Object.keys(obj).includes("data"));
+  console.log("entered ------- ", output)
+
+}
 
 //Code for WebScraping Internal and International Movement Controls:
 
