@@ -11,7 +11,7 @@ let ranking = {overall, cases, vaccination, mortality};
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("30 * * * * *", function() {
+const task = cron.schedule("5 * * * *", function() {
     console.log("algorithm.js cron started...");
     algorithm();
   },
@@ -72,7 +72,7 @@ function algorithm() {
     } else {
       console.log('a number');
     }
-    
+    console.log(algo_data['Zimbabwe'].data.total_vaccinations_per_hundred);
     console.log((algo_data['Zimbabwe'].ranking.cases));
 
     return algo_data;
