@@ -49,30 +49,30 @@ app.use(logger);
 api2.api();
 app.get("/", async (req, res) => {
   //const airports=await api.airports()
-  let air = await axios.get(
-    "https://raw.githubusercontent.com/mwgg/Airports/master/airports.json"
-  );
-  //air=JSON.stringify(air.data)
-  //air= JSON.parse(air.data)
-  res.send({ status: "success", message: air.data });
-  userData = {
-    citizenship: null,
-    location: null,
-    airport: null,
+ let air= await axios.get('https://raw.githubusercontent.com/mwgg/Airports/master/airports.json')
+ //air=JSON.stringify(air.data)
+ //air= JSON.parse(air.data)
+  res.send({ status:'success', message:air.data})
+  userData={
+    entered:false,
+    citizenship:null,
+    location:null,
+    airport:null,
 
     //advanced; may be null
     advanced: null,
     continent: null,
     reason: null,
-    name: null,
+    name:null,
     email: null
-  };
+  }
   //console.log(api2.getWebScrape());
   algorithm.algorithm()
 });
 
-app.post("/", (req, res) => {
-  userData = {
+app.post('/', (req,res)=>{
+  userData={
+    entered:true,
     // do error checkings
     citizenship: req.body.citizenship,
     location: req.body.location,
@@ -82,17 +82,16 @@ app.post("/", (req, res) => {
     advanced: req.body.advanced,
     continent: req.body.continent,
     reason: req.body.reason,
-    name: req.body.name,
-    email: req.body.email
-  };
+    name:req.body.name,
+    email: req.body.email,  
+  }
+  res.redirect('/confirmation');
+})
 
-  res.redirect("/confirmation");
-});
-
-app.get("/confirmation", (req, res) => {
-  console.log("sending info to the confirmation page");
-  res.send({ status: "success", message: userData });
-});
+app.get('/confirmation',(req,res)=>{
+  console.log("sending info to the confirmation page", userData)
+  res.send({status:'success', message:userData})
+})
 
 //Get request for flight info
 app.get("/flight_info", (req, res) => {
