@@ -10,7 +10,7 @@ const fs = require('fs');
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("7 8 * * *", function() {
+const task = cron.schedule("* * * * *", function() {
     api();
     api2();
     getdeath.api();
@@ -36,7 +36,7 @@ function api() {
   let dd = today.getDate() - 1;
   let mm = today.getMonth() + 1;
   let yyyy = today.getFullYear();
-  console.log("entering");
+  //console.log("entering");
 
   if (dd < 10) {
     dd = "0" + dd;
@@ -46,7 +46,7 @@ function api() {
     mm = "0" + mm;
   }
   today = yyyy + "-" + mm + "-" + (dd);
-  console.log(today);
+  //console.log(today);
 
   // sxios to retrieve online data
   axios
@@ -104,7 +104,7 @@ function api2() {
   //NOTE: this will get last month's Date because government policies are not updated frequently.
   let mm = today.getMonth();
   let yyyy = today.getFullYear();
-  console.log("entering");
+  //console.log("entering");
 
   if (dd < 10) {
     dd = "0" + dd;
@@ -113,8 +113,8 @@ function api2() {
   if (mm < 10) {
     mm = "0" + mm;
   }
-  lastMonth = yyyy + mm + dd;
-  console.log(lastMonth);
+  let lastMonth = yyyy + mm + dd;
+  //console.log(lastMonth);
 
   // axios to retrieve online data
   axios
@@ -165,9 +165,7 @@ function combineData(){
   const stringency= getStringency.getStringency()
   const death= getdeath.getdeath()
 
-  const arrayOfData={...covid, ...web}
-
-    for(key in covid){
+    for(let key in covid){
        if(web[key] && stringency[key] && death[key]){
          const combined={...covid[key], ...web[key], ...death[key],...stringency[key]} 
          covid[key] = combined

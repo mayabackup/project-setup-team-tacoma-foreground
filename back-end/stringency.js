@@ -45,7 +45,7 @@ dataStream.on("finish", () => {
         if((data[i][5]== date) && (data[i][4]=="NAT_TOTAL")){
             let country = (data[i][0]);
             //console.log(country);
-            let date = data[i][5];
+            //let date = data[i][5];
             //console.log(date);
             let stayatHome = data[i][16];
             if(stayatHome==''){
