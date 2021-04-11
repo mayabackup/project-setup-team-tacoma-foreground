@@ -1,6 +1,4 @@
 // MORTALITY LINK
-
-
 const papa = require("papaparse");
 const request = require("request");
 
@@ -9,7 +7,7 @@ let date = new Date();
 let data2 = [];
 var obj = {};
 function api() {
-    console.log("entering the death rate")
+    //console.log("entering the death rate")
     // use date mod
   
     // let date = new Date();
