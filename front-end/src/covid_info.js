@@ -59,7 +59,7 @@ const CovidInfo = ({ props }) => {
             setGstringency("Data Unknown")
         }
         if(data_covid.Workplace){
-            setWork(data_covid.data.Workplace)
+            setWork(data_covid.Workplace)
         }
         else{
             setWork("Data Unknown")
