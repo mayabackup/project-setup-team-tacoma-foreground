@@ -125,8 +125,8 @@ app.get("/flight_info", (req, res) => {
 });
 
 app.get("/covid_info", (req, res) => {
-  console.log("sending info to the covid_info page");
-  res.send({ message: userData });
+  console.log("sending info to the covid_info page", user_location);
+  res.send({ message: user_location });
 });
 
 app.get("/FeaturedLocations", (req, res) => {
