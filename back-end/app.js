@@ -47,6 +47,9 @@ app.use(logger);
 // we will put some server logic here later...
 
 api2.api();
+const covid_locations=algorithm.algorithm();
+let result=[];
+let user_location
 app.get("/", async (req, res) => {
   //const airports=await api.airports()
  let air= await axios.get('https://raw.githubusercontent.com/mwgg/Airports/master/airports.json')
@@ -66,8 +69,6 @@ app.get("/", async (req, res) => {
     name:null,
     email: null
   }
-  //console.log(api2.getWebScrape());
-  algorithm.algorithm()
 });
 
 app.post('/', (req,res)=>{
@@ -93,6 +94,30 @@ app.get('/confirmation',(req,res)=>{
   res.send({status:'success', message:userData})
 })
 
+app.get('/top_locations' , (req,res)=>{
+  result=[]
+  console.log("entering the top locations")
+  const loc=(Object.keys(covid_locations))
+  if(userData!=='null' && typeof userData!=='undefined'){
+    result.push({user_location:userData.location})
+  }
+  else{
+    result.push({user_location:"Data Not Entered"})
+  }
+  
+  user_location={}
+  for(let x=0;x<13;x++){
+    result.push(covid_locations[loc[x]])
+  }
+  //const result=covid_locations.slice(0,10)
+  res.send({status:'success', message:result})
+})
+app.post('/top_locations', (req,res)=>{
+  console.log("the post for top locations" , req.body)
+  user_location[req.body.destination]=covid_locations[req.body.destination]
+  console.log(user_location)
+  res.redirect('/covid_info')
+})
 //Get request for flight info
 app.get("/flight_info", (req, res) => {
   console.log("sending info to the Flight Information page");

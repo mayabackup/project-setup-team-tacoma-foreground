@@ -15,72 +15,37 @@ function TopLocations() {
     //history
     let history = useHistory();
 
-    //user info
-    let citizenship = localStorage.getItem('citizenship');
-    let location = localStorage.getItem('location');
-    let airport = localStorage.getItem('airport');
-    let continent = localStorage.getItem('continent');
-    let reason = localStorage.getItem('reason');
-    let name = localStorage.getItem('name');
-    let email = localStorage.getItem('email');
-    let destination = "";
-    let destination_score = 100;
-    let travel_date = localStorage.getItem('travel_date');
-    let return_date = localStorage.getItem('return_date');
+    //covid data
 
-    if(citizenship=='undefined'){
-        citizenship="Data not entered";
-    }
-    if(airport=='undefined'){
-        airport="Data not entered";
-    }
-    if(continent=='undefined'){
-        continent="Data not entered";
-    }
-    if(reason=='undefined'){
-        reason="Data not entered";
-    }
-    if(name=='undefined'){
-        name="Data not entered";
-    }
-    if(email=='undefined'){
-        email="Data not entered";
-    }
-    if(destination=='undefined'){
-        destination="Data not entered";
-    }
-    if(travel_date=='undefined'){
-        travel_date="Data not entered";
-    }
-    if(return_date=='undefined'){
-        return_date="Data not entered";
-    }
-
-    //variables
-    let count = 1;
+    
     const [data, setData] = useState([]);
+    const [location, setLocation] = useState([]);
+
+    useEffect(() => {
+        const getItems= async()=>{
+            const resp= await axios.get("http://localhost:5000/top_locations")
+        
+            const val=resp.data.message.shift()
+            console.log((resp.data.message))
+            setLocation(val.user_location)
+            const optionItems = Object.keys(resp.data.message).map((el) => ({
+                score: resp.data.message[el].ranking.overall,
+                continent: resp.data.message[el].continent,
+                location: resp.data.message[el].location,
+              }));
+            
+            setData(optionItems);  
+        }  
+
+        getItems()
+    
+      }, [])
 
     //functions
     function Sort() {
         console.log("placeholder");
     }
 
-    //mock data
-    useEffect(()=>{
-        async function fetchData() {
-            const result = await axios.get("https://my.api.mockaroo.com/total_locations.json?key=64e1b920"); 
-            // set the state variable
-            // this will cause a re-render of this component
-            setData(result.data);  
-            console.log(result.data[0]) 
-            
-            if(location=='undefined'){
-                location=result.data[0].city;
-                localStorage.setItem('location',location);
-            }
-        }
-        fetchData();
-    },[])
 
     //page output HTML
     return (
@@ -103,7 +68,7 @@ function TopLocations() {
                 </div>
                 <div className= "locations_tl">
                     <section className="location">
-                        {data.map(item => (<Location key={item.id} details={item} />))}
+                        {data.map((user,index) => (<Location key={index} details={user} />))}
                     </section>
                 </div>
             </div>

@@ -18,7 +18,7 @@ const Confirmation = ({ props }) => {
   useEffect(() => {
     const getItems= async()=>{
     const resp= await axios.get("http://localhost:5000/confirmation")
-    console.log("entering", resp.data.message)
+    if(resp.data.message!=null){
       if ( resp.data.message.citizenship!=null){
         setCitizenship(resp.data.message.citizenship)
       }
@@ -42,7 +42,13 @@ const Confirmation = ({ props }) => {
       }
       setEnterd(resp.data.message.entered)
     } 
-
+    else{
+      setCitizenship("Data Not Entered")
+      setLocation("Data Not Entered" )
+      setAirport("Data Not Entered")
+    }
+  }
+  
     getItems();
   
     if(entered===false){

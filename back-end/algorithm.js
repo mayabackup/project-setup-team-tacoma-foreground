@@ -4,7 +4,7 @@ const cron = require("node-cron");
 let max_cases = 0;
 let max_vaccination = 0;
 let max_mortality = 0;
-
+let dataArray = {};
 /*
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
@@ -35,7 +35,7 @@ function algorithm() {
    // console.log(algo_data)
     for (let country in algo_data) {
       if (!("data" in algo_data[country])) {
-        console.log("delting ", algo_data[country]);
+        //console.log("delting ", algo_data[country]);
         delete algo_data[country];
 
         //algo_data[country].ranking = ranking;
@@ -118,7 +118,6 @@ function algorithm() {
       return a.ranking.overall - b.ranking.overall;
     });
     // result.forEach(e => console.log(e))
-    let dataArray = {};
     for (let x in result) {
       // console.log(Object.keys(result[x]))
       let res = {};
@@ -127,10 +126,13 @@ function algorithm() {
       let loc = result[x].location;
       dataArray[loc] = result[x];
     }
-  console.log(dataArray);
-    return dataArray;
+  //console.log(dataArray);
+   
   });
+  return dataArray;
 }
+
+
 
 module.exports = {
   algorithm: algorithm
