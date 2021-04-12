@@ -129,9 +129,14 @@ app.get("/covid_info", (req, res) => {
   res.send({ message: user_location });
 });
 
-app.get("/Featured Locations", (req, res) => {
-  console.log("Sending info to the Featured Location page");
-  res.send({ message: userData });
+app.get("/FeaturedLocations", (req, res) => {
+  console.log("sending info to the FeaturedLocations page");
+  result=[]
+  const loc=(Object.keys(covid_locations))
+  for(let x=0;x<6;x++){
+    result.push(covid_locations[loc[x]])
+  }
+  res.send({status:'success', message:result})
 });
 // export the express app we created to make it available to other modules
 module.exports = app;
