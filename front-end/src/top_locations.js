@@ -26,7 +26,6 @@ function TopLocations() {
             const resp= await axios.get("http://localhost:5000/top_locations")
         
             const val=resp.data.message.shift()
-            console.log((resp.data.message))
             setLocation(val.user_location)
             const optionItems = Object.keys(resp.data.message).map((el) => ({
                 score: resp.data.message[el].ranking.overall,

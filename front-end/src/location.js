@@ -14,13 +14,10 @@ function Location(props) {
     const [destination1, setDestination] = useState([]);
     const handleSubmit = evt => {
         evt.preventDefault();
-        console.log(destination1)
         setDestination(props.details.location)
-        console.log(destination1)
         let formData={
             destination:props.details.location
         }
-        console.log(formData)
         const post= async() => await axios
         .post('http://localhost:5000/top_locations',formData)
         .then(() => {
