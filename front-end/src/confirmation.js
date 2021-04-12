@@ -12,13 +12,14 @@ const Confirmation = ({ props }) => {
   let [citizenship, setCitizenship] = useState();
   let [location, setLocation] = useState();
   let [airport, setAirport] = useState();
-  let [entered, setEnterd] = useState();
+  let [entered, setEnterd] = useState(false);
 
   let locationMap;;
   useEffect(() => {
     const getItems= async()=>{
     const resp= await axios.get("http://localhost:5000/confirmation")
     if(resp.data.message!=null){
+
       if ( resp.data.message.citizenship!=null){
         setCitizenship(resp.data.message.citizenship)
       }
@@ -50,7 +51,7 @@ const Confirmation = ({ props }) => {
   }
   
     getItems();
-  
+    console.log(entered)
     if(entered===false){
       getItems();
     }
