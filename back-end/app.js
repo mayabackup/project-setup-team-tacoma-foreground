@@ -7,7 +7,8 @@ const api2=require('./covid.js');
 const dataBase=require('./db.js')
 const mongoose = require("mongoose");
 
-const User = mongoose.model("user_data");
+const User_data = mongoose.model("user_data");
+const User = mongoose.model("User");
 
 cors = require("cors");
 
@@ -87,9 +88,20 @@ app.post('/', (req,res)=>{
     email: req.body.email,
      
   }
+  const newQuery= new User_data({
+    name: req.body.citizenship,
+    location: req.body.location,
+    airport: req.body.airport.selectedOption.value,
+    continent: req.body.continent,
+    reason: req.body.reason,
+    email: req.body.email
+  })
 
-  
-  res.redirect('/confirmation');
+  newFlight.save(err => {
+    console.log("the error " + err);
+    res.redirect("/confirmation");
+  });
+  //res.redirect('/confirmation');
 })
 
 

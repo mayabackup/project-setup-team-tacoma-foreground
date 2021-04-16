@@ -12,6 +12,7 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 const user_data = new mongoose.Schema({
     // username provided by authentication plugin
     // password hash provided by authentication plugin
+   // user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     name: { type: String, require: false },
     location: { type: String, require: false },
     airport: { type: String, require: false },
@@ -20,8 +21,16 @@ const user_data = new mongoose.Schema({
     email: { type: String, require: false }
   });
 
+  const User = new mongoose.Schema({
+    // username provided by authentication plugin
+    // password hash provided by authentication plugin
+    name: { type: String, require: true },
+    password: { type: String, require: true },
+    email: { type: String, require: true },
+ 
+  });
   mongoose.model("user_data", user_data);
-
+  mongoose.model("User", User);
 mongoose.connect(
     uri,
     { useNewUrlParser: true, useUnifiedTopology: true },
