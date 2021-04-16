@@ -10,8 +10,8 @@ function routeloader(route) {
 }
 
 export customroute {
-	component: App,
-    childRoutes: [
+    component: App,
+    newRoutes: [
     {
       path: 'FeaturedLocations',
       getComponent(location, route) {
