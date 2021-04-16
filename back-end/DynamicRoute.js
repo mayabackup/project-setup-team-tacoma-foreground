@@ -36,7 +36,17 @@ export customroute {
           .catch(errorhandler);
       }
     },
+     {
+      path: 'Sign In',
+      getComponent(location, cb) {
+        System.import('pages/SignIn')
+          .then(routeLoader(route))
+          .catch(errorhandler);
+		
+		}
+	  }
   ]
+	
 };
 		
 	
