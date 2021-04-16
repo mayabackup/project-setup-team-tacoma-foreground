@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 
 // Mock Data
 import axios from "axios";
@@ -10,7 +9,6 @@ import "./covid_info.css";
 
 // Page Output
 const CovidInfo = ({ props }) => {
-    const [data, setData] = useState([]);
     const [destination, setDestination] = useState([]);
     const [cases, setCases] = useState(0);
     const [current_cases, setCurrent] = useState(0);
@@ -25,56 +23,55 @@ const CovidInfo = ({ props }) => {
     useEffect(() => {
         const getItems= async()=>{
         const resp= await axios.get("http://localhost:5000/covid_info");
-        const data_covid=resp.data.message[Object.keys(resp.data.message)[0]]
+        const data_covid=resp.data.message[Object.keys(resp.data.message)[0]];
+
         if(data_covid.data.total_cases!=null){
-            setCases(data_covid.data.total_cases)
+            setCases(data_covid.data.total_cases);
         }
         else{
-            setCases("Data Unknown")
+            setCases("Data Unknown");
         }
         if(data_covid.location!=null){
-            setDestination(data_covid.location)
+            setDestination(data_covid.location);
         }
         else{
-            setDestination("Data Unknown")
+            setDestination("Data Unknown");
         }
         if(data_covid.data.total_cases!=null){
-            setCurrent(data_covid.data.new_cases)
+            setCurrent(data_covid.data.new_cases);
         }
         else{
-            setCurrent("Data Unknown")
+            setCurrent("Data Unknown");
         }
-
-
-        if(data_covid.data.total_vaccinations!=null){
-            setVac(data_covid.data.total_vaccinations)
+        if(data_covid.data.total_vaccinations_per_hundred!=null){
+            setVac(data_covid.data.total_vaccinations_per_hundred);
         }
         else{
-            setVac("Data Unknown")
+            setVac("Data Unknown");
         }
         if(data_covid.data.stringency_index){
-            setGstringency(data_covid.data.stringency_index)
+            setGstringency(data_covid.data.stringency_index);
         }
         else{
-            setGstringency("Data Unknown")
+            setGstringency("Data Unknown");
         }
         if(data_covid.Workplace){
-            setWork(data_covid.Workplace)
+            setWork(data_covid.Workplace);
         }
         else{
-            setWork("Data Unknown")
+            setWork("Data Unknown");
         }
         if(data_covid.International){
-            setTravel(data_covid.International)
+            setTravel(data_covid.International);
         }
         else{
-            setTravel("Data Unknown")
+            setTravel("Data Unknown");
         }
         if (data_covid.Internal){
-            setMove(data_covid.Internal)
+            setMove(data_covid.Internal);
         }
         else{
-            setMove("Data Unknown")
+            setMove("Data Unknown");
         }
         
         }
@@ -86,7 +83,7 @@ const CovidInfo = ({ props }) => {
 
     //function
     function FlightInfo() {
-        window.open("./flight_info","_self")
+        window.open("./flight_info","_self");
     }
     //page output HTML
     return (
@@ -105,7 +102,7 @@ const CovidInfo = ({ props }) => {
                     <button className="data"><b>{current_cases} cases</b></button>
                 </div>
                 <div className = "space_between">
-                    <h3>Number of population vaccinated:</h3>
+                    <h3>Percentage of population vaccinated:</h3>
                     <button className="data"><b>{vac} %</b></button>
                 </div>
                 <div className = "space_between">
