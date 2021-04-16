@@ -19,77 +19,22 @@ const Featured = ({ props }) => {
   
   useEffect(()=>{
     const getItems = async() => {
-        const results = await axios.get(
-    "http://localhost:5000/FeaturedLocations"
-    );
+        const resp = await axios.get("http://localhost:5000/FeaturedLocations")
 
-    if(results.data.message.FLocation1!=null) {
-      setFLocation1(results.data.FLocation1);
-    }
-    else {
-      setFLocation1("Please Enter Data");
-    }
+      setFLocation1(resp.data.message[0].location)
+      setFLocation2(resp.data.message[1].location)
+      setFLocation3(resp.data.message[2].location)
 
-    if(results.data.message.FLocation2!=null) {
-      setFLocation2(results.data.FLocation2);
-    }
-    else {
-      setFLocation2("Please Enter Data");
-    }
+      setFscore1(resp.data.message[0].ranking.overall)
+      setFscore2(resp.data.message[1].ranking.overall)
+      setFscore3(resp.data.message[2].ranking.overall)
 
-    if(results.data.message.FLocation3!=null) {
-      setFLocation3(results.data.FLocation3);
+      setcovid1(resp.data.message[0].data.total_cases)
+      setcovid2(resp.data.message[1].data.total_cases)
+      setcovid3(resp.data.message[2].data.total_cases)
     }
-    else {
-      setFLocation3("Please Enter Data");
-    }
+      getItems() }, [])
 
-    if(results.data.message.Fscore1!=null) {
-      setFscore1(results.data.Fscore1);
-    }
-    else {
-      setFscore1("Please Enter Data");
-    }
-    
-    if(results.data.message.Fscore2!=null) {
-      setFscore1(results.data.Fscore2);
-    }
-    else {
-      setFscore2("Please Enter Data");
-    }
-    
-    if(results.data.message.Fscore3!=null) {
-      setFscore3(results.data.Fscore1);
-    }
-    else {
-      setFscore3("Please Enter Data");
-    }
-
-    if(results.data.message.covid1!=null) {
-      setcovid1(results.data.covid1);
-    }
-    else {
-      setcovid1("Please Enter Data");
-    }
-    
-    if(results.data.message.covid2!=null) {
-      setcovid2(results.data.covid2);
-    }
-    else {
-      setcovid2("Please Enter Data");
-    }
-
-    if(results.data.message.covid3!=null) {
-      setcovid3(results.data.covid3);
-    }
-    else {
-      setcovid3("Please Enter Data");
-    }
-  }
-
-  getItems();
-  },[])
- 
     return (
         <div className="FeaturedCSS">
             <h1 className="FeaturedTitle">Featured Safest Locations</h1>

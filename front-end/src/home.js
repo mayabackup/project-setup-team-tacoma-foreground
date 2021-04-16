@@ -179,6 +179,7 @@ const HomePage = ({ props }) => {
               type="text"
               placeholder="Enter your citizenship"
               value={citizenship}
+              required
               onChange={e => setCitizenship(e.target.value)}
             />
           </label>
@@ -190,6 +191,7 @@ const HomePage = ({ props }) => {
               type="text"
               placeholder="Enter your location"
               value={location}
+              required
               onChange={e => setLocation(e.target.value)}
               //onChange={e => setChoreDesc(e.target.value)}
             />
