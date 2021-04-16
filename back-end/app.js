@@ -5,6 +5,8 @@ const app = express(); // instantiate an Express object
 const axios = require("axios");
 const api2 = require("./covid.js");
 const algorithm = require('./algorithm.js');
+const mongoose = require("mongoose");
+require("./db");
 
 const cors = require("cors");
 //use cors to allow cross origin resource sharing
@@ -14,6 +16,10 @@ app.use(
     credentials: true
   })
 );
+
+const User_data = mongoose.model("user_data");
+// eslint-disable-next-line no-unused-vars
+const User = mongoose.model("User");
 // middleware to get req body
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -89,7 +95,7 @@ app.post('/', (req,res)=>{
   // eslint-disable-next-line no-unused-vars
   // eslint-disable-next-line no-undef
   const newQuery= new User_data({
-    name: req.body.citizenship,
+    citizenship: req.body.citizenship,
     location: req.body.location,
     airport: req.body.airport.selectedOption.value,
     continent: req.body.continent,

@@ -13,7 +13,7 @@ const user_data = new mongoose.Schema({
     // username provided by authentication plugin
     // password hash provided by authentication plugin
    // user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-    name: { type: String, require: false },
+    citizenship: { type: String, require: false },
     location: { type: String, require: false },
     airport: { type: String, require: false },
     continent: { type: String, require: false },
