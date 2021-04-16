@@ -88,11 +88,11 @@ function algorithm() {
           parseFloat(max_mortality)) *
           100;
       algo_data[country].ranking.overall =
-        parseFloat(algo_data[country].ranking.mortality) +
+        (parseFloat(algo_data[country].ranking.mortality) +
         parseFloat(algo_data[country].ranking.vaccination) +
-        parseFloat(algo_data[country].ranking.cases);
+        parseFloat(algo_data[country].ranking.cases)) / 3;
 
-      //console.log( algo_data)
+      //console.log(algo_data)
     } //console.log(algo_data)
     //console.log(algo_data)
     //console.log(max_cases, max_vaccination, max_mortality);
@@ -112,10 +112,22 @@ function algorithm() {
     }
 
     //console.log((algo_data['Zimbabwe'].ranking.cases));
-
+    
+    // remove countries lacking vital data
+    for (let x in algo_data) {
+      if (isNaN(algo_data[x].ranking.cases) || algo_data[x].ranking.cases == null || algo_data[x].ranking.cases == 0) {
+        delete algo_data[x];
+      }
+      else if (isNaN(algo_data[x].ranking.vaccination) || algo_data[x].ranking.vaccination == null || algo_data[x].ranking.vaccination == 0) {
+        delete algo_data[x];
+      }
+      else if (isNaN(algo_data[x].ranking.mortality) || algo_data[x].ranking.mortality == null || algo_data[x].ranking.mortality == 0) {
+        delete algo_data[x];
+      }
+    }
     const json = Object.values(algo_data);
     const result = json.sort(function(a, b) {
-      return a.ranking.overall - b.ranking.overall;
+      return b.ranking.overall - a.ranking.overall;
     });
     // result.forEach(e => console.log(e))
     for (let x in result) {
@@ -126,7 +138,7 @@ function algorithm() {
       let loc = result[x].location;
       dataArray[loc] = result[x];
     }
-  //console.log(dataArray);
+  console.log(dataArray);
    
   });
   return dataArray;
