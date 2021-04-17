@@ -10,7 +10,7 @@ const fs = require('fs');
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("* * * * *", function() {
+const task = cron.schedule("5 8 * * *", function() {
     api();
     api2();
     getdeath.api();
@@ -50,7 +50,7 @@ function api() {
 
   // sxios to retrieve online data
   axios
-    .get("https://covid.ourworldindata.org/data/owid-covid-data.json")
+    .get("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.json")
     .then(response => {
       const v = JSON.stringify(response.data);
       const filtered = JSON.parse(v);
@@ -76,7 +76,7 @@ function api() {
           location: filtered[x].location
         };
       }
-      combineData()
+
       //console.log(result);
       return result;
     })

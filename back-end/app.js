@@ -19,6 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const path = require("path");
+const { type } = require("os");
 //const { airports } = require("./home_api");
 
 // eslint-disable-next-line no-undef
@@ -107,7 +108,26 @@ app.get('/top_locations' , (req,res)=>{
   
   user_location={}
   for(let x=0;x<13;x++){
-    result.push(covid_locations[loc[x]])
+    //console.log()
+    if(userData.continent!=null && typeof userData!='undefined'){ 
+      if(covid_locations[loc[x]].continent===userData.continent){
+        result.push(covid_locations[loc[x]])
+     }else{
+      console.log(x)
+      if(x===0){
+        x=0;
+      }
+      else{
+        x=x-1;
+      }
+      
+       
+     }
+    }else{
+      result.push(covid_locations[loc[x]])
+    }
+   
+    
   }
   //const result=covid_locations.slice(0,10)
   res.send({status:'success', message:result})

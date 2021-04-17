@@ -30,9 +30,10 @@ function algorithm() {
       console.log("File read failed:", err);
       return;
     }
+    //console.log(algo_data)
     algo_data = JSON.parse(algo_data);
     // add ranking
-   // console.log(algo_data)
+     console.log(algo_data)
     for (let country in algo_data) {
       if (!("data" in algo_data[country])) {
         //console.log("delting ", algo_data[country]);
@@ -138,7 +139,7 @@ function algorithm() {
       let loc = result[x].location;
       dataArray[loc] = result[x];
     }
-  console.log(dataArray);
+  //console.log(algo_data);
    
   });
   return dataArray;
