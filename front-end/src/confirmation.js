@@ -24,7 +24,6 @@ const Confirmation = ({ props }) => {
         setCitizenship(resp.data.message.citizenship)
       }
       else{
-        console.log("entering")
         setCitizenship("Data Not Entered")
       }
 
@@ -58,7 +57,20 @@ const Confirmation = ({ props }) => {
 
   }, [])
 
- 
+  function handelClick(){
+    const selected={
+      entered:true
+    }
+    //setConfirm(e)
+    const post= async() => await axios
+    .post('http://localhost:5000/confirmation',selected)
+    .then(() => console.log('Sent form data'))
+    .catch(err => {
+      console.error(err);
+    });
+    post()
+    history.push("/top_locations");
+  }
   locationMap=location;
   const loc =
     "https://maps.google.com/maps?q=" +
@@ -105,7 +117,7 @@ const Confirmation = ({ props }) => {
       </div>
       <br></br>
       <div>
-        <button onClick={e => setConfirm(e)} className="confirm" type="button">
+        <button onClick={handelClick} className="confirm" type="button">
           confirm and view results
         </button>
         <br></br>

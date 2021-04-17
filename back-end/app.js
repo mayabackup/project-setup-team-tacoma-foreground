@@ -5,6 +5,8 @@ const app = express(); // instantiate an Express object
 const axios = require("axios");
 const api2 = require("./covid.js");
 const algorithm = require('./algorithm.js');
+const mongoose = require("mongoose");
+require("./db");
 
 const cors = require("cors");
 //use cors to allow cross origin resource sharing
@@ -14,6 +16,10 @@ app.use(
     credentials: true
   })
 );
+
+const User_data = mongoose.model("user_data");
+// eslint-disable-next-line no-unused-vars
+const User = mongoose.model("User");
 // middleware to get req body
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -86,12 +92,36 @@ app.post('/', (req,res)=>{
     name:req.body.name,
     email: req.body.email,  
   }
-  res.redirect('/confirmation');
+  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line no-undef
+  
+  res.send({status:'success', message:userData})
+  //res.redirect('/confirmation');
 })
 
 app.get('/confirmation',(req,res)=>{
   console.log("sending info to the confirmation page", userData)
   res.send({status:'success', message:userData})
+})
+app.post('/confirmation',(req,res)=>{
+  console.log("SAVE INFO INTO DATABASE")
+  if(req.body.entered===true){
+    const newQuery= new User_data({
+      citizenship: userData['citizenship'],
+      location:userData['location'],
+      airport: userData['airport'],
+      continent: userData['continent'],
+      reason: userData['reason'],
+      email: userData['email']
+    })
+  
+    // eslint-disable-next-line no-undef
+    newQuery.save(err => {
+      console.log("the error " + err);
+      res.redirect("/confirmation");
+    });
+  }
+  
 })
 
 app.get('/top_locations' , (req,res)=>{
