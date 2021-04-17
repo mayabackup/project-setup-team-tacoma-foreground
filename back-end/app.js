@@ -94,26 +94,34 @@ app.post('/', (req,res)=>{
   }
   // eslint-disable-next-line no-unused-vars
   // eslint-disable-next-line no-undef
-  const newQuery= new User_data({
-    citizenship: req.body.citizenship,
-    location: req.body.location,
-    airport: req.body.airport.selectedOption.value,
-    continent: req.body.continent,
-    reason: req.body.reason,
-    email: req.body.email
-  })
-
-  // eslint-disable-next-line no-undef
-  newQuery.save(err => {
-    console.log("the error " + err);
-    res.redirect("/confirmation");
-  });
+  
+  res.send({status:'success', message:userData})
   //res.redirect('/confirmation');
 })
 
 app.get('/confirmation',(req,res)=>{
   console.log("sending info to the confirmation page", userData)
   res.send({status:'success', message:userData})
+})
+app.post('/confirmation',(req,res)=>{
+  console.log("SAVE INFO INTO DATABASE")
+  if(req.body.entered===true){
+    const newQuery= new User_data({
+      citizenship: userData['citizenship'],
+      location:userData['location'],
+      airport: userData['airport'],
+      continent: userData['continent'],
+      reason: userData['reason'],
+      email: userData['email']
+    })
+  
+    // eslint-disable-next-line no-undef
+    newQuery.save(err => {
+      console.log("the error " + err);
+      res.redirect("/confirmation");
+    });
+  }
+  
 })
 
 app.get('/top_locations' , (req,res)=>{
