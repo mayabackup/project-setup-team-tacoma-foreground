@@ -130,6 +130,7 @@ const CovidInfo = ({ props }) => {
                     <p className = "p_left_ci">{move}</p>
                 </div>
                 <button button onClick={e => FlightInfo(props)} id="margin">Flight Information</button>
+                <button button onClick='temp' id="margin2">Select Country</button>
             </div>
             <div>
                 <ul id="nav">
