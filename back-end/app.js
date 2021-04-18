@@ -136,8 +136,26 @@ app.get('/top_locations' , (req,res)=>{
   }
   
   user_location={}
-  for(let x=0;x<13;x++){
-    result.push(covid_locations[loc[x]])
+  let flag=0;
+  for(let x=0;x<loc.length;x++){
+    if(flag===13){
+     // console.log("entering the flag", x)
+      break;
+    }
+    if(userData.continent!=null && typeof userData.continent!='undefined'){
+      
+      if(covid_locations[loc[x]].continent===userData.continent){
+        result.push(covid_locations[loc[x]])
+        flag++;
+      }
+      else{
+       continue
+      }
+    }else{
+      flag++;
+      result.push(covid_locations[loc[x]])
+    }
+    
   }
   //const result=covid_locations.slice(0,10)
   res.send({status:'success', message:result})
