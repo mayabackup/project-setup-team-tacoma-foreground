@@ -138,7 +138,7 @@ function algorithm() {
       let loc = result[x].location;
       dataArray[loc] = result[x];
     }
-  console.log(dataArray);
+  //console.log(dataArray);
    
   });
   return dataArray;

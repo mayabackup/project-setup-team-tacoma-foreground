@@ -10,12 +10,16 @@ const fs = require('fs');
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("7 8 * * *", function() {
-    api();
-    api2();
-    getdeath.api();
-    getStringency.api();
-    console.log("Running a job at 08:07 pm at NYC EST timezone");
+const task = cron.schedule("1 8 * * *",  function() {
+  run().then(()=>{
+  })
+  },
+  {
+    scheduled: true
+  }
+);
+const task2 = cron.schedule("7 8 * * *",  function() {
+  combineData()
   },
   {
     scheduled: true
@@ -23,8 +27,16 @@ const task = cron.schedule("7 8 * * *", function() {
 );
 // Start task cron
 task.start();
+task2.start();
 
-
+async function run() {
+  api();
+  api2();
+  getdeath.api();
+  getStringency.api();
+    console.log("Running a job at 08:07 pm at NYC EST timezone");
+ 
+  }
 // RESULT WILL HOLD MASTER COVID DATA
 let result = {};
 
@@ -76,8 +88,6 @@ function api() {
           location: filtered[x].location
         };
       }
-      combineData()
-      //console.log(result);
       return result;
     })
     .catch(error => {
@@ -144,6 +154,7 @@ function api2() {
     //console.log(resultWeb)
 
   });
+      console.log("finishing the second function")
       return resultWeb;
     })
     .catch(error => {
@@ -160,6 +171,7 @@ function getWebScrape() {
 }
 
 function combineData(){
+  console.log("Entering the combine function")
   const covid=getCovid()
   const web=  getWebScrape()
   const stringency= getStringency.getStringency()
