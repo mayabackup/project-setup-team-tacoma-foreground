@@ -1,45 +1,58 @@
-#margin2 {
-    background-color: #448bc5; 
-    border: 2px solid black;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
-    margin-top: 30px;
-    margin-bottom: 60px;
+#margin3 {
+  background-color: #448bc5; 
+  border: 2px solid black;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 2px;
+  height:65px;
+  width: 52%;
 }
 
-.new section {
-    border: 1px solid white;
-    padding: 20px;
-  }
-  
-  .new h1 {
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
-    text-align: center;
- 
-  }
-.new{
-    display:flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
-    text-align: center;
+h2{
+text-align: center;
 }
 
-.new img{
-    height: 10%;
-    width: 10%;  
-} 
+h3{
+text-align: center;
+font-size: 16px;
+margin-bottom: 0.0005px;
+}
+
+.space_between {
+display: flex;
+width: 100%;
+margin: 10px;
+justify-content: space-between;
+text-align:center;
+}
+
+.login{
+width: 50%;
+margin: 8px 0;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 0.0005px;
+text-align:center;
+height:50px;
+font-size:14pt;
+}
+
+#margin4 {
+background-color: green; 
+border: 2px solid black;
+border-radius: 5px;
+color: white;
+font-size: 15px;
+padding: 15px 32px;
+text-align: center;
+display: inline-block;
+margin-top: 30px;
+margin-bottom: 5px;
+height:45px;
+width: 35%;
+}
