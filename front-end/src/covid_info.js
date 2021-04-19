@@ -149,7 +149,8 @@ const CovidInfo = ({ props }) => {
                     <h3> Internal Movement Restrictions:</h3>
                     <p className = "p_left_ci">{move}</p>
                 </div>
-                <button button onClick={e => FlightInfo(props)} id="margin">Flight Information</button>
+                <button button onClick={e => FlightInfo(props)} id="margin">View Flight Information</button>
+                &nbsp;&nbsp;&nbsp;
                 <button button onClick={handelClick} id="margin2">Select Country</button>
             </div>
             <div>
