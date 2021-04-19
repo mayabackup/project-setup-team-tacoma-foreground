@@ -1,0 +1,56 @@
+
+/* input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  display: inline-block;
+  border: none;
+  background: #c0c0c0;
+}
+/*  buttons */
+button {
+  background-color: #504caf;
+  color: white;
+  padding: 14px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+.container {
+  padding: 10px;
+}
+
+/* Modal sign up page */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal page contents */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto 15% auto; 
+  border: 1px solid #888;
+  width: 75%; 
+}
+.bold-red {
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+}
