@@ -31,6 +31,23 @@ const submit = e => {
     }
 }
 
+const post= async() => await axios
+    .post('http://localhost:5000/',formData)
+    .then(() => console.log('Loading'))
+    .catch(err => {
+        console.error(err);
+    });
+  post()
+};
+const handleChange = selected => {
+    set({ selected });
+};
+
+  
+const setSubmit = e => {
+    setSubmit(e.target.value);
+};
+
 
 
 return (
