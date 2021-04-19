@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 
 // Mock Data
 import axios from "axios";
@@ -11,10 +10,6 @@ import "./top_locations.css";
 
 // Page
 function TopLocations() {
-
-    //history
-    let history = useHistory();
-
     //covid data
 
     
