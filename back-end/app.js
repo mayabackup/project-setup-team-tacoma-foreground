@@ -16,10 +16,10 @@ app.use(
     credentials: true
   })
 );
-
 const User_data = mongoose.model("user_data");
 // eslint-disable-next-line no-unused-vars
 const User = mongoose.model("User");
+const country_details = mongoose.model("country_details");
 // middleware to get req body
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -161,7 +161,7 @@ app.get('/top_locations' , (req,res)=>{
   res.send({status:'success', message:result})
 })
 app.post('/top_locations', (req,res)=>{
-  console.log("the post for top locations" , req.body)
+  console.log("the post for top locations" )
   user_location[req.body.destination]=covid_locations[req.body.destination]
   console.log(user_location)
   res.redirect('/covid_info')
@@ -173,8 +173,33 @@ app.get("/flight_info", (req, res) => {
 });
 
 app.get("/covid_info", (req, res) => {
-  console.log("sending info to the covid_info page", user_location);
+  console.log("sending info to the covid_info page");
   res.send({ message: user_location });
+});
+app.post("/covid_info", (req, res) => {
+  console.log("sending info to the covid_info page", req.body.location.data.date);
+  const newLocation=new country_details({
+    date: req.body.location.data.date,
+    total_cases:req.body.location.data.total_cases,
+    total_vaccinations:req.body.location.data.total_vaccinations,
+    new_vaccinations_smoothed_per_million:req.body.location.data.new_vaccinations_smoothed_per_million,
+    continent:req.body.location.continent,
+    location:req.body.location.location,
+    Workplace:req.body.location.Workplace,
+    Internal:req.body.location.Internal,
+    International:req.body.location.International,
+    ranking:{
+      cases:req.body.location.ranking.cases,
+      vaccination:req.body.location.ranking.vaccination,
+      mortality:req.body.location.ranking.mortality,
+      overall:req.body.location.ranking.overall
+    }
+  })
+  console.log(newLocation)
+  newLocation.save(err => {
+    console.log("the error " + err);
+    res.redirect("/flight_info");
+  });
 });
 
 app.get("/FeaturedLocations", (req, res) => {

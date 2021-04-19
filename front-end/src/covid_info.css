@@ -39,7 +39,7 @@
 .p_left_ci {
     text-align: left;
 }
-#margin {
+#margin,#margin2  {
     background-color: #448bc5; 
     border: 2px solid black;
     border-radius: 5px;
@@ -50,19 +50,12 @@
     display: inline-block;
     margin-top: 30px;
     margin-bottom: 60px;
+    padding-right: 22px;
+    display:inline-block;
+    width:300px;
+    height:auto;
 }
-#margin2 {
-    background-color: #448bc5; 
-    border: 2px solid black;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
-    margin-top: 30px;
-    margin-bottom: 60px;
-}
+
 #nav {
     background-color: black;
     position: fixed;
