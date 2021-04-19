@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 // Mock Data
 import axios from "axios";
@@ -19,7 +20,9 @@ const CovidInfo = ({ props }) => {
     const [work, setWork] = useState("Unknown");
     const [travel, setTravel] = useState("");
     const [move, setMove] = useState("");
-    
+    const [location, setLocation] = useState({});
+    let history = useHistory();
+
     useEffect(() => {
         const getItems= async()=>{
         const resp= await axios.get("http://localhost:5000/covid_info");
@@ -73,6 +76,9 @@ const CovidInfo = ({ props }) => {
         else{
             setMove("Data Unknown");
         }
+            setLocation(data_covid);
+        
+        
         
         }
         getItems();
@@ -80,11 +86,25 @@ const CovidInfo = ({ props }) => {
     }, [])
 
 
-
     //function
     function FlightInfo() {
         window.open("./flight_info","_self");
     }
+    function handelClick(evt){
+        evt.preventDefault();
+        const formData={
+            location
+        }
+        const post= async() => await axios
+        .post('http://localhost:5000/covid_info',formData)
+        .then(() => console.log('Sent form data'))
+        .catch(err => {
+          console.error(err);
+        });
+        post()
+        history.push('./flight_info')
+      };
+    
     //page output HTML
     return (
         <div id="covid_info">
@@ -130,7 +150,7 @@ const CovidInfo = ({ props }) => {
                     <p className = "p_left_ci">{move}</p>
                 </div>
                 <button button onClick={e => FlightInfo(props)} id="margin">Flight Information</button>
-                <button button onClick='temp' id="margin2">Select Country</button>
+                <button button onClick={handelClick} id="margin2">Select Country</button>
             </div>
             <div>
                 <ul id="nav">

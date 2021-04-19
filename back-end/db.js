@@ -38,21 +38,23 @@ const user_data = new mongoose.Schema({
     date: { type: String, require: true },
     total_cases: { type: Number, require: true },
     total_deaths:{ type: Number, require: true },
-    total_cases_per_million: { type: Number, require: true },
     total_vaccinations: { type: Number, require: true },
     new_vaccinations_smoothed_per_million: { type: Number, require: true },
     continent:  { type: String, require: true },
     location:  { type: String, require: true },
+    Workplace:  { type: Number, require: false },
+    Internal:  { type: Number, require: false },
+    International:  { type: Number, require: false },
     ranking: {
-      cases:  { type: Number, require: true },
-      vaccination:  { type: Number, require: true },
-      mortality: { type: Number, require: true },
-      overall:  { type: Number, require: true },
+      cases:  { type: Number, require: false },
+      vaccination:  { type: Number, require: false },
+      mortality: { type: Number, require: false },
+      overall:  { type: Number, require: false },
     }
   });
   mongoose.model("user_data", user_data);
   mongoose.model("User", User);
-  mongoose.model("country_details", User);
+  mongoose.model("country_details", country_details);
 mongoose.connect(
     uri,
     { useNewUrlParser: true, useUnifiedTopology: true },
