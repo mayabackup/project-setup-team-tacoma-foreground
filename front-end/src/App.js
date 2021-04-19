@@ -15,6 +15,7 @@ import CovidInfo from './covid_info';
 import MeetTheTeam from './MeetTheTeam.js'
 import TravelResources from './TravelResources';
 import Featured from './FeaturedLocations';
+import login from './login';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <Route path='/MeetTheTeam' component={MeetTheTeam}></Route>
       <Route path='/TravelResources' component={TravelResources}></Route>
       <Route path='/FeaturedLocations' component={Featured}></Route>
+      <Route path='/login' component={login}></Route>
     </Router>
   );
 }
