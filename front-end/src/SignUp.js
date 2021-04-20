@@ -67,6 +67,7 @@ return (
     
         
         <form  className="inputs" onSubmit={handleChange}>
+          <h1>Sign Up</h1>
         <p>Please provide credentials to create your personal account.</p>
       {feedback}
           <label>
