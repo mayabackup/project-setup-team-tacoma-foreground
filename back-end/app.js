@@ -105,6 +105,27 @@ app.post('/',(req,res)=>{
   res.send({status:'success', message:userData})
   //res.redirect('/confirmation');
 })
+app.post('/signup', (req,res)=>{
+  console.log("sending info to the signup page")
+
+  // do error checkings
+  // eslint-disable-next-line no-unused-vars
+  let user_signup={
+    email: req.body.email,
+    password: req.body.password,
+    confirmPassword: req.body.confirm,
+    name:req.body.name
+  }
+  const newUser= new User({
+    name: req.body.name,
+    password: req.body.password,
+    email: req.body.email,
+  })
+  newUser.save(err => {
+    console.log("the error " + err);
+    res.redirect("/login");
+  });
+})
 
 app.get('/confirmation',(req,res)=>{
   console.log("sending info to the confirmation page", userData)
