@@ -358,3 +358,46 @@ app.post("/login",
   })
 );
 
+//register the new user. Cannot register if logged inn
+app.get("/signup", (req, res) => {
+  if (loggedIn == false) {
+    console.log("Registering the user");
+    res.render("register");
+  } else {
+    res.locals.loggedIn = loggedIn;
+    res.redirect("/");
+  }
+});
+
+//validate the info for registration and save to the database
+app.post("/signup", (req, res) => {
+  const name = req.body.name;
+  const email = req.body.username;
+  const password = req.body.password;
+  const confirm = req.body.confirm;
+  if (name == "" || email == "" || password == "") {
+    res.render("register", { error: "Missing field requirements" });
+  }
+  if (password != confirm) {
+    res.render("register", { error: "Passwords do not match" });
+  } else {
+    User.findOne({ username: email }, function(err, user) {
+      console.log("the user " + user);
+      if (user == null) {
+        const newUser = new User({
+          name: name,
+          username: email,
+          password: String(password)
+        });
+        newUser.save(err => {
+          //redirect to tell user to login with the new credentials
+          // done(null, newUser);
+          res.redirect("/login");
+        });
+      } else {
+        res.redirect("/login");
+      }
+    });
+  }
+});
+
