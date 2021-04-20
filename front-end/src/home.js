@@ -13,7 +13,7 @@ const HomePage = ({ props }) => {
   //states
   const [citizenship, setCitizenship] = useState(null);
   const [location, setLocation] = useState(null);
-  const [airport, setAirport] = useState({selectedOption});
+  const [airport, setAirport] = useState();
   const [advanced, setAdvanced] = useState(null);
   const [feedback, setFeedback] = useState();
   const [updates, setUpdates] = useState(null);
@@ -53,6 +53,7 @@ const HomePage = ({ props }) => {
       name,
       email
     }
+    console.log(formData)
     const post= async() => await axios
     .post('http://localhost:5000/',formData)
     .then(() => console.log('Sent form data'))
@@ -137,7 +138,7 @@ const HomePage = ({ props }) => {
       setUpdates();
     }
   }, [advanced]);
-
+/*
   useEffect(() => {
     const getItems= async()=>{
      const resp= await axios.get("http://localhost:5000/")
@@ -152,7 +153,7 @@ const HomePage = ({ props }) => {
     } 
     getItems();
 
-  }, [])
+  }, [])*/
 
   //initial return with iframe and forms
   return (
@@ -198,12 +199,27 @@ const HomePage = ({ props }) => {
           </label>
           <br></br>
           <label>
+            <input
+              className="input-field"
+              name="location"
+              type="text"
+              placeholder="Enter Departure Airport"
+              value={airport}
+              required
+              onChange={e => setAirport(e.target.value)}
+              //onChange={e => setChoreDesc(e.target.value)}
+            />
+          </label>
+          <br></br>
+        {/* whenClicked is a property not an event, per se. 
+          /* <label>
           <WindowedSelect className="input-field"
            
           onChange={handleChange}
           options={data}
          />
           </label>
+          */}
           <input
       
             className="input-field"
@@ -216,7 +232,16 @@ const HomePage = ({ props }) => {
           {feedback}
           <br></br>
           <input className="input-field" type="submit" value="CALCULATE" />
+          <br></br>
+          <br></br>
+          <a href="./signup" target="_blank">Sign Up </a> <a>or </a>
+      <a href="./login" target="_blank">Login </a><a> to save your results!</a>
+      <br></br>
+      <br></br>
         </form>
+      </div>
+      <div>
+     
       </div>
     </div>
   );

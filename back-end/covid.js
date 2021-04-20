@@ -5,7 +5,7 @@ const axios = require("axios");
 const cron = require("node-cron");
 const csv=require('csv-parser');
 const fs = require('fs');
-
+const airport=require('./airports.js')
 /*
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
@@ -34,6 +34,7 @@ async function run() {
   api2();
   getdeath.api();
   getStringency.api();
+  airport.getAirports()
     console.log("Running a job at 08:07 pm at NYC EST timezone");
  
   }

@@ -6,6 +6,10 @@ const axios = require("axios");
 const api2 = require("./covid.js");
 const algorithm = require('./algorithm.js');
 const mongoose = require("mongoose");
+const { body, validationResult } = require('express-validator');
+const airports=require('./airports.js')
+const fs = require('fs');
+
 require("./db");
 
 const cors = require("cors");
@@ -56,34 +60,38 @@ api2.api();
 const covid_locations=algorithm.algorithm();
 let result=[];
 let user_location
-app.get("/", async (req, res) => {
-  //const airports=await api.airports()
- let air= await axios.get('https://raw.githubusercontent.com/mwgg/Airports/master/airports.json')
- //air=JSON.stringify(air.data)
- //air= JSON.parse(air.data)
-  res.send({ status:'success', message:air.data})
-  userData={
-    entered:false,
-    citizenship:null,
-    location:null,
-    airport:null,
+let air
 
-    //advanced; may be null
-    advanced: null,
-    continent: null,
-    reason: null,
-    name:null,
-    email: null
-  }
+app.get("/", async (req, res) => {
+  /*let air= await axios.get('https://raw.githubusercontent.com/mwgg/Airports/master/airports.json')
+
+  res.send({ status:'success', message:air.data})*/
+    userData={
+      entered:false,
+      citizenship:null,
+      location:null,
+      airport:null,
+  
+      //advanced; may be null
+      advanced: null,
+      continent: null,
+      reason: null,
+      name:null,
+      email: null
+    }
+
+  //res.send({ status:'success', message:air.data})
+
 });
 
-app.post('/', (req,res)=>{
+app.post('/',(req,res)=>{
+  console.log("posting user data")
   userData={
     entered:true,
     // do error checkings
     citizenship: req.body.citizenship,
     location: req.body.location,
-    airport: req.body.airport.selectedOption.value,
+    airport: req.body.airport,
 
     //advanced; may be null
     advanced: req.body.advanced,
@@ -94,7 +102,6 @@ app.post('/', (req,res)=>{
   }
   // eslint-disable-next-line no-unused-vars
   // eslint-disable-next-line no-undef
-  
   res.send({status:'success', message:userData})
   //res.redirect('/confirmation');
 })
@@ -106,6 +113,7 @@ app.get('/confirmation',(req,res)=>{
 app.post('/confirmation',(req,res)=>{
   console.log("SAVE INFO INTO DATABASE")
   if(req.body.entered===true){
+    console.log("entering the query")
     const newQuery= new User_data({
       citizenship: userData['citizenship'],
       location:userData['location'],
@@ -118,7 +126,7 @@ app.post('/confirmation',(req,res)=>{
     // eslint-disable-next-line no-undef
     newQuery.save(err => {
       console.log("the error " + err);
-      res.redirect("/confirmation");
+      res.redirect("/top_location");
     });
   }
   
