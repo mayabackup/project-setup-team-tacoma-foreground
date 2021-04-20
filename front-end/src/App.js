@@ -16,6 +16,7 @@ import MeetTheTeam from './MeetTheTeam.js'
 import TravelResources from './TravelResources';
 import Featured from './FeaturedLocations';
 import Login from './login';
+import SignUp from './SignUp';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
       <Route path='/TravelResources' component={TravelResources}></Route>
       <Route path='/FeaturedLocations' component={Featured}></Route>
       <Route path='/login' component={Login}></Route>
+      <Route path='/SignUp' component={SignUp}></Route>
+
     </Router>
   );
 }

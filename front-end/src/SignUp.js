@@ -14,25 +14,22 @@ const SignUp = ({ props }) => {
 const[name, setName] = useState(null);
 const[email, setEmail] = useState(null);
 const[password, setPassword] = useState(null);
-const[confirm, setConfirm] = usestate(null);
+const[confirm, setConfirm] = useState(null);
 
+const[set, doSet] = useState(null);
 
 const submit = e => {
-    e.preventDefault();
-    localStorage.setItem('Name', name)
-    localStorage.setItem('Email', email)
-    localStorage.setItem('Password',password)
-    localStorage.setItem('Confirm Password',confirm)
-    let form = {
+    
+    let formData = {
         name,
         email,
         password,
         confirm
     }
-}
+
 
 const post= async() => await axios
-    .post('http://localhost:5000/',formData)
+    .post('http://localhost:5000/signup',formData)
     .then(() => console.log('Loading'))
     .catch(err => {
         console.error(err);
@@ -40,7 +37,9 @@ const post= async() => await axios
   post()
 };
 const handleChange = selected => {
-    set({ selected });
+  selected.preventDefault();
+
+    doSet({ selected });
 };
 
   
@@ -80,7 +79,7 @@ return (
             />
           </label>
           <br></br>
-          <label>
+       
           <br></br>
           <label>
             <input
@@ -112,7 +111,7 @@ return (
           <input className="input-field" type="submit " value="SUBMIT" />
         </form>
       </div>
-    </div>
+
   );
 };
 export default SignUp;
