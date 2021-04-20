@@ -11,6 +11,12 @@ export const HamburgerMenu = [
     cName: 'nav-text'
   },
   {
+    title: 'login',
+    path: '/login',
+    icon: <FaIcons.FaUser />,
+    cName: 'nav-text'
+  },
+  {
     title: 'About Us',
     path: '/aboutus',
     icon: <IoIcons.IoIosPaper />,
