@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import './login.css'
+import axios from "axios/lib/axios";
 
-const login = () => {
+const Login = () => {
   //states
-  const [login, setLogin] = useState(null);
+  const [username, setUser] = useState(null);
   const [password, setPass] = useState(null);
 
-  const handleSubmit = evt => {
+  const HandleSubmit = evt => {
     evt.preventDefault();
-    localStorage.setItem('login',login)
+    localStorage.setItem('username',username)
     localStorage.setItem('password',password)
 
     let formData={
-      login,
+      username,
       password,
     }
     const post= async() => await axios
-    .post('http://localhost:5000/',formData)
+    .post('http://localhost:5000/login',formData)
     .then(() => console.log('Sent form data'))
     .catch(err => {
       console.error(err);
@@ -30,13 +31,14 @@ return (
     <div className = "space_between"></div>
     <h2>Welcome to Covid Travel Agent!</h2>
     <div className = "space_between"></div>
+    <form  className="inputsLogin" onSubmit={HandleSubmit}>
     <label>
-            <input className="login"
+            <input className="username"
               type="text"
-              placeholder="Enter your login"     
-              value={login}
+              placeholder="Enter your Username"     
+              value={username}
               required
-              onChange={e => setLogin(e.target.value)}         
+              onChange={e => setUser(e.target.value)}         
             />
     </label>
     <div className = "space_between"></div>
@@ -51,8 +53,9 @@ return (
     </label>
     <button button onClick='temp' id="margin3">Log in</button>
     <h3>Forgot Password?</h3>
+    </form>
     <button button onClick='temp' id="margin4">Create New Account</button>
   </div>
     );
   }
-  export default login;
+  export default Login;
