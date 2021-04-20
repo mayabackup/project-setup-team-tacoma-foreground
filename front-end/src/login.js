@@ -54,7 +54,8 @@ return (
     <button button onClick='temp' id="margin3">Log in</button>
     <h3>Forgot Password?</h3>
     </form>
-    <button button onClick='temp' id="margin4">Create New Account</button>
+    <div className = "space_between"></div>
+    <a href="./signup" target="_blank">Sign Up </a> 
   </div>
     );
   }
