@@ -1,5 +1,4 @@
 import React from "react";
-import Axios from "axios";
 import { useState, useEffect } from "react";
 import "./home.css";
 import { useHistory } from "react-router-dom";

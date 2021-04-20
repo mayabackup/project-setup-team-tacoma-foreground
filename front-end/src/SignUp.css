@@ -1,0 +1,65 @@
+ .SignUpCSS section {
+    border: 1px solid purple;
+    display: flex;
+    padding: 15px;
+  }
+  
+  .SignUpCSS article {
+    flex: auto;
+    border: 5px dotted grey;
+    margin: 15px;
+    padding: 15px;
+  }
+  
+  .SignUpCSS h1 {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 900;
+    text-align: center;
+  }
+  .SignUpCSS iframe{
+ 
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ 
+  }
+ 
+
+.inputs,.input-field, .drop-down{
+    width: 60%;
+ 
+    margin: 15px 0;
+ 
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    height:40px;
+    font-size: 12pt;
+ 
+    
+
+  }
+  .drop-down{
+    border-color: Grey;
+    height:40px;
+    position: absolute;
+    size: 0pc;
+  }
+ 
+  label.check {
+    display: inline-block;
+    display: block;
+
+  }
+.SignUpCSS img{
+    height: 50%;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} 

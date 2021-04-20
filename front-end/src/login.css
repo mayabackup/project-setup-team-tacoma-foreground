@@ -42,6 +42,18 @@ height:50px;
 font-size:14pt;
 }
 
+.login2{
+  width: 50%;
+  margin: 8px 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.0005px;
+  text-align:center;
+  height:50px;
+  font: small-caption;
+  font-size:14pt;
+  }
+
 #margin4 {
 background-color: green; 
 border: 2px solid black;
@@ -56,3 +68,27 @@ margin-bottom: 5px;
 height:45px;
 width: 35%;
 }
+
+.username {
+  width: 50%;
+margin: 8px 0;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 0.0005px;
+text-align:center;
+height:50px;
+font-size:14pt;
+}
+
+/* .inputsLogin{
+  width: 50%;
+
+  margin: 8px 0;
+
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  height:50px;
+  font-size:14pt;
+
+} */
