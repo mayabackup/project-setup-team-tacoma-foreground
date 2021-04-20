@@ -30,13 +30,15 @@ const user_data = new mongoose.Schema({
     // password hash provided by authentication plugin
     name: { type: String, require: true },
     password: { type: String, require: true },
-    email: { type: String, require: true },
+    username: { type: String, require: true },
  
   });
   // eslint-disable-next-line no-unused-vars
   const country_details = new mongoose.Schema({
     // username provided by authentication plugin
     // password hash provided by authentication plugin
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+
     date: { type: String, require: true },
     total_cases: { type: Number, require: true },
     total_deaths:{ type: Number, require: true },
@@ -54,9 +56,18 @@ const user_data = new mongoose.Schema({
       overall:  { type: Number, require: false },
     }
   });
+  const countries=  new mongoose.Schema({
+
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    user_data: [user_data],
+    country_details: [country_details],
+  
+  })
   mongoose.model("user_data", user_data);
   mongoose.model("User", User);
   mongoose.model("country_details", country_details);
+  mongoose.model("countries", countries);
+
 mongoose.connect(
     uri,
     { useNewUrlParser: true, useUnifiedTopology: true },

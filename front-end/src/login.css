@@ -79,7 +79,11 @@ text-align:center;
 height:50px;
 font-size:14pt;
 }
-
+.error-message{
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+}
 /* .inputsLogin{
   width: 50%;
 
