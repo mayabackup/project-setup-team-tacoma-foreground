@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import './login.css'
 import axios from "axios/lib/axios";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   //states
   const [username, setUser] = useState(null);
   const [password, setPass] = useState(null);
+  const [feedback, setFeedback] = useState();
+  const [submit, setSubmit] = useState(false);
+
+  let history = useHistory();
 
   const HandleSubmit = evt => {
     evt.preventDefault();
@@ -23,8 +28,30 @@ const Login = () => {
       console.error(err);
     });
     post()
+    setSubmit(true)
+    history.push('/')
   };
 
+  useEffect(() => {
+    const getItems= async()=>{
+     const resp= await axios.get("http://localhost:5000/login-error")
+  
+     if( resp.data.error){
+      console.log('entering the feebback')
+       setFeedback(
+         <h3 className='error-message'>{resp.data.error}</h3>
+       )
+     }else{
+      setFeedback(
+        <h3></h3>
+      )
+      history.push('/')
+     }
+     
+    } 
+    getItems();
+
+  }, [submit])
 return (
   <div className="login">
     <div className = "space_between"></div>
@@ -32,6 +59,7 @@ return (
     <h2>Welcome to Covid Travel Agent!</h2>
     <div className = "space_between"></div>
     <form  className="inputsLogin" onSubmit={HandleSubmit}>
+      {feedback}
     <label>
             <input className="username"
               type="text"
@@ -44,7 +72,7 @@ return (
     <div className = "space_between"></div>
     <label>
             <input className="login"
-              type="text"
+              type="password"
               placeholder="Enter your password"
               value={password}
               required
