@@ -3,58 +3,73 @@ import { useState, useEffect } from "react";
 import "./SignUp.css";
 import { useHistory } from "react-router-dom";
 import axios from "axios/lib/axios";
-import WindowedSelect from "react-windowed-select";
 
 const SignUp = ({ props }) => {
-    let selectedOption={
-        value:"Enter necessary information"
-};
+
+let history = useHistory();
 
 
 const[name, setName] = useState(null);
 const[email, setEmail] = useState(null);
 const[password, setPassword] = useState(null);
-const[confirm, setConfirm] = usestate(null);
+const[confirm, setConfirm] = useState(null);
 
+const[set, doSet] = useState(null);
 
-const submit = e => {
-    e.preventDefault();
-    localStorage.setItem('Name', name)
-    localStorage.setItem('Email', email)
-    localStorage.setItem('Password',password)
-    localStorage.setItem('Confirm Password',confirm)
-    let form = {
-        name,
-        email,
-        password,
-        confirm
-    }
+const [incorrect, setIncorrect] = useState()
+const [feedback, setFeedback] = useState()
+    
+const handleChange = selected => {
+
+  selected.preventDefault();
+  console.log('entering to handle in',password,name,email,confirm)
+if(
+password === confirm){
+  let formData={
+    email,
+    password,
+    confirm,
+    name
+  }
+  console.log('entering to log in')
+  setIncorrect(true)
+  const post= async() => await axios
+  .post('http://localhost:5000/signup',formData)
+  .then(() => console.log('Sent form data'))
+  .catch(err => {
+    console.error(err);
+  });
+  post()
+
+  history.push('/login')
+  
+}else{
+  setIncorrect(false)
 }
 
-const post= async() => await axios
-    .post('http://localhost:5000/',formData)
-    .then(() => console.log('Loading'))
-    .catch(err => {
-        console.error(err);
-    });
-  post()
-};
-const handleChange = selected => {
-    set({ selected });
-};
+}
 
-  
-const setSubmit = e => {
-    setSubmit(e.target.value);
-};
-
+useEffect(() => {
+  console.log("entering the use effect", incorrect)
+  if(incorrect===false){
+    console.log("entering the use effrrrect")
+    setFeedback(
+      <h1 className="error-message">Passwords must match, password, name, and email must be length greater than 0 </h1>
+    )
+  }else{
+    <div></div>
+  }
+},[incorrect])
 
 
 return (
     <div class="SignUpCSS">
-    <h1>Sign Up </h1>
+    
         
-        <form  className="inputs" onSubmit={submit}>
+        <form  className="inputs" onSubmit={handleChange}>
+          <h1>Sign Up</h1>
+        <p>Please provide credentials to create your personal account.</p>
+      {feedback}
           <label>
             <input
               className="input-field"
@@ -80,13 +95,13 @@ return (
             />
           </label>
           <br></br>
-          <label>
+       
           <br></br>
           <label>
             <input
               className="input-field"
               name="Password"
-              type="text"
+              type="password"
               placeholder="Enter Your Password"
               value={password}
               required
@@ -100,19 +115,20 @@ return (
             <input
               className="input-field"
               name="Confirm"
-              type="text"
+              type="password"
               placeholder="Confirm Password"
               value={confirm}
               required
               onChange={e => setConfirm(e.target.value)}
-             
             />
           </label>
           <br></br>
-          <input className="input-field" type="submit " value="SUBMIT" />
+          <div>
+        <input className="input-field" type="submit" value="Sign Up" />
+      </div>
         </form>
       </div>
-    </div>
+
   );
 };
 export default SignUp;

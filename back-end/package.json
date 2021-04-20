@@ -19,11 +19,8 @@
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-<<<<<<< HEAD
-    "express-validator": "^6.10.0",
-=======
     "express-session": "^1.17.1",
->>>>>>> master
+    "express-validator": "^6.10.0",
     "jsdom": "^16.5.1",
     "mongodb": "^3.6.6",
     "mongoose": "^5.12.3",
