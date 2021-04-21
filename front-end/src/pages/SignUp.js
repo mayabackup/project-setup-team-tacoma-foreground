@@ -18,7 +18,9 @@ const[set, doSet] = useState(null);
 
 const [incorrect, setIncorrect] = useState()
 const [feedback, setFeedback] = useState()
-    
+const [error, setError] = useState(null)
+const [next, setNext] = useState()
+
 const handleChange = selected => {
 
   selected.preventDefault();
@@ -32,23 +34,35 @@ password === confirm){
     name
   }
   console.log('entering to log in')
-  setIncorrect(true)
+
   const post= async() => await axios
   .post('http://localhost:5000/signup',formData)
-  .then(() => console.log('Sent form data'))
+  .then((response) => {
+    console.log('Sent form data 12',response.data.errors===null)
+    if(response.data.errors===null){
+      history.push('/login')
+    }
+    let errorHandle="ERROR: "
+    for (let x in Object.keys(response.data.errors) ){
+      console.log('Sent form data 12ff')
+      errorHandle+=  response.data.errors[x].msg+  " in the " + response.data.errors[x].param+ " field "
+    }
+    setError(<h3 className="error-message">{errorHandle}</h3>)
+   
+})
   .catch(err => {
     console.error(err);
-  });
+  })
   post()
-
-  history.push('/login')
+  setIncorrect(true)
+  
+  
   
 }else{
   setIncorrect(false)
 }
 
 }
-
 useEffect(() => {
   console.log("entering the use effect", incorrect)
   if(incorrect===false){
@@ -61,7 +75,9 @@ useEffect(() => {
   }
 },[incorrect])
 
+useEffect(() => {
 
+},[error])
 return (
     <div class="SignUpCSS">
     
@@ -70,6 +86,7 @@ return (
           <h1>Sign Up</h1>
         <p>Please provide credentials to create your personal account.</p>
       {feedback}
+      {error}
           <label>
             <input
               className="input-field"

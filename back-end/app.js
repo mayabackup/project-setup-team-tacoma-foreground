@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 const { body, validationResult } = require('express-validator');
 const airports=require('./airports.js')
 const fs = require('fs');
-
+let signup_errors;
 require("./db");
 let user_id;
 const cors = require("cors");
@@ -229,11 +229,23 @@ app.post('/',(req,res)=>{
   res.send({status:'success', message:userData})
   //res.redirect('/confirmation');
 })
-app.post('/signup', (req,res)=>{
+
+app.post('/signup',
+body('email').isEmail(),
+body('password').isLength({min:5}),
+ (req,res)=>{
   console.log("sending info to the signup page")
 
   // do error checkings
   // eslint-disable-next-line no-unused-vars
+  const errors=validationResult(req)
+  if(!errors.isEmpty()){
+    console.log(errors.array())
+    signup_errors=errors.array()
+    //res.redirect('/signup')
+    return res.send({errors:errors.array()});
+  }
+  else{
   let user_signup={
     username: req.body.email,
     password: req.body.password,
@@ -247,8 +259,10 @@ app.post('/signup', (req,res)=>{
   })
   newUser.save(err => {
     console.log("the error " + err);
-    res.redirect("/login");
+     
   });
+  return res.send({errors:null});
+}
 })
 
 app.get('/confirmation',(req,res)=>{
