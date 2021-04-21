@@ -17,15 +17,21 @@ export const HamburgerMenu = [
     cName: 'nav-text'
   },
   {
-    title: 'About Us',
-    path: '/aboutus',
-    icon: <IoIcons.IoIosPaper />,
+    title: 'Saved Locations',
+    path: '/favorites',
+    icon: <FaIcons.FaThumbtack />,
     cName: 'nav-text'
   },
   {
     title: 'Featured Locations',
     path: '/FeaturedLocations',
     icon: <AiIcons.AiOutlineGlobal />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'About Us',
+    path: '/aboutus',
+    icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
   {
