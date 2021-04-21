@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useHistory } from "react-router-dom";
-import "./confirmation.css";
+import "./css/confirmation.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 

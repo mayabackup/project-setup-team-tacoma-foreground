@@ -7,7 +7,7 @@ import axios from "axios";
 import Flight from "./flight";
 
 // CSS
-import "./flight_info.css";
+import "./css/flight_info.css";
 
 
 const FlightInfo = ({ props }) => {

@@ -1,7 +1,7 @@
 import React, { useEffect , useState} from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import './FeaturedLocations.css'; 
+import './css/FeaturedLocations.css'; 
 import axios from "axios";
 const Featured = ({ props }) => {
   let [FLocation1, setFLocation1] = useState();

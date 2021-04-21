@@ -2,21 +2,20 @@ import './App.css';
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch, Link, Redirect} from 'react-router-dom'
 // modules
-import Navbar from './Navbar.js'
-// pages
-import AboutUs from "./aboutus"
+import Navbar from './components/Navbar.js'
 
 // pages
-import HomePage from "./home"
-import confirmation from './confirmation.js'
-import FlightInfo from './flight_info.js'
-import TopLocations from './top_locations.js'
-import CovidInfo from './covid_info';
-import MeetTheTeam from './MeetTheTeam.js'
-import TravelResources from './TravelResources';
-import Featured from './FeaturedLocations';
-import Login from './login';
-import SignUp from './SignUp';
+import AboutUs from "./pages/aboutus"
+import HomePage from "./pages/home"
+import confirmation from './pages/confirmation.js'
+import FlightInfo from './pages/flight_info.js'
+import TopLocations from './pages/top_locations.js'
+import CovidInfo from './pages/covid_info';
+import MeetTheTeam from './pages/MeetTheTeam.js'
+import TravelResources from './pages/TravelResources';
+import Featured from './pages/FeaturedLocations';
+import Login from './pages/login';
+import SignUp from './pages/SignUp';
 
 function App() {
   return (

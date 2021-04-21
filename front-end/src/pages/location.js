@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./location.css";
+import "./css/location.css";
 import axios from "axios/lib/axios";
 import { useHistory } from "react-router-dom";
 
