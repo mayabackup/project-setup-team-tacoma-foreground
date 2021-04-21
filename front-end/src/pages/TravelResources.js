@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import './TravelResources.css'
-import globalRestrictions from './img/WorldRestrictions.png';
-import globalCases from './img/WorldCasesCDC.png';
-import CDCnews from './img/CDCupdate.png'
-import CNNnews from './img/CNNupdate.png'
-import Recommendations from './img/RecommendedLocations.png'
+import './css/TravelResources.css'
+import globalRestrictions from '../img/WorldRestrictions.png';
+import globalCases from '../img/WorldCasesCDC.png';
+import CDCnews from '../img/CDCupdate.png'
+import CNNnews from '../img/CNNupdate.png'
+import Recommendations from '../img/RecommendedLocations.png'
 
 const TravelResources = () => {
 

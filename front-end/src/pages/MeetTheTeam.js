@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import './MeetTheTeam.css'
-import samplepics from './img/SampleProfile.png';
-import rajPic from './img/raj_pic.jpeg';
-import adamPic from './img/adam1.PNG'
+import './css/MeetTheTeam.css'
+import samplepics from '../img/SampleProfile.png';
+import rajPic from '../img/raj_pic.jpeg';
+import adamPic from '../img/adam1.PNG'
 
 const MeetTheTeam = () => {
 

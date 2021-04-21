@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./home.css";
+import "./css/home.css";
 import { useHistory } from "react-router-dom";
 import axios from "axios/lib/axios";
 import WindowedSelect from "react-windowed-select";

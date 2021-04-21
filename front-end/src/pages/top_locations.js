@@ -6,7 +6,7 @@ import axios from "axios";
 import Location from "./location";
 
 // CSS
-import "./top_locations.css";
+import "./css/top_locations.css";
 
 // Page
 function TopLocations() {

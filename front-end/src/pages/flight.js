@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./flight.css";
+import "./css/flight.css";
 
 // variables
 let location = localStorage.getItem('location');

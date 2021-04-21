@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./SignUp.css";
+import "./css/SignUp.css";
 import { useHistory } from "react-router-dom";
 import axios from "axios/lib/axios";
 

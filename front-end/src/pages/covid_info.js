@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 // CSS
-import "./covid_info.css";
+import "./css/covid_info.css";
 
 // Page Output
 const CovidInfo = ({ props }) => {
