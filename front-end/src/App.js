@@ -10,12 +10,13 @@ import HomePage from "./pages/home"
 import confirmation from './pages/confirmation.js'
 import FlightInfo from './pages/flight_info.js'
 import TopLocations from './pages/top_locations.js'
-import CovidInfo from './pages/covid_info';
+import CovidInfo from './pages/covid_info'
 import MeetTheTeam from './pages/MeetTheTeam.js'
-import TravelResources from './pages/TravelResources';
-import Featured from './pages/FeaturedLocations';
-import Login from './pages/login';
-import SignUp from './pages/SignUp';
+import TravelResources from './pages/TravelResources'
+import Featured from './pages/FeaturedLocations'
+import Login from './pages/login'
+import SignUp from './pages/SignUp'
+import favorites from './pages/favorites'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route path='/FeaturedLocations' component={Featured}></Route>
       <Route path='/login' component={Login}></Route>
       <Route path='/SignUp' component={SignUp}></Route>
+      <Route path='/favorites' component={favorites}></Route>
 
     </Router>
   );
