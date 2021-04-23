@@ -429,6 +429,31 @@ app.get("/FeaturedLocations", (req, res) => {
   }
   res.send({status:'success', message:result})
 });
+app.get("/favorites", (req, res) => {
+  console.log("sending info to the favorites page");
+  result=[]
+  countries.findOne({ user: user_id}, function(err,list){    
+   //console.log(list.country_details[0]['__parentArray'][0] )
+     //console.log(list.country_details[0]['__parentArray'][1] )
+    result.push(list.country_details[0]['__parentArray'][0])
+    result.push(list.country_details[0]['__parentArray'][1])
+    let updated=[];
+    for(let x in covid_locations){
+      //console.log(x)
+      if(x===list.country_details[0]['__parentArray'][0].location){
+        updated.push(covid_locations[x])
+      }
+      else if(x===list.country_details[0]['__parentArray'][1].location){
+        updated.push(covid_locations[x])
+      }
+    }
+
+    console.log(result)
+    res.send({status:'success', message:result, update:updated})
+
+  })
+ 
+});
 // export the express app we created to make it available to other modules
 module.exports = app;
 

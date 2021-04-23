@@ -23,8 +23,7 @@ function Location(props) {
         .then(() => {
             console.log('Sent form data')
             history.push('/covid_info')
-        }
-            
+        }     
             )
         .catch(err => {
           console.error(err);
