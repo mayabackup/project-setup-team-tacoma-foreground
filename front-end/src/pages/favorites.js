@@ -8,7 +8,6 @@ function Favorites() {
   
     const [data, setData] = useState([]);
     const [updatedData, setUpdatedData] = useState([]);
-
     const [location, setLocation] = useState([]);
 
     useEffect(() => {
