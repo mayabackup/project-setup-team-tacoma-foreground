@@ -137,22 +137,25 @@ const HomePage = ({ props }) => {
       setUpdates();
     }
   }, [advanced]);
-/*
+
   useEffect(() => {
     const getItems= async()=>{
      const resp= await axios.get("http://localhost:5000/")
      let optionItems;
+     let loggedIn=resp.data.logged_in;
      
+     /*
        optionItems = Object.keys(resp.data.message).map((el) => ({
         value: resp.data.message[el].name,
         label: resp.data.message[el].name,
       }));
-    
+  
      setData(optionItems)
+       */
     } 
     getItems();
 
-  }, [])*/
+  }, [])
 
   //initial return with iframe and forms
   return (

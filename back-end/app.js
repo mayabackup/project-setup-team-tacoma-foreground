@@ -122,6 +122,7 @@ passport.use(
 passport.serializeUser(function(user, done) {
   console.log("serializeUser " + user.id);
   user_id=user.id
+  loggedIn=true
   done(null, user.id);
 });
 //First argument corresponds to the key of the user object
@@ -166,10 +167,10 @@ app.get("/login", (req, res, next) => {
   }
 });
 */
-app.get('/login-error', (req, res) => {
+app.get('/login', (req, res) => {
   const message=req.flash('message')
   console.log(message)
-  res.send({error:message})
+  res.send({lsogged_in:loggedIn})
 }
 )
 app.post("/login",
@@ -190,6 +191,7 @@ app.get("/", async (req, res) => {
   /*let air= await axios.get('https://raw.githubusercontent.com/mwgg/Airports/master/airports.json')
 
   res.send({ status:'success', message:air.data})*/
+  console.log('Logged in', loggedIn)
     userData={
       entered:false,
       citizenship:null,
@@ -205,6 +207,7 @@ app.get("/", async (req, res) => {
     }
 
   //res.send({ status:'success', message:air.data})
+  res.send({ status:'success', logged_in:loggedIn})
 
 });
 

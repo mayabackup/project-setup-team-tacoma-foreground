@@ -34,9 +34,9 @@ const Login = () => {
 
   useEffect(() => {
     const getItems= async()=>{
-     const resp= await axios.get("http://localhost:5000/login-error")
-  
-     if( resp.data.error){
+     const resp= await axios.get("http://localhost:5000/login")
+    const log_status=resp.data.logged_in
+     if(resp.data.error){
       console.log('entering the feebback')
        setFeedback(
          <h3 className='error-message'>{resp.data.error}</h3>
@@ -45,7 +45,17 @@ const Login = () => {
       setFeedback(
         <h3></h3>
       )
-      history.push('/')
+    }
+      if(log_status===true){
+        history.push('/')
+        setFeedback(
+          <h3></h3>
+        )
+     }
+     else{
+      setFeedback(
+        <h3 className='error-message'>Wrong username/password. Try again</h3>
+      )
      }
      
     } 
