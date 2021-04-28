@@ -204,7 +204,7 @@ app.get("/", async (req, res) => {
       email: null
     }
 
-  //res.send({ status:'success', message:air.data})
+  res.send({ status:'success'})
 
 });
 
@@ -360,13 +360,13 @@ app.get('/top_locations' , (req,res)=>{
     }
     
   }
+  console.log('result ', result)
   //const result=covid_locations.slice(0,10)
   res.send({status:'success', message:result})
 })
 app.post('/top_locations', (req,res)=>{
   console.log("the post for top locations" )
   user_location[req.body.destination]=covid_locations[req.body.destination]
-  console.log(user_location)
   res.redirect('/covid_info')
 })
 //Get request for flight info
@@ -377,7 +377,7 @@ app.get("/flight_info", (req, res) => {
 
 app.get("/covid_info", (req, res) => {
   console.log("sending info to the covid_info page");
-  res.send({ message: user_location });
+  res.send({ status:"success", message: user_location });
 });
 app.post("/covid_info", (req, res) => {
   console.log("sending info to the covid_info page", req.body.location.data.date);

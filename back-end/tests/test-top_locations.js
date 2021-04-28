@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 const path = require('path');
 const chai = require('chai');
 const chaiHttp = require("chai-http");
@@ -15,71 +15,77 @@ const app = require(modulePath);
 console.log(modulePath);
 
 
-describe('GET /', function ()  {
-    this.timeout(55000);
+describe('GET /top_locations', function ()  {
+    this.timeout(15000);
     
-    it('check the status of the get request', function(done) {
+    it('check the status of top_locations get request', function(done) {
    
         console.log('running the test')
       chai
         .request(host)
-        .get('/')
+        .get('/top_locations')
         .end((err, res) => {
-            //console.log(res)
         expect(res).to.have.status(200);
         expect(res.body.status).to.equals("success");
-        //expect(res.body.message).to.equals("success");
         done();
         });
     });
-/*
+
     it('check the keys of the airports api', function(done) {
  
         console.log('running the test')
         chai
           .request(host)
-          .get('/')
+          .get('/top_locations')
           .end((err, res) => {
         //get the keys of the within each dic key of airports
-        const keysAirports=[];
+        const locations=[];
 
         for (let x in res.body.message){
-            keysAirports.push(Object.keys(res.body.message[x]))
+            locations.push(Object.keys(res.body.message[x]))
             
         }
-        console.log(Object.keys(res.body.message).length)
-        //console.log(keysAirports)
-        for (let x=0;x<=keysAirports.length-1;x++){
-            expect(keysAirports[x]).to.have.members(['icao', 'iata', 'name', 'city', 'state','country','elevation', 'lat','lon','tz']);
+        
+        for (let x=0;x<=locations.length-1;x++){
+            if(x===0){
+              expect(locations[x]).to.have.members(['user_location']);
+            }else{
+              expect(locations[x]).to.have.any.keys([ 
+                '0',  '1',  '2',  '3',
+                '4',  '5',  '6',  '7',
+                '8',  '9',  '10', '11',
+                '12', '13',
+              'data',
+              'continent',
+              'location',
+              'Workplace',
+              'Internal',
+              'International',
+              'ranking']);
+            }
+             
         }
           done();
         });
     });
-    it('check the length of the api to make sure it make ALL airports', function(done ) {
-
-        console.log('running the test')
-      chai
-        .request(host)
-        .get('/')
-        .end((err, res) => {
-            //console.log(res)
-            expect(Object.keys(res.body.message)).to.have.lengthOf(28868);
-        //expect(res.body.message).to.equals("success");
-        done();
-        });
-    });*/
+   
     
   });
 
   describe("POST /", () => {
-  
+    selectedOption={
+        selectedOption:{
+            value:"JFK"
+        }
+        
+      };
     it("should return status 200", done => {
         console.log('running the test')
         
         chai
           .request(host)
           .post('/')
-            .send({citizenship: "American", location: "New York", airport:"JFK"
+            .send({citizenship: "American", location: "New York", airport:selectedOption
           
            })
           .end((err, res) => {
