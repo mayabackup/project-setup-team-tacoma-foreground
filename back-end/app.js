@@ -454,6 +454,14 @@ app.get("/favorites", (req, res) => {
   })
  
 });
+app.get("/logout", function(req, res) {
+  req.logout();
+  loggedIn = false;
+  res.redirect("/login");
+  loggedIn = false;
+  res.locals.loggedIn = false;
+});
+
 // export the express app we created to make it available to other modules
 module.exports = app;
 
