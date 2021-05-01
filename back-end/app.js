@@ -1,16 +1,14 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 // import and instantiate express
 const express = require("express"); // CommonJS import style!
 const app = express(); // instantiate an Express object
 //const api = require('./home_api');
-const axios = require("axios");
 const api2 = require("./covid.js");
 const algorithm = require('./algorithm.js');
 const mongoose = require("mongoose");
 const { body, validationResult } = require('express-validator');
-const airports=require('./airports.js')
-const fs = require('fs');
-let signup_errors;
+//const airports=require('./airports.js')
 require("./db");
 let user_id;
 const cors = require("cors");
@@ -184,7 +182,6 @@ api2.api();
 const covid_locations=algorithm.algorithm();
 let result=[];
 let user_location
-let air
 
 app.get("/", async (req, res) => {
   /*let air= await axios.get('https://raw.githubusercontent.com/mwgg/Airports/master/airports.json')
@@ -241,17 +238,11 @@ body('password').isLength({min:5}),
   const errors=validationResult(req)
   if(!errors.isEmpty()){
     console.log(errors.array())
-    signup_errors=errors.array()
     //res.redirect('/signup')
     return res.send({errors:errors.array()});
   }
   else{
-  let user_signup={
-    username: req.body.email,
-    password: req.body.password,
-    confirmPassword: req.body.confirm,
-    name:req.body.name
-  }
+
   const newUser= new User({
     name: req.body.name,
     password: req.body.password,
@@ -316,8 +307,7 @@ app.post('/confirmation',(req,res)=>{
           user.save(function(err) {
             if (err) {
               console.log(err);
-            } else {
-            }
+            } 
           });
         })
       })}
@@ -408,8 +398,6 @@ app.post("/covid_info", (req, res) => {
           user.save(function(err){
             if(err){
               console.log(err)
-            }else{
-
             }
           })
         })
@@ -460,6 +448,31 @@ app.get("/logout", function(req, res) {
   res.redirect("/login");
   loggedIn = false;
   res.locals.loggedIn = false;
+});
+app.get("/search", function(req, res) {
+  console.log("ENTERING SEARCH")
+
+  const country_user=req.body.country;
+  console.log(country_user)
+  console.log(covid_locations)
+});
+app.post("/search", function(req, res) {
+  console.log("ENTERING SEARCH")
+  let country_user=req.body.country;
+  let data_country
+  country_user=country_user.toLowerCase()
+  country_user=country_user.charAt(0).toUpperCase() + country_user.slice(1).toLowerCase();
+
+
+      data_country=covid_locations[country_user]
+      console.log(typeof data_country==='undefined')
+  if(typeof data_country==='undefined'){
+    res.send({status:'success', message:data_country, unknown:true})
+  }
+  else{
+    res.send({status:'success', message:data_country, unknown:false})
+  }
+  
 });
 
 // export the express app we created to make it available to other modules
