@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "node"
+  - "stable"
+  - "7"
+install:
+  - npm init
+script:
+  - npm test
+  - npm run build
+before_install:
+  - cd front-end
