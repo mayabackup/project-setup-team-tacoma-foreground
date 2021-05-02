@@ -11,6 +11,11 @@ const { body, validationResult } = require('express-validator');
 //const airports=require('./airports.js')
 require("./db");
 let user_id;
+
+// encryption data
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 const cors = require("cors");
 //use cors to allow cross origin resource sharing
 app.use(
@@ -101,6 +106,7 @@ passport.use(
     password,
     done
   ) {
+    
     User.findOne({ username:username }, function(err, user) {
      // console.log("the user trying to login " + user);
       if (err) {
@@ -109,7 +115,9 @@ passport.use(
       if (!user) {
         return done(null, false, req.flash('message', 'User does not exist' ))
       }
-      if (user.password !== password) {
+      const isValidPass = bcrypt.compareSync(password, user.password);
+      loggedIn=isValidPass
+      if (!isValidPass) {
         return done(null, false, req.flash( 'message', "Incorrect password." ));
       }
       return done(null, user);
@@ -131,6 +139,11 @@ passport.deserializeUser(function(id, done) {
     return done(err, user);
   });
 });
+
+app.get('/login',(req,res)=>{
+  res.send({status:'success'})
+})
+
 /*
 app.get("/login", (req, res, next) => {
   console.log("ENTERING ");
@@ -164,7 +177,7 @@ app.get("/login", (req, res, next) => {
   }
 });
 */
-app.get('/login-error', (req, res) => {
+app.get('/login', (req, res) => {
   const message=req.flash('message')
   console.log(message)
   res.send({error:message})
@@ -172,10 +185,14 @@ app.get('/login-error', (req, res) => {
 )
 app.post("/login",
   passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/login-error",
+    //successRedirect: "/",
+    failureRedirect: "/login",
     failureFlash: true
-  })
+  }),
+  (req,res)=>{
+    console.log("entering....",loggedIn)
+    res.send({error:loggedIn})
+  }
 );
 
 api2.api();
@@ -227,6 +244,10 @@ app.post('/',(req,res)=>{
   //res.redirect('/confirmation');
 })
 
+app.get('/signup',(req,res)=>{
+  res.send({status:'success'})
+})
+
 app.post('/signup',
 body('email').isEmail(),
 body('password').isLength({min:5}),
@@ -242,17 +263,27 @@ body('password').isLength({min:5}),
     return res.send({errors:errors.array()});
   }
   else{
-
-  const newUser= new User({
-    name: req.body.name,
-    password: req.body.password,
+  let user_signup={
     username: req.body.email,
-  })
-  newUser.save(err => {
-    console.log("the error " + err);
-     
-  });
-  return res.send({errors:null});
+    password: req.body.password,
+    confirmPassword: req.body.confirm,
+    name:req.body.name
+  }
+  // hash and salt the password to encrypt
+  bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
+    // Store hash in your password DB.
+    const newUser= new User({
+      name: req.body.name,
+      password: hash,
+      username: req.body.email,
+    })
+    newUser.save(err => {
+      console.log("the error " + err);
+      return res.send({errors:null});
+    });
+});
+ 
+  
 }
 })
 
@@ -350,14 +381,18 @@ app.get('/top_locations' , (req,res)=>{
     }
     
   }
-  console.log('result ', result)
-  //const result=covid_locations.slice(0,10)
+   //const result=covid_locations.slice(0,10)
   res.send({status:'success', message:result})
 })
 app.post('/top_locations', (req,res)=>{
   console.log("the post for top locations" )
   user_location[req.body.destination]=covid_locations[req.body.destination]
   res.redirect('/covid_info')
+})
+
+//test for flight info
+app.get('/flight_info',(req,res)=>{
+  res.send({status:'success'})
 })
 //Get request for flight info
 app.get("/flight_info", (req, res) => {
@@ -408,6 +443,11 @@ app.post("/covid_info", (req, res) => {
 });
 })
 
+//test for featured get request
+app.get('/FeaturedLocations',(req,res)=>{
+  res.send({status:'success'})
+})
+
 app.get("/FeaturedLocations", (req, res) => {
   console.log("sending info to the FeaturedLocations page");
   result=[]
@@ -417,6 +457,11 @@ app.get("/FeaturedLocations", (req, res) => {
   }
   res.send({status:'success', message:result})
 });
+
+app.get('/favorites',(req,res)=>{
+  res.send({status:'success'})
+})
+
 app.get("/favorites", (req, res) => {
   console.log("sending info to the favorites page");
   result=[]

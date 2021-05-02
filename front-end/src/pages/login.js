@@ -23,33 +23,29 @@ const Login = () => {
     }
     const post= async() => await axios
     .post('http://localhost:5000/login',formData)
-    .then(() => console.log('Sent form data'))
+    .then((response) => {
+      console.log('Sent form data',response.data)
+      if(response.data.error===true){
+        setSubmit(true)
+        history.push('/')
+
+      }else{
+        setFeedback(<div>
+          <h3 className='error-message'>ERROR: wrong username or password</h3>
+        </div>)
+      }
+    
+    })
     .catch(err => {
       console.error(err);
     });
     post()
-    setSubmit(true)
-    history.push('/')
+    
   };
 
   useEffect(() => {
-    const getItems= async()=>{
-     const resp= await axios.get("http://localhost:5000/login-error")
-  
-     if( resp.data.error){
-      console.log('entering the feebback')
-       setFeedback(
-         <h3 className='error-message'>{resp.data.error}</h3>
-       )
-     }else{
-      setFeedback(
-        <h3></h3>
-      )
-      history.push('/')
-     }
+   
      
-    } 
-    getItems();
 
   }, [submit])
 return (

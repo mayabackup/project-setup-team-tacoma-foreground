@@ -15,7 +15,7 @@ const app = require(modulePath);
 console.log(modulePath);
 
 
-describe('GET /FeaturedLocation', function ()  {
+describe('GET /FeaturedLocations', function ()  {
     this.timeout(55000);
     
     it('check the status of FeaturedLocation get request', function(done) {
@@ -23,7 +23,7 @@ describe('GET /FeaturedLocation', function ()  {
         console.log('running the test')
       chai
         .request(host)
-        .get('/FeaturedLocation')
+        .get('/FeaturedLocations')
         .end((err, res) => {
             //console.log(res)
         expect(res).to.have.status(200);
