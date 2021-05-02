@@ -3,3 +3,8 @@ node_js:
   - "node"
   - "stable"
   - "7"
+script:
+  - npm test
+  - npm run build
+before_install:
+  - cd front-end
