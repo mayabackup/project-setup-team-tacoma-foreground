@@ -23,6 +23,12 @@ export const HamburgerMenu = [
     cName: 'nav-text'
   },
   {
+    title: 'Search',
+    path: '/search',
+    icon: <FaIcons.FaSearch />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Featured Locations',
     path: '/FeaturedLocations',
     icon: <AiIcons.AiOutlineGlobal />,
