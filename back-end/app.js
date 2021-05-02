@@ -141,6 +141,11 @@ passport.deserializeUser(function(id, done) {
     return done(err, user);
   });
 });
+
+app.get('/login',(req,res)=>{
+  res.send({status:'success'})
+})
+
 /*
 app.get("/login", (req, res, next) => {
   console.log("ENTERING ");
@@ -240,6 +245,10 @@ app.post('/',(req,res)=>{
   // eslint-disable-next-line no-undef
   res.send({status:'success', message:userData})
   //res.redirect('/confirmation');
+})
+
+app.get('/signup',(req,res)=>{
+  res.send({status:'success'})
 })
 
 app.post('/signup',
@@ -385,6 +394,11 @@ app.post('/top_locations', (req,res)=>{
   user_location[req.body.destination]=covid_locations[req.body.destination]
   res.redirect('/covid_info')
 })
+
+//test for flight info
+app.get('/flight_info',(req,res)=>{
+  res.send({status:'success'})
+})
 //Get request for flight info
 app.get("/flight_info", (req, res) => {
   console.log("sending info to the Flight Information page");
@@ -434,6 +448,11 @@ app.post("/covid_info", (req, res) => {
 });
 })
 
+//test for featured get request
+app.get('/FeaturedLocations',(req,res)=>{
+  res.send({status:'success'})
+})
+
 app.get("/FeaturedLocations", (req, res) => {
   console.log("sending info to the FeaturedLocations page");
   result=[]
@@ -443,6 +462,11 @@ app.get("/FeaturedLocations", (req, res) => {
   }
   res.send({status:'success', message:result})
 });
+
+app.get('/favorites',(req,res)=>{
+  res.send({status:'success'})
+})
+
 app.get("/favorites", (req, res) => {
   console.log("sending info to the favorites page");
   result=[]
