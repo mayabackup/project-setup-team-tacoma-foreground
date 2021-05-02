@@ -1,12 +1,11 @@
 language: node_js
+
 node_js:
-  - "node"
-  - "stable"
-  - "7"
+  - "12"
 install:
   - npm init
+  - node server
 script:
-  - npm test
-  - npm run build
+  - mocha tests
 before_install:
-  - cd front-end
+  - cd back-end
