@@ -17,6 +17,7 @@ import Featured from './pages/FeaturedLocations'
 import Login from './pages/login'
 import SignUp from './pages/SignUp'
 import favorites from './pages/favorites'
+import search from './pages/search'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       <Route path='/login' component={Login}></Route>
       <Route path='/SignUp' component={SignUp}></Route>
       <Route path='/favorites' component={favorites}></Route>
+      <Route path='/search' component={search}></Route>
 
     </Router>
   );
