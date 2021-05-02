@@ -31,7 +31,7 @@ const Search= ({ props }) => {
             console.log("entering the then",response.data.unknown)
             if(response.data.message===null || response.data.unknown===true){
                 console.log("entering the mesage")
-                setFeedback(<div><h2>Country Not Found</h2></div>)
+                setFeedback(<div className='error-message'><h2>Country Not Found</h2></div>)
             }
             
             else if(response.data.message!=null){
