@@ -13,6 +13,11 @@ const fs = require('fs');
 let signup_errors;
 require("./db");
 let user_id;
+
+// encryption data
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 const cors = require("cors");
 //use cors to allow cross origin resource sharing
 app.use(
@@ -103,6 +108,7 @@ passport.use(
     password,
     done
   ) {
+    
     User.findOne({ username:username }, function(err, user) {
      // console.log("the user trying to login " + user);
       if (err) {
@@ -111,7 +117,9 @@ passport.use(
       if (!user) {
         return done(null, false, req.flash('message', 'User does not exist' ))
       }
-      if (user.password !== password) {
+      const isValidPass = bcrypt.compareSync(password, user.password);
+      loggedIn=isValidPass
+      if (!isValidPass) {
         return done(null, false, req.flash( 'message', "Incorrect password." ));
       }
       return done(null, user);
@@ -166,7 +174,7 @@ app.get("/login", (req, res, next) => {
   }
 });
 */
-app.get('/login-error', (req, res) => {
+app.get('/login', (req, res) => {
   const message=req.flash('message')
   console.log(message)
   res.send({error:message})
@@ -174,10 +182,14 @@ app.get('/login-error', (req, res) => {
 )
 app.post("/login",
   passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/login-error",
+    //successRedirect: "/",
+    failureRedirect: "/login",
     failureFlash: true
-  })
+  }),
+  (req,res)=>{
+    console.log("entering....",loggedIn)
+    res.send({error:loggedIn})
+  }
 );
 
 api2.api();
@@ -252,16 +264,21 @@ body('password').isLength({min:5}),
     confirmPassword: req.body.confirm,
     name:req.body.name
   }
-  const newUser= new User({
-    name: req.body.name,
-    password: req.body.password,
-    username: req.body.email,
-  })
-  newUser.save(err => {
-    console.log("the error " + err);
-     
-  });
-  return res.send({errors:null});
+  // hash and salt the password to encrypt
+  bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
+    // Store hash in your password DB.
+    const newUser= new User({
+      name: req.body.name,
+      password: hash,
+      username: req.body.email,
+    })
+    newUser.save(err => {
+      console.log("the error " + err);
+      return res.send({errors:null});
+    });
+});
+ 
+  
 }
 })
 
@@ -360,8 +377,7 @@ app.get('/top_locations' , (req,res)=>{
     }
     
   }
-  console.log('result ', result)
-  //const result=covid_locations.slice(0,10)
+   //const result=covid_locations.slice(0,10)
   res.send({status:'success', message:result})
 })
 app.post('/top_locations', (req,res)=>{
@@ -408,8 +424,6 @@ app.post("/covid_info", (req, res) => {
           user.save(function(err){
             if(err){
               console.log(err)
-            }else{
-
             }
           })
         })
