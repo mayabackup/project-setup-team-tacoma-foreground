@@ -31,7 +31,7 @@ const Login = () => {
 
       }else{
         setFeedback(<div>
-          <h3>ERROR: wrong username or password</h3>
+          <h3 className='error-message'>ERROR: wrong username or password</h3>
         </div>)
       }
     

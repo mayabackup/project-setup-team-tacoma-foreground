@@ -174,7 +174,7 @@ app.get("/login", (req, res, next) => {
   }
 });
 */
-app.get('/login-error', (req, res) => {
+app.get('/login', (req, res) => {
   const message=req.flash('message')
   console.log(message)
   res.send({error:message})
