@@ -17,6 +17,12 @@ export const HamburgerMenu = [
     cName: 'nav-text'
   },
   {
+    title: 'Logout', 
+    path: '/', //logout back to homepage.
+    icon: <FaIcons.FaUser />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Saved Locations',
     path: '/favorites',
     icon: <FaIcons.FaThumbtack />,
