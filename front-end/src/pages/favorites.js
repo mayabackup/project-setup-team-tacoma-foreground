@@ -9,14 +9,19 @@ function Favorites() {
     const [data, setData] = useState([]);
     const [updatedData, setUpdatedData] = useState([]);
     const [location, setLocation] = useState([]);
-
+    const [error, setError] = useState([]);
     useEffect(() => {
         const getItems= async()=>{
             const resp= await axios.get("http://localhost:5000/favorites")
         
-            const val=resp.data.message
-            console.log(val)
+          console.log(resp.data)
             //setLocation(val.user_location)
+            if(resp.data.error!=null){
+              setError(resp.data.error)
+            }
+            else{
+              const val=resp.data.message
+              console.log(val)
             const optionItems = Object.keys(resp.data.message).map((el) => ({
                 cases: resp.data.message[el].ranking.cases,
                 vaccination: resp.data.message[el].ranking.vaccination,
@@ -55,7 +60,7 @@ function Favorites() {
             
             setData(optionItems);  
             setUpdatedData(updated)
-        }  
+        }  }
 
         getItems()
     
@@ -66,6 +71,7 @@ function Favorites() {
             <div className="flex-container">
                 <h1>Favorite Locations</h1> 
                 <div className= "favorites">
+                  {error}
                 <h2>Selected Countries</h2>
                 {data.map(function(user,index){
                   return (

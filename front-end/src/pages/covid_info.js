@@ -21,13 +21,14 @@ const CovidInfo = ({ props }) => {
     const [travel, setTravel] = useState("");
     const [move, setMove] = useState("");
     const [location, setLocation] = useState({});
+    const [errorMessage, setErrorMessage] = useState();
     let history = useHistory();
 
     useEffect(() => {
         const getItems= async()=>{
         const resp= await axios.get("http://localhost:5000/covid_info");
         const data_covid=resp.data.message[Object.keys(resp.data.message)[0]];
-
+        if(data_covid!=null){
         if(data_covid.data.total_cases!=null){
             setCases(data_covid.data.total_cases);
         }
@@ -79,7 +80,7 @@ const CovidInfo = ({ props }) => {
             setLocation(data_covid);
         
         
-        
+    }
         }
         getItems();
 
@@ -97,18 +98,30 @@ const CovidInfo = ({ props }) => {
         }
         const post= async() => await axios
         .post('http://localhost:5000/covid_info',formData)
-        .then(() => console.log('Sent form data'))
+        .then((response) =>{
+            console.log(response.data)
+
+            if(response.data.error===true){
+                setErrorMessage(<div><h2>Cannot save if not logged in!</h2></div>)
+     
+            }else{
+                setErrorMessage(<div></div>)
+
+            }
+          
+        })
         .catch(err => {
           console.error(err);
         });
         post()
-        history.push('./flight_info')
+     
       };
     
     //page output HTML
     return (
         <div id="covid_info">
             <div className="flex-container">
+                 &nbsp;&nbsp;&nbsp;
                 <h2>Covid Information</h2>
                 <div className = "space_between">
                     <button id="ci_button">Location: {destination}</button>
@@ -148,10 +161,17 @@ const CovidInfo = ({ props }) => {
                 <div className = "format_ci">
                     <h3> Internal Movement Restrictions:</h3>
                     <p className = "p_left_ci">{move}</p>
+                
                 </div>
-                <button button onClick={e => FlightInfo(props)} id="margin">View Flight Information</button>
-                &nbsp;&nbsp;&nbsp;
-                <button button onClick={handelClick} id="margin2">Select Country</button>
+               
+                <div>
+                     {errorMessage}   
+                </div>
+                 <div>
+                    <button button onClick={e => FlightInfo(props)} id="margin">View Flight Information</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button button onClick={handelClick} id="margin2">Save Country</button>
+                </div>
             </div>
             <div>
                 <ul id="nav">
