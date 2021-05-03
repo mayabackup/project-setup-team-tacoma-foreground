@@ -33,6 +33,7 @@ function App() {
       <Route path='/TravelResources' component={TravelResources}></Route>
       <Route path='/FeaturedLocations' component={Featured}></Route>
       <Route path='/login' component={Login}></Route>
+      <Route path='/logout' component={Logout}></Route>
       <Route path='/SignUp' component={SignUp}></Route>
       <Route path='/favorites' component={favorites}></Route>
       <Route path='/search' component={search}></Route>
