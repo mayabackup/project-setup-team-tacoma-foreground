@@ -11,6 +11,28 @@
     padding: 20px;
   }
   
+  @media screen and (min-width: 601px) {
+    div {
+      font-size: 20px;
+    }
+  }
+  .HomeCSS{
+    font-size:2vw !important;
+   
+
+  }
+  .container-iframe{
+ 
+  
+  }
+  .responsive-iframe{   
+    padding-bottom: -10%;
+  
+ 
+ 
+ 
+ 
+   }
   .HomeCSS h1 {
     display: block;
     margin-top: 0.67em;

@@ -4,6 +4,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    overflow: hidden;
   }
 
   .navbar h1{
@@ -91,4 +92,12 @@
   
   span {
     margin-left: 16px;
+  }
+  @media screen and (min-width: 601px) {
+    div {
+      font-size: 20px;
+    }
+  }
+  .font{
+    font-size:5vw !important;
   }

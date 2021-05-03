@@ -156,18 +156,21 @@ const HomePage = ({ props }) => {
 
   //initial return with iframe and forms
   return (
-    <div class="HomeCSS">
-      <h1>Welcome to the Covid Travel Agent </h1>
-      <div>
+    <div class="HomeCSS" >
+      
+     <h1>Welcome to the Covid Travel Agent </h1>
+      <div className="container-iframe">
         <iframe
+          className="responsive-iframe"
           title='covid-map'
           ondblclick="window.location='http://www.google.com'"
           src="https://public.domo.com/cards/bWxVg"
           width="100%"
-          height="600"
+          height="500"
           marginheight="0"
           marginwidth="0"
           frameborder="0"
+    
         ></iframe>
       </div>
       <div>

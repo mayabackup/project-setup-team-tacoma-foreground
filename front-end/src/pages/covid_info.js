@@ -159,6 +159,8 @@ const CovidInfo = ({ props }) => {
                     <li><a href="./top_locations">Top Locations</a></li>
                 </ul>
             </div>
+            <div data-skyscanner-widget="LocationWidget" data-locale="en-GB" data-params="colour:glen;location:Edinburgh;locationId:EDI"></div>
+<script src="https://widgets.skyscanner.net/widget-server/js/loader.js"></script>
         </div>
       );
     };

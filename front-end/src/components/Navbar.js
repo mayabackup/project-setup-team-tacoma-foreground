@@ -21,7 +21,7 @@ function Navbar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showHamburger} />
           </Link>
-          <h1>Covid Travel Agent</h1>
+          <h1 className="font">Covid Travel Agent</h1>
           <Link to = './'>
           <img className="LogoPic" src={logo} alt="logo"/> 
           </Link>
