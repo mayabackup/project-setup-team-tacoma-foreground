@@ -486,9 +486,7 @@ app.get("/favorites", (req, res) => {
       if(x===list.country_details[0]['__parentArray'][0].location){
         updated.push(covid_locations[x])
       }
-      else if(x===list.country_details[0]['__parentArray'][1].location){
-        updated.push(covid_locations[x])
-      }
+    
     }
 
     console.log(updated)
