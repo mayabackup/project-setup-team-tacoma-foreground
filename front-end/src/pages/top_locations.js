@@ -35,12 +35,6 @@ function TopLocations() {
     
       }, [])
 
-    //functions
-    function Sort() {
-        console.log("placeholder");
-    }
-
-
     //page output HTML
     return (
         <div id="top_locations">
@@ -48,17 +42,6 @@ function TopLocations() {
                 <h2>My Top Locations</h2>
                 <div id = "to_sort_tl">
                     <button className="button_tl">From: {location}</button>
-                    <button className="button_tl">
-                        <label for="sort">Sort By: </label>
-                        <select name="sort" id="sort">
-                            <option onClick={e => Sort(e)} value="overall">Overall</option>
-                            <option onClick={e => Sort(e)} value="vaccinated">% Vaccinated</option>
-                            <option onClick={e => Sort(e)} value="cases"># Covid Cases</option>
-                            <option onClick={e => Sort(e)} value="quarantine">Quarantine Period</option>
-                            <option onClick={e => Sort(e)} value="death">Mortality Risk</option>
-                            <option onClick={e => Sort(e)} value="price">Price</option>
-                        </select>
-                    </button>
                 </div>
                 <div className= "locations_tl">
                     <section className="location">

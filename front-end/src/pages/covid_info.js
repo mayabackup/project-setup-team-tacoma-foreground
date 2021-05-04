@@ -89,7 +89,7 @@ const CovidInfo = ({ props }) => {
 
     //function
     function FlightInfo() {
-        window.open("./flight_info","_self");
+        window.open("https://www.tripadvisor.com/")
     }
     function handelClick(evt){
         evt.preventDefault();
@@ -195,7 +195,7 @@ const CovidInfo = ({ props }) => {
                      {errorMessage}   
                 </div>
                  <div>
-                    <button button onClick={e => FlightInfo(props)} id="margin">View Flight Information</button>
+                    <button button onClick={e => FlightInfo(props)} id="margin">Tripadvisor</button>
                     &nbsp;&nbsp;&nbsp;
                     <button button onClick={handelClick} id="margin2">Save Country</button>
                 </div>
