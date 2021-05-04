@@ -126,39 +126,67 @@ const CovidInfo = ({ props }) => {
                     <button id="ci_button">Location: {destination}</button>
                 </div>
                 <div className = "space_between">
-                    <h3>Total number of cases:</h3>
+                    <span class="field-tip">
+                    <h3>ⓘ Total number of cases:</h3>
+                    <span class="tip-content">Put help text in here!</span>
+                    </span>
                     <button className="data"><b>{cases} cases</b></button>
                 </div>
                 <div className = "space_between">
-                    <h3>Current number of cases:</h3>
+                    <span class="field-tip">
+                    <h3>ⓘ Current number of cases:</h3>
+                    <span class="tip-content">Put help text in here!</span>
+                    </span>
                     <button className="data"><b>{current_cases} cases</b></button>
                 </div>
                 <div className = "space_between">
-                    <h3>Percentage of population vaccinated:</h3>
+                    <span class="field-tip">
+                    <h3>ⓘ Percentage of population vaccinated:</h3>
+                    <span class="tip-content">Number of people vaccinated per 100</span>
+                    </span>
                     <button className="data"><b>{vac} %</b></button>
                 </div>
                 <div className = "space_between">
-                    <h3>Mortality risk:</h3>
+                    <span class="field-tip">
+                    <h3>ⓘ Mortality risk:</h3>
+                    <span class="tip-content">Covid-related deaths per 100 cases</span>
+                    </span>
                     <button className="data"><b>{mort} %</b></button>
                 </div>
                 <div className = "space_between">
-                    <h3>Quarantine periods:</h3>
+                    <span class="field-tip">
+                    <h3>ⓘ Quarantine periods:</h3>
+                    <span class="tip-content">Days of mandatory quarantine required upon arrival</span>
+                    </span>
                     <button className="data"><b>{quarantine} days</b></button>
                 </div>
                 <div className = "space_between">
-                    <h3>Governmental stringency index:</h3>
+                    <span class="field-tip">
+                    <h3>ⓘ Stringency index:</h3>
+                    <span class="tip-content">This is a composite measure based on nine response indicators including school closures, workplace closures, and travel bans, rescaled to a value from 0 to 100 (100 = strictest).</span>
+                    </span>
                     <button className="data"><b>{gstringency}</b></button>
                 </div>
                 <div className = "format_ci">
-                    <h3> Workplace Closures:</h3>
+                    <span class="field-tip">
+                    <h3>ⓘ Workplace Closures:</h3>
+                    <span class="tip-content">0: No measures; 1: Recommended; 2: Required for some; 3: Required for all but key workers
+                    </span>
+                    </span>
                     <p className = "p_left_ci">{work}</p>
                 </div>
                 <div className = "format_ci">
-                    <h3> International Travel Control:</h3>
+                    <span class="field-tip">
+                    <h3>ⓘ International Travel Control:</h3>
+                    <span class="tip-content">0: No measures; 1: Screening; 2: Quarantine from high-risk regions; 3: Ban on high-risk regions; 4: Total border closure; </span>
+                    </span>
                     <p className = "p_left_ci">{travel}</p>
                 </div>
                 <div className = "format_ci">
-                    <h3> Internal Movement Restrictions:</h3>
+                    <span class="field-tip">
+                    <h3>ⓘ Internal Movement Restrictions:</h3>
+                    <span class="tip-content">0: No measures; 1: Recommend movement restriction; 2: Restrict movement;</span>
+                    </span>
                     <p className = "p_left_ci">{move}</p>
                 
                 </div>
