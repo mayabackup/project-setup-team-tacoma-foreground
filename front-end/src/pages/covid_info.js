@@ -137,7 +137,7 @@ const CovidInfo = ({ props }) => {
                 <div className = "space_between">
                     <span class="field-tip">
                     <h3>ⓘ Mortality risk:</h3>
-                    <span class="tip-content">Covid-related deaths per cases</span>
+                    <span class="tip-content">Covid-related deaths per 100 cases</span>
                     </span>
                     <button className="data"><b>{mort} %</b></button>
                 </div>
