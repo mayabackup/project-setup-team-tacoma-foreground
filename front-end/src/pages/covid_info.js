@@ -26,7 +26,7 @@ const CovidInfo = ({ props }) => {
 
     useEffect(() => {
         const getItems= async()=>{
-        const resp= await axios.get("http://localhost:5000/covid_info");
+        const resp= await axios.get("http://104.131.7.104:5000/covid_info");
         const data_covid=resp.data.message[Object.keys(resp.data.message)[0]];
         if(data_covid!=null){
         if(data_covid.data.total_cases!=null){
@@ -97,7 +97,7 @@ const CovidInfo = ({ props }) => {
             location
         }
         const post= async() => await axios
-        .post('http://localhost:5000/covid_info',formData)
+        .post('http://104.131.7.104:5000/covid_info',formData)
         .then((response) =>{
             console.log(response.data)
 

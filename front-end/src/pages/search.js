@@ -24,7 +24,7 @@ const Search= ({ props }) => {
         console.log("ENTERING" ,formData)
 
         const post= async() => await axios
-        .post('http://localhost:5000/search',formData)
+        .post('http://104.131.7.104:5000/search',formData)
         .then(function x(response){
 
             setData(response.data.message)
