@@ -105,8 +105,7 @@ const CovidInfo = ({ props }) => {
                 setErrorMessage(<div><h2>Cannot save if not logged in!</h2></div>)
      
             }else{
-                setErrorMessage(<div></div>)
-
+                setErrorMessage(<div><h2>SAVED THE LOCATION! View on the Saved Locations Page </h2></div>)
             }
           
         })

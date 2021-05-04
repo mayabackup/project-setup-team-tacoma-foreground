@@ -140,9 +140,6 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-app.get('/login',(req,res)=>{
-  res.send({status:'success'})
-})
 
 /*
 app.get("/login", (req, res, next) => {
@@ -179,8 +176,14 @@ app.get("/login", (req, res, next) => {
 */
 app.get('/login', (req, res) => {
   const message=req.flash('message')
-  console.log(message)
-  res.send({error:message})
+  console.log(loggedIn)
+  if(user_id===null){
+    res.send({error:message})
+  }
+  else{
+    res.send({error:message,user:user_id})
+  }
+  
 }
 )
 app.post("/login",
@@ -190,7 +193,6 @@ app.post("/login",
     failureFlash: true
   }),
   (req,res)=>{
-    console.log("entering....",loggedIn)
     res.send({error:loggedIn})
   }
 );
@@ -218,7 +220,7 @@ app.get("/", async (req, res) => {
       email: null
     }
 
-  res.send({ status:'success'})
+  res.send({ status:'success',user:user_id})
 
 });
 
@@ -245,7 +247,7 @@ app.post('/',(req,res)=>{
 })
 
 app.get('/signup',(req,res)=>{
-  res.send({status:'success'})
+  res.send({status:'success',user:user_id})
 })
 
 app.post('/signup',
@@ -497,15 +499,18 @@ app.get("/favorites", (req, res) => {
   })
 }else{
   res.send({error:" PLEASE LOG IN OR CREATE AN ACCOUNT TO SAVE OR VIEW LOCATIONS"});
-
 }
  
 });
 app.get("/logout", function(req, res) {
   req.logout();
   loggedIn = false;
-  res.redirect("/login");
-  loggedIn = false;
+  req.session.destroy(function (err) {
+    res.redirect('/login')
+    user_id=""
+    loggedIn = false
+  });
+ 
   res.locals.loggedIn = false;
 });
 app.get("/search", function(req, res) {
