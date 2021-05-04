@@ -109,7 +109,7 @@ const CovidInfo = ({ props }) => {
     return (
         <div id="covid_info">
             <div className="flex-container">
-                <h2>ⓘ Covid Information</h2>
+                <h2>Covid Information</h2>
                 <div className = "space_between">
                     <button id="ci_button">Location: {destination}</button>
                 </div>
