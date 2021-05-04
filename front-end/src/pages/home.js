@@ -22,7 +22,7 @@ const HomePage = ({ props }) => {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
 
-  const [data, setData] = useState(10);
+  const [data, setData] = useState();
 
 
    let history = useHistory();
@@ -137,22 +137,35 @@ const HomePage = ({ props }) => {
       setUpdates();
     }
   }, [advanced]);
-/*
+
   useEffect(() => {
     const getItems= async()=>{
      const resp= await axios.get("http://localhost:5000/")
      let optionItems;
-     
+     /*
        optionItems = Object.keys(resp.data.message).map((el) => ({
         value: resp.data.message[el].name,
         label: resp.data.message[el].name,
       }));
-    
-     setData(optionItems)
+    */
+   console.log(resp.data)
+   if(resp.data.user===null || typeof resp.data.user ==='undefined' || resp.data.user==='' ){
+    setData(<div>
+      <a href="./signup" target="_blank">Sign Up </a> <a>or </a>
+      <a href="./login" target="_blank">Login </a><a> to save your results!</a>
+      
+    </div>)
+   }else{
+    setData(<div>
+        <a href="./logout" target="_blank">Logout </a><a>!</a>
+    </div>
+    )
+   }
+ 
     } 
     getItems();
 
-  }, [])*/
+  }, [])
 
   //initial return with iframe and forms
   return (
@@ -233,8 +246,7 @@ const HomePage = ({ props }) => {
           <input className="input-field" type="submit" value="CALCULATE" />
           <br></br>
           <br></br>
-          <a href="./signup" target="_blank">Sign Up </a> <a>or </a>
-      <a href="./login" target="_blank">Login </a><a> to save your results!</a>
+             {data}
       <br></br>
       <br></br>
         </form>

@@ -140,9 +140,6 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-app.get('/login',(req,res)=>{
-  res.send({status:'success'})
-})
 
 /*
 app.get("/login", (req, res, next) => {
@@ -179,8 +176,14 @@ app.get("/login", (req, res, next) => {
 */
 app.get('/login', (req, res) => {
   const message=req.flash('message')
-  console.log(message)
-  res.send({error:message})
+  console.log(loggedIn)
+  if(user_id===null){
+    res.send({error:message})
+  }
+  else{
+    res.send({error:message,user:user_id})
+  }
+  
 }
 )
 app.post("/login",
@@ -190,7 +193,6 @@ app.post("/login",
     failureFlash: true
   }),
   (req,res)=>{
-    console.log("entering....",loggedIn)
     res.send({error:loggedIn})
   }
 );
@@ -218,7 +220,7 @@ app.get("/", async (req, res) => {
       email: null
     }
 
-  res.send({ status:'success'})
+  res.send({ status:'success',user:user_id})
 
 });
 
@@ -245,7 +247,7 @@ app.post('/',(req,res)=>{
 })
 
 app.get('/signup',(req,res)=>{
-  res.send({status:'success'})
+  res.send({status:'success',user:user_id})
 })
 
 app.post('/signup',
@@ -298,7 +300,9 @@ app.post('/confirmation',(req,res)=>{
    
   
     // eslint-disable-next-line no-undef
-    
+    if(loggedIn===true){
+
+
     countries.findOne({ user: user_id}, function(err,list){
       if(list===null){
         const newQuery= new User_data({
@@ -342,9 +346,10 @@ app.post('/confirmation',(req,res)=>{
           });
         })
       })}
+      
         res.redirect("/top_location");
       });
-    }
+    }}
     })
   
 
@@ -359,7 +364,7 @@ app.get('/top_locations' , (req,res)=>{
     result.push({user_location:"Data Not Entered"})
   }
   
-  user_location={}
+
   let flag=0;
   for(let x=0;x<loc.length;x++){
     if(flag===13){
@@ -386,8 +391,9 @@ app.get('/top_locations' , (req,res)=>{
 })
 app.post('/top_locations', (req,res)=>{
   console.log("the post for top locations" )
+  user_location={}
   user_location[req.body.destination]=covid_locations[req.body.destination]
-  res.redirect('/covid_info')
+   res.redirect('/covid_info')
 })
 
 //test for flight info
@@ -401,12 +407,15 @@ app.get("/flight_info", (req, res) => {
 });
 
 app.get("/covid_info", (req, res) => {
-  console.log("sending info to the covid_info page");
+  console.log("sending info to the covid_info page",user_location);
   res.send({ status:"success", message: user_location });
 });
 app.post("/covid_info", (req, res) => {
-  console.log("sending info to the covid_info page", req.body.location.data.date);
+  console.log("sending info to the covid_info page", loggedIn);
 
+  if(loggedIn===true){
+
+  
   countries.findOne({ user: user_id}, function(err,list){
     const newLocation=new country_details({
       date: req.body.location.data.date,
@@ -441,6 +450,9 @@ app.post("/covid_info", (req, res) => {
     }
  
 });
+  }else{
+    res.send({error:true});
+  }
 })
 
 //test for featured get request
@@ -458,18 +470,18 @@ app.get("/FeaturedLocations", (req, res) => {
   res.send({status:'success', message:result})
 });
 
-app.get('/favorites',(req,res)=>{
-  res.send({status:'success'})
-})
 
 app.get("/favorites", (req, res) => {
-  console.log("sending info to the favorites page");
+  console.log("sending info to the favorites page",loggedIn);
   result=[]
+  if(loggedIn===true){
   countries.findOne({ user: user_id}, function(err,list){    
-   //console.log(list.country_details[0]['__parentArray'][0] )
-     //console.log(list.country_details[0]['__parentArray'][1] )
-    result.push(list.country_details[0]['__parentArray'][0])
-    result.push(list.country_details[0]['__parentArray'][1])
+      console.log(list.country_details[0]['__parentArray'] )
+    for(let x in list.country_details[0]['__parentArray'] ){
+      result.push(list.country_details[0]['__parentArray'][x])
+ 
+    }
+    
     let updated=[];
     for(let x in covid_locations){
       //console.log(x)
@@ -481,17 +493,24 @@ app.get("/favorites", (req, res) => {
       }
     }
 
-    console.log(result)
+    console.log(updated)
     res.send({status:'success', message:result, update:updated})
 
   })
+}else{
+  res.send({error:" PLEASE LOG IN OR CREATE AN ACCOUNT TO SAVE OR VIEW LOCATIONS"});
+}
  
 });
 app.get("/logout", function(req, res) {
   req.logout();
   loggedIn = false;
-  res.redirect("/login");
-  loggedIn = false;
+  req.session.destroy(function (err) {
+    res.redirect('/login')
+    user_id=""
+    loggedIn = false
+  });
+ 
   res.locals.loggedIn = false;
 });
 app.get("/search", function(req, res) {

@@ -44,10 +44,16 @@ const Login = () => {
   };
 
   useEffect(() => {
-   
-     
-
-  }, [submit])
+    
+      const getItems= async()=>{
+      const resp= await axios.get("http://localhost:5000/login");
+      console.log(resp.data)
+        if(resp.data.user!=null && resp.data.user!=""){
+          history.push('/')
+        }
+      }
+      getItems()
+  },)
 return (
   <div className="login">
     <div className = "space_between"></div>

@@ -18,6 +18,7 @@ import Login from './pages/login'
 import SignUp from './pages/SignUp'
 import favorites from './pages/favorites'
 import search from './pages/search'
+import logout from './pages/logout'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       <Route path='/SignUp' component={SignUp}></Route>
       <Route path='/favorites' component={favorites}></Route>
       <Route path='/search' component={search}></Route>
+      <Route path='/logout' component={logout}></Route>
 
     </Router>
   );
