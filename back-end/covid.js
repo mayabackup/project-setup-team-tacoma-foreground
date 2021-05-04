@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 const getdeath = require('./deathrate');
 const getStringency = require('./stringency');
 
@@ -10,7 +11,7 @@ const airport=require('./airports.js')
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("1 8 * * *",  function() {
+const task = cron.schedule("0 18 * * *",  function() {
   run().then(()=>{
   })
   },
@@ -18,7 +19,7 @@ const task = cron.schedule("1 8 * * *",  function() {
     scheduled: true
   }
 );
-const task2 = cron.schedule("7 8 * * *",  function() {
+const task2 = cron.schedule("10 18 * * *",  function() {
   combineData()
   },
   {
@@ -163,7 +164,12 @@ function api2() {
     });
 
     //you must delete response.csv file after reading it
-    fs.unlinkSync('./response.csv');
+    try{
+      fs.unlinkSync('./response.csv');
+    }
+   catch(err){
+
+   }
 
 }
 //getter func for MASTER COVID data

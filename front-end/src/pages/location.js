@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
 import "./css/location.css";
 import axios from "axios/lib/axios";
 import { useHistory } from "react-router-dom";
+import { findFlagUrlByCountryName } from "country-flags-svg";
 
 
 // variables
@@ -12,6 +14,7 @@ let i = 1;
 function Location(props) {
     let history = useHistory();
     const [destination1, setDestination] = useState([]);
+     
     const handleSubmit = evt => {
         evt.preventDefault();
         setDestination(props.details.location)
@@ -33,7 +36,7 @@ function Location(props) {
     i++;
     return (
         <article className="location">
-                <img src={"https://picsum.photos/300/200?random=" + i}></img>
+                <img src={props.details.flag} alt="country flag"></img>
                 <h4>Continent: {props.details.continent}</h4>
                 <h4>Country: {props.details.location}</h4>
                 <h4>Score: {props.details.score.toFixed(3)}</h4> 
