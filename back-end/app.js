@@ -198,7 +198,7 @@ app.post("/login",
 );
 
 api2.api();
-const covid_locations=algorithm.algorithm();
+let covid_locations=algorithm.algorithm();
 let result=[];
 let user_location
 
@@ -206,6 +206,8 @@ app.get("/", async (req, res) => {
   /*let air= await axios.get('https://raw.githubusercontent.com/mwgg/Airports/master/airports.json')
 
   res.send({ status:'success', message:air.data})*/
+  covid_locations=algorithm.algorithm();
+
     userData={
       entered:false,
       citizenship:null,
@@ -455,10 +457,6 @@ app.post("/covid_info", (req, res) => {
   }
 })
 
-//test for featured get request
-app.get('/FeaturedLocations',(req,res)=>{
-  res.send({status:'success'})
-})
 
 app.get("/FeaturedLocations", (req, res) => {
   console.log("sending info to the FeaturedLocations page");
