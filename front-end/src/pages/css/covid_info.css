@@ -74,3 +74,38 @@
     color: white;
     text-decoration: none;
 }
+
+body {
+    padding:30px;
+    font:normal 12px/1.5 Arial, sans-serif;
+}
+
+.field-tip {
+    cursor:help;
+    position:relative;
+}
+    .field-tip .tip-content {
+        position:absolute;
+        top:10px; 
+        right: 100;
+        width:190px;
+        margin-left:-220px; 
+        padding:6px;
+        color:rgb(255, 255, 255);
+        background:#333;
+        opacity:-10000;
+
+    }
+        .field-tip .tip-content:before {
+            content:' '; 
+            position:absolute;
+            top:52%;
+            left:-16px; 
+            margin-top:-9px; 
+            border:8px solid;
+            border-right-color:rgb(105, 102, 102);
+        }
+        .field-tip:hover .tip-content {
+            right: -235px;
+            opacity:100000;
+        }
