@@ -22,7 +22,7 @@ function Location(props) {
             destination:props.details.location
         }
         const post= async() => await axios
-        .post('http://104.131.7.104:5000/top_locations',formData)
+        .post('http://localhost:5000/top_locations',formData)
         .then(() => {
             console.log('Sent form data')
             history.push('/covid_info')
