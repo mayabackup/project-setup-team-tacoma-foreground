@@ -28,7 +28,7 @@ describe('GET /top_locations', function ()  {
         done();
         });
     });
-
+    /*
     it('check the keys of the airports api', function(done) {
  
         console.log('running the test')
@@ -65,7 +65,7 @@ describe('GET /top_locations', function ()  {
         }
           done();
         });
-    });
+    });*/
    
     
   });

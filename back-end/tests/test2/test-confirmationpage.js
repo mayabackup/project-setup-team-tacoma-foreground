@@ -27,7 +27,10 @@ describe('GET /confirmation', function ()  {
         done();
         });
     });
+});
 
+/*
+describe('GET /confirmation', function ()  {
     it('check the confirmation page has all user data', function(done) {
    
         console.log('running the test')
@@ -49,3 +52,4 @@ describe('GET /confirmation', function ()  {
     });
     
   });
+*/

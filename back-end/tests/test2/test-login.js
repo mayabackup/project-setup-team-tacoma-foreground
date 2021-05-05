@@ -12,7 +12,7 @@ chai.use(chaiHttp);
 const modulePath = path.join(__dirname, '../app.js');
 const host = "http://localhost:5000";
 
-
+/*
 describe('GET /login', function ()  {
     //this.timeout(15000);
     it('login: check get request', function(done) {
@@ -27,9 +27,9 @@ describe('GET /login', function ()  {
         });
     });
     
-  });
-
-  describe("POST /login", () => {
+});
+*/
+describe("POST /login", () => {
         
     it("should return status 200", done => {
         let formData = {
