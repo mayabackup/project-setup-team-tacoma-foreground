@@ -4,10 +4,8 @@ node_js:
   - "12"
 
 before_script:
-  - npm install
   - cd back-end
-  - npm init
-  - npm install
+  - npm ci
   - node server
   - run mocha tests
 
