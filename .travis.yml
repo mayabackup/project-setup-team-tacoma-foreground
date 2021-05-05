@@ -6,6 +6,7 @@ node_js:
 before_script:
   - cd back-end
   - npm install
+  - npm init
   - node server
   - run mocha tests
 
