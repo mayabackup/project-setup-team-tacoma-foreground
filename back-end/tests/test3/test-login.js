@@ -1,20 +1,24 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const path = require('path');
 const chai = require('chai');
 const chaiHttp = require("chai-http");
 
- 
-const request = chai.request; 
+const request = require("supertest");////
+const app = require('../../app.js');////
+// const request = chai.request;  
 const { expect } = chai;
 chai.use(chaiHttp);
+const modulePath = path.join(__dirname, '../app.js');
 const host = "http://localhost:5000";
 
 
 describe('GET /login', function ()  {
-    this.timeout(15000);
+    //this.timeout(15000);
     it('login: check get request', function(done) {
         console.log('testing login page')
       chai
-        .request(host)
+        .request(app)
         .get('/login')
         .end((err, res) => {
         expect(res).to.have.status(200);
@@ -34,7 +38,7 @@ describe('GET /login', function ()  {
         }
         console.log('running the test')
         
-        chai.request(host)
+        chai.request(app)
           .post('/login')
           .send({formData})
           .end((err, res) => {

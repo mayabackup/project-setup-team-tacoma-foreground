@@ -4,7 +4,7 @@ const path = require('path');
 const chai = require('chai');
 const chaiHttp = require("chai-http");
 const request = require("supertest");////
-const app = require('../server.js');////
+const app = require('../../app.js');////
 // const request = chai.request; 
 const { expect } = chai;
 chai.use(chaiHttp);

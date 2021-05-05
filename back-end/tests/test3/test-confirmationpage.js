@@ -1,22 +1,23 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+const path = require('path'); //
 const chai = require('chai');
 const chaiHttp = require("chai-http");
-
-const request = chai.request; 
+const request = require("supertest");////
+const app = require('../../app.js');////
+//const request = chai.request; 
 const { expect } = chai;
 chai.use(chaiHttp);
 const host = "http://localhost:5000";
 
 
 describe('GET /confirmation', function ()  {
-    this.timeout(15000);
+    //this.timeout(15000);
 
     it('check the status of the get request', function(done) {
    
         console.log('running the test')
-      chai
-        .request(host)
+        request(app)
         .get('/confirmation')
         .end((err, res) => {
             //console.log(res)
@@ -30,8 +31,7 @@ describe('GET /confirmation', function ()  {
     it('check the confirmation page has all user data', function(done) {
    
         console.log('running the test')
-      chai
-        .request(host)
+        request(app)
         .post('/').send({citizenship: "American", location: "New York", airport:"JFK"})
         .end((err, res) => {
             
@@ -39,8 +39,7 @@ describe('GET /confirmation', function ()  {
         expect(res.body.status).to.equals("success");
    
         });
-        chai
-        .request(host)
+        request(app)
         .get('/confirmation')
         .end((err, res) => {
         expect(res).to.have.status(200);
