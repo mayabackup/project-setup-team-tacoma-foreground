@@ -2,6 +2,7 @@ import './css/MeetTheTeam.css'
 import samplepics from '../img/SampleProfile.png';
 import rajPic from '../img/raj_pic.jpeg';
 import adamPic from '../img/adam1.PNG'
+import alifaPic from '../img/alifa.png'
 
 const MeetTheTeam = () => {
 
@@ -16,9 +17,9 @@ const MeetTheTeam = () => {
           </p>
 
           <h2>Alifa Faruk</h2>
-          <img alt="Alifa" src={samplepics} />
+          <img alt="Alifa" src={alifaPic} />
           <p>
-           Hello Im Alifa Faruk and Im a senior at NYU studying stuff. 
+          Senior at New York University CAS majoring in Computer Science, with a minor in Mathematics.
           </p>
 
           <h2>Adam Ethan</h2>
