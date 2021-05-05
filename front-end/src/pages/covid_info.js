@@ -1,14 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-
-// Mock Data
 import axios from "axios";
-
-// CSS
 import "./css/covid_info.css";
 
-// Page Output
 const CovidInfo = ({ props }) => {
     const [destination, setDestination] = useState([]);
     const [cases, setCases] = useState(0);
@@ -86,8 +81,6 @@ const CovidInfo = ({ props }) => {
 
     }, [])
 
-
-    //function
     function FlightInfo() {
         window.open("https://www.tripadvisor.com/")
     }
@@ -115,8 +108,7 @@ const CovidInfo = ({ props }) => {
         post()
      
       };
-    
-    //page output HTML
+
     return (
         <div id="covid_info">
             <div className="flex-container">

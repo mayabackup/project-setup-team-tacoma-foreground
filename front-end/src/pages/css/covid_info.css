@@ -75,11 +75,6 @@
     text-decoration: none;
 }
 
-body {
-    padding:30px;
-    font:normal 12px/1.5 Arial, sans-serif;
-}
-
 .field-tip {
     cursor:help;
     position:relative;

@@ -6,9 +6,7 @@ import { HamburgerMenu } from './Hamburger';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
 import logo from '../img/CovidTravelAgentLogo.jpg';
-//ATTENTION: YOU HAVE TO RUN THIS COMMAND "npm install react-icons --save" in terminal for icons
 
-//function to toggle/show or hide Hamburger Menu
 function Navbar() {
   const [Hamburger, setHamburger] = useState(false);
 

@@ -123,19 +123,3 @@ function Favorites() {
       );
     };
     export default Favorites;
-
-    /*
-vaccination: resp.data.message[el].ranking.vaccination,
-                mortality:resp.data.message[el].ranking.mortality,
-                overall:resp.data.message[el].ranking.overall,
-
-                date:resp.data.message[el].date,
-                total_cases: resp.data.message[el].total_cases,
-                total_vaccinations: resp.data.message[el].total_vaccinations,
-                new_vaccinations_smoothed_per_million: resp.data.message[el].new_vaccinations_smoothed_per_million,
-                continent:resp.data.message[el].continent,
-                location:resp.data.message[el].location,
-                Workplace:resp.data.message[el].Workplace,
-                Internal:resp.data.message[el].Internal,
-                International:resp.data.message[el].International,
-    */

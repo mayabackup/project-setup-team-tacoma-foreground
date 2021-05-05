@@ -5,8 +5,6 @@ import "./css/confirmation.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
-//confirmation component
 const Confirmation = ({ props }) => {
   
   let [citizenship, setCitizenship] = useState();
@@ -61,7 +59,6 @@ const Confirmation = ({ props }) => {
     const selected={
       entered:true
     }
-    //setConfirm(e)
     const post= async() => await axios
     .post('http://localhost:5000/confirmation',selected)
     .then(() => console.log('Sent form data'))
@@ -77,16 +74,13 @@ const Confirmation = ({ props }) => {
     locationMap +
     "&t=&z=13&ie=UTF8&iwloc=&output=embed";
   let history = useHistory();
-  // transfer pages after confirmation 
   function setConfirm() {
     history.push("/top_locations");
   }
 
-  // go back to home
   function setHome() {
     history.push("/");
   }
-  // return the component
   return (
     <div>
       <div className="user-data">
