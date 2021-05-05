@@ -12,7 +12,7 @@ const Confirmation = ({ props }) => {
   let locationMap;;
   useEffect(() => {
     const getItems= async()=>{
-    const resp= await axios.get("http://localhost:5000/confirmation")
+    const resp= await axios.get("http://104.131.7.104:5000/confirmation")
     if(resp.data.message!=null){
 
       console.log(resp.data.message)
@@ -44,7 +44,7 @@ const Confirmation = ({ props }) => {
       entered:true
     }
     const post= async() => await axios
-    .post('http://localhost:5000/confirmation',selected)
+    .post('http://104.131.7.104:5000/confirmation',selected)
     .then(() => console.log('Sent form data'))
     .catch(err => {
       console.error(err);

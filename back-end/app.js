@@ -18,7 +18,7 @@ const cors = require("cors");
 //use cors to allow cross origin resource sharing
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://104.131.7.104:3000",
     credentials: true
   })
 );

@@ -1,5 +1,7 @@
 ## Description of the project and Product Vision Statement
 
+**Website Link** http://104.131.7.104:3000/
+
 **Goal.** The COVID Travel Agent app is designed to provide prospective travelers with the most relevant knowledge to help them make a well-informed decision on international travel during the COVID pandemic. Particularly, the app aims at creating a personalized, comprehensive list of safest travel destinations based on the user's inputs (e.g. location, citizenship etc.), allowing the user to choose the most suitable destination for travel.<br>
 
 **Who are the users?** The target user of the app is anyone who wants to learn where he or she can travel, how safe each possible destination is and what are the requirements to travel there. The app facilitates decision making process for a traveler as it breaks the process into steps (steps include finding a safe destination, analyzing its COVID related data, booking a flight etc.) and guides the user through each of the steps. <br>
