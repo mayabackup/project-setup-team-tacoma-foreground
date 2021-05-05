@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mayabackup/project-setup-team-tacoma-foreground.svg?branch=master)](https://travis-ci.com/mayabackup/project-setup-team-tacoma-foreground)
+
 ## Description of the project and Product Vision Statement
 
 **Website Link** http://104.131.7.104:3000/
