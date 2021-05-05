@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import './css/MeetTheTeam.css'
 import samplepics from '../img/SampleProfile.png';
 import rajPic from '../img/raj_pic.jpeg';

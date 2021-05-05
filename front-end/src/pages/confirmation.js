@@ -5,8 +5,6 @@ import "./css/confirmation.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
-//confirmation component
 const Confirmation = ({ props }) => {
   let [entered, setEnterd] = useState(false);
   let [continents, setContinents] = useState();
@@ -45,7 +43,6 @@ const Confirmation = ({ props }) => {
     const selected={
       entered:true
     }
-    //setConfirm(e)
     const post= async() => await axios
     .post('http://localhost:5000/confirmation',selected)
     .then(() => console.log('Sent form data'))
@@ -66,7 +63,6 @@ const Confirmation = ({ props }) => {
   function setHome() {
     history.push("/");
   }
-  // return the component
   return (
     <div>
       <div className="user-data">
