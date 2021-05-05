@@ -4,6 +4,7 @@ node_js:
   - "12"
 
 before_script:
+  - npm ci
   - cd back-end
   - npm ci
   - node server
