@@ -1,8 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./css/favorites.css";
-import Location from "./location";
 
 function Favorites() {
   const [data, setData] = useState([]);

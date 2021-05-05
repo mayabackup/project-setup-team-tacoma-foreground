@@ -348,10 +348,10 @@ app.post("/covid_info", (req, res) => {
             }
           })
         })
-        res.redirect("/flight_info");
       });
     }
 });
+  res.send({error:false});
   }else{
     res.send({error:true});
   }

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useState, useEffect } from "react";
 import "./css/home.css";
@@ -98,9 +99,10 @@ const HomePage = ({ props }) => {
           </div>
           <br></br>
           <input className="input-field" type="submit" value="CALCULATE" />
-          <br></br>
-          <br></br>
           {data}
+          <br></br>
+          <br></br>
+        
           <br></br>
           <br></br>
         </form>

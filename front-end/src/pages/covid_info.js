@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./css/covid_info.css";
 
@@ -19,7 +18,6 @@ const CovidInfo = ({ props }) => {
     const [location, setLocation] = useState({});
     const [score, setScore] = useState('');
     const [errorMessage, setErrorMessage] = useState();
-    let history = useHistory();
 
     useEffect(() => {
         const getItems= async()=>{
