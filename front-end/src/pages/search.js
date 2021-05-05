@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 
 import { useHistory } from "react-router-dom";
@@ -11,9 +12,7 @@ const Search= ({ props }) => {
     const [data, setData] = useState(null);
     const [feedback, setFeedback] = useState(null);
 
-    useEffect(() => {
-        console.log("entering the use effect")
-       
+    useEffect(() => {       
     
     },[] )
     function  handleSubmit(event){
@@ -21,22 +20,16 @@ const Search= ({ props }) => {
         const formData={
             country
         }
-        console.log("ENTERING" ,formData)
-
         const post= async() => await axios
         .post('http://localhost:5000/search',formData)
         .then(function x(response){
 
             setData(response.data.message)
-            console.log("entering the then",response.data.unknown)
             if(response.data.message===null || response.data.unknown===true){
-                console.log("entering the mesage")
                 setFeedback(<div className='error-message'><h2>Country Not Found</h2></div>)
             }
             
             else if(response.data.message!=null){
-
-                console.log("entering the then")
             setFeedback(
                 <div> 
 
@@ -51,11 +44,11 @@ const Search= ({ props }) => {
                 </div>
                 <div className = "space_between">
                     <h3>Population Vaccinated:</h3>
-                    <button className="data"><b>{response.data.message.data.total_vaccinations} %</b></button>
+                    <button className="data"><b>{response.data.message.data.total_vaccinations}</b></button>
                 </div>
                 <div className = "space_between">
                     <h3>Mortality risk:</h3>
-                    <button className="data"><b>{response.data.message.ranking.mortality} %</b></button>
+                    <button className="data"><b>{response.data.message.ranking.mortality}</b></button>
                 </div>
                 
                 
@@ -82,10 +75,7 @@ const Search= ({ props }) => {
           console.error(err);
         });
         post()
-                        
-          
-    
-          
+         
     }
      //functions
      function Sort() {

@@ -6,11 +6,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Confirmation = ({ props }) => {
-  
-  let [citizenship, setCitizenship] = useState();
-  let [location, setLocation] = useState();
-  let [airport, setAirport] = useState();
   let [entered, setEnterd] = useState(false);
+  let [continents, setContinents] = useState();
 
   let locationMap;;
   useEffect(() => {
@@ -18,32 +15,18 @@ const Confirmation = ({ props }) => {
     const resp= await axios.get("http://localhost:5000/confirmation")
     if(resp.data.message!=null){
 
-      if ( resp.data.message.citizenship!=null){
-        setCitizenship(resp.data.message.citizenship)
-      }
-      else{
-        setCitizenship("Data Not Entered")
-      }
-
-      if(resp.data.message.location!==null){
-        setLocation(resp.data.message.location)
-      }
-      else{
-        setLocation("Data Not Entered" )
-      }
-      if(resp.data.message.airport!==null){
-        setAirport(resp.data.message.airport)
+      console.log(resp.data.message)
+      if(resp.data.message.continent!==null){
+        setContinents(resp.data.message.continent)
       }
       
       else{
-        setAirport("Data Not Entered")
+        setContinents("Data Not Entered")
       }
       setEnterd(resp.data.message.entered)
     } 
     else{
-      setCitizenship("Data Not Entered")
-      setLocation("Data Not Entered" )
-      setAirport("Data Not Entered")
+      setContinents("Data Not Entered")
     }
   }
   
@@ -53,6 +36,7 @@ const Confirmation = ({ props }) => {
       getItems();
     }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function handelClick(){
@@ -68,16 +52,14 @@ const Confirmation = ({ props }) => {
     post()
     history.push("/top_locations");
   }
-  locationMap=location;
+  locationMap=continents;
   const loc =
     "https://maps.google.com/maps?q=" +
     locationMap +
     "&t=&z=13&ie=UTF8&iwloc=&output=embed";
   let history = useHistory();
-  function setConfirm() {
-    history.push("/top_locations");
-  }
-
+  
+  // go back to home
   function setHome() {
     history.push("/");
   }
@@ -86,14 +68,7 @@ const Confirmation = ({ props }) => {
       <div className="user-data">
         <h1 className='page-title'>Confirmation</h1>
         <h3>
-          Your Citizenship: <span className="user-input"> {citizenship}</span>
-        </h3>
-        <h3>
-          Current Location: <span className="user-input"> {location}</span>
-        </h3>
-        <h3>
-          Desired Departure Airport:{" "}
-          <span className="user-input"> {airport}</span>
+        Desired Continent: <span className="user-input"> {continents}</span>
         </h3>
       </div>
       <div class="flex-container">

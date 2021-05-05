@@ -40,8 +40,7 @@ function Location(props) {
                 <h4>Continent: {props.details.continent}</h4>
                 <h4>Country: {props.details.location}</h4>
                 <h4>Score: {props.details.score.toFixed(3)}</h4> 
-                <button button onClick={handleSubmit} className="l_button">Covid Information</button>  
-              
+                <button button onClick={handleSubmit} className="l_button">Covid Information</button>          
         </article>
     );
 }

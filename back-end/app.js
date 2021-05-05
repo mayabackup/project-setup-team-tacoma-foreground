@@ -3,12 +3,10 @@
 // import and instantiate express
 const express = require("express"); // CommonJS import style!
 const app = express(); // instantiate an Express object
-//const api = require('./home_api');
 const api2 = require("./covid.js");
 const algorithm = require('./algorithm.js');
 const mongoose = require("mongoose");
 const { body, validationResult } = require('express-validator');
-//const airports=require('./airports.js')
 require("./db");
 let user_id;
 
@@ -60,7 +58,6 @@ app.use((req, res, next) => {
 });
 
 app.use(logger);
-// we will put some server logic here later...
 
 //authenticaiton using passport
 const passport = require("passport");
@@ -108,7 +105,6 @@ passport.use(
   ) {
     
     User.findOne({ username:username }, function(err, user) {
-     // console.log("the user trying to login " + user);
       if (err) {
         return done(err);
       }
@@ -133,47 +129,12 @@ passport.serializeUser(function(user, done) {
 //First argument corresponds to the key of the user object
 // the object req.user is received
 passport.deserializeUser(function(id, done) {
-  //console.log(id);
+
   User.findById(id, function(err, user) {
     loggedIn = true;
     return done(err, user);
   });
 });
-
-
-/*
-app.get("/login", (req, res, next) => {
-  console.log("ENTERING ");
-  if (loggedIn == false) {
-    const user = String(req.query.username);
-    const password = String(req.query.password);
-
-    if (user != "undefined" && password != "undefined") {
-      User.find({ username: user, password: password }, function(err, users) {
-        //console.log("We are AUTHENTICATING " + users);
-        if (users.length < 0) {
-          res.send({ error: "Inncorrect username or password " });
-        } else {
-          req.logIn(user, function(err) {
-            if (err) {
-              return next(err);
-            }
-            return res.redirect("/login");
-          });
-        } 
-				//console.log("ENTERING " + user + " " +password);
-				//console.log("the users " +users);
-      });
-    } else {
-      console.log("Could not login. Redirecting to login in again ");
-      res.render("login", { error: req.session.error });
-    }
-  } else {
-    res.locals.loggedIn = loggedIn;
-    res.redirect("/");
-  }
-});
-*/
 app.get('/login', (req, res) => {
   const message=req.flash('message')
   console.log(loggedIn)
@@ -197,7 +158,7 @@ app.post("/login",
   }
 );
 
-api2.api();
+api2;
 let covid_locations=algorithm.algorithm();
 let result=[];
 let user_location
@@ -207,21 +168,11 @@ app.get("/", async (req, res) => {
 
   res.send({ status:'success', message:air.data})*/
   covid_locations=algorithm.algorithm();
-
     userData={
       entered:false,
-      citizenship:null,
-      location:null,
-      airport:null,
-  
       //advanced; may be null
       advanced: null,
-      continent: null,
-      reason: null,
-      name:null,
-      email: null
     }
-
   res.send({ status:'success',user:user_id})
 
 });
@@ -231,21 +182,11 @@ app.post('/',(req,res)=>{
   userData={
     entered:true,
     // do error checkings
-    citizenship: req.body.citizenship,
-    location: req.body.location,
-    airport: req.body.airport,
-
-    //advanced; may be null
-    advanced: req.body.advanced,
-    continent: req.body.continent,
-    reason: req.body.reason,
-    name:req.body.name,
-    email: req.body.email,  
+    continent: req.body.continent,  
   }
   // eslint-disable-next-line no-unused-vars
   // eslint-disable-next-line no-undef
   res.send({status:'success', message:userData})
-  //res.redirect('/confirmation');
 })
 
 app.get('/signup',(req,res)=>{
@@ -263,7 +204,6 @@ body('password').isLength({min:5}),
   const errors=validationResult(req)
   if(!errors.isEmpty()){
     console.log(errors.array())
-    //res.redirect('/signup')
     return res.send({errors:errors.array()});
   }
   else{
@@ -285,36 +225,22 @@ body('password').isLength({min:5}),
       console.log("the error " + err);
       return res.send({errors:null});
     });
-});
- 
-  
+}); 
 }
 })
 
 app.get('/confirmation',(req,res)=>{
-  console.log("sending info to the confirmation page", userData)
   res.send({status:'success', message:userData})
 })
 app.post('/confirmation',(req,res)=>{
-  console.log("SAVE INFO INTO DATABASE", user_id)
-  if(req.body.entered===true){
-    console.log("entering the query")
-   
-  
+  if(req.body.entered===true){   
     // eslint-disable-next-line no-undef
     if(loggedIn===true){
-
-
     countries.findOne({ user: user_id}, function(err,list){
       if(list===null){
         const newQuery= new User_data({
           user: user_id,
-          citizenship: userData['citizenship'],
-          location:userData['location'],
-          airport: userData['airport'],
           continent: userData['continent'],
-          reason: userData['reason'],
-          email: userData['email']
         })
         newQuery.save(err=>{
           console.log('error',err)
@@ -329,13 +255,7 @@ app.post('/confirmation',(req,res)=>{
       }
       else{
       const newQuery= new User_data({
-        user: user_id,
-        citizenship: userData['citizenship'],
-        location:userData['location'],
-        airport: userData['airport'],
         continent: userData['continent'],
-        reason: userData['reason'],
-        email: userData['email']
       })
       newQuery.save(err => {
         console.log("the error " + err);
@@ -348,7 +268,6 @@ app.post('/confirmation',(req,res)=>{
           });
         })
       })}
-      
         res.redirect("/top_location");
       });
     }}
@@ -357,28 +276,29 @@ app.post('/confirmation',(req,res)=>{
 
 app.get('/top_locations' , (req,res)=>{
   result=[]
-  console.log("entering the top locations")
   const loc=(Object.keys(covid_locations))
   if(userData!=='null' && typeof userData!=='undefined'){
-    result.push({user_location:userData.location})
+    result.push({user_location:userData.continent})
   }
   else{
     result.push({user_location:"Data Not Entered"})
   }
-  
-
   let flag=0;
   for(let x=0;x<loc.length;x++){
     if(flag===13){
-     // console.log("entering the flag", x)
       break;
     }
     if(userData.continent!=null && typeof userData.continent!='undefined'){
       
-      if(covid_locations[loc[x]].continent===userData.continent){
+      if(covid_locations[loc[x]].continent!=null && typeof covid_locations[loc[x]].continent!='undefined'){
+        console.log((covid_locations[loc[x]].continent).toLowerCase())
+        console.log((userData.continent).toLowerCase())
+        const covid_database=(userData.continent).trim()
+      if((covid_locations[loc[x]].continent).toLowerCase()===(covid_database).toLowerCase()){
         result.push(covid_locations[loc[x]])
         flag++;
       }
+    }
       else{
        continue
       }
@@ -386,38 +306,20 @@ app.get('/top_locations' , (req,res)=>{
       flag++;
       result.push(covid_locations[loc[x]])
     }
-    
   }
-   //const result=covid_locations.slice(0,10)
   res.send({status:'success', message:result})
 })
 app.post('/top_locations', (req,res)=>{
-  console.log("the post for top locations" )
   user_location={}
   user_location[req.body.destination]=covid_locations[req.body.destination]
    res.redirect('/covid_info')
 })
 
-//test for flight info
-app.get('/flight_info',(req,res)=>{
-  res.send({status:'success'})
-})
-//Get request for flight info
-app.get("/flight_info", (req, res) => {
-  console.log("sending info to the Flight Information page");
-  res.send({ message: userData });
-});
-
 app.get("/covid_info", (req, res) => {
-  console.log("sending info to the covid_info page",user_location);
   res.send({ status:"success", message: user_location });
 });
 app.post("/covid_info", (req, res) => {
-  console.log("sending info to the covid_info page", loggedIn);
-
   if(loggedIn===true){
-
-  
   countries.findOne({ user: user_id}, function(err,list){
     const newLocation=new country_details({
       date: req.body.location.data.date,
@@ -438,7 +340,6 @@ app.post("/covid_info", (req, res) => {
     })
     if(list!==null){
       newLocation.save(err => {
-        console.log("the error " + err);
         countries.findOne({ user: user_id}, (err, user) => {
           user.country_details.push(newLocation)
           user.save(function(err){
@@ -447,11 +348,10 @@ app.post("/covid_info", (req, res) => {
             }
           })
         })
-        res.redirect("/flight_info");
       });
     }
- 
 });
+  res.send({error:false});
   }else{
     res.send({error:true});
   }
@@ -459,7 +359,6 @@ app.post("/covid_info", (req, res) => {
 
 
 app.get("/FeaturedLocations", (req, res) => {
-  console.log("sending info to the FeaturedLocations page");
   result=[]
   const loc=(Object.keys(covid_locations))
   for(let x=0;x<6;x++){
@@ -468,28 +367,23 @@ app.get("/FeaturedLocations", (req, res) => {
   res.send({status:'success', message:result})
 });
 
-
 app.get("/favorites", (req, res) => {
-  console.log("sending info to the favorites page",loggedIn);
   result=[]
   if(loggedIn===true){
   countries.findOne({ user: user_id}, function(err,list){    
-      console.log(list.country_details[0]['__parentArray'] )
+      
     for(let x in list.country_details[0]['__parentArray'] ){
       result.push(list.country_details[0]['__parentArray'][x])
- 
     }
-    
     let updated=[];
     for(let x in covid_locations){
-      //console.log(x)
-      if(x===list.country_details[0]['__parentArray'][0].location){
-        updated.push(covid_locations[x])
-      }
+      for(let y in list.country_details[0]['__parentArray'])
+        if(x===list.country_details[0]['__parentArray'][y].location){
+          console.log("entering the update")
+          updated.push(covid_locations[x])
+        }
     
     }
-
-    console.log(updated)
     res.send({status:'success', message:result, update:updated})
 
   })
@@ -510,22 +404,14 @@ app.get("/logout", function(req, res) {
   res.locals.loggedIn = false;
 });
 app.get("/search", function(req, res) {
-  console.log("ENTERING SEARCH")
-
   const country_user=req.body.country;
-  console.log(country_user)
-  console.log(covid_locations)
 });
 app.post("/search", function(req, res) {
-  console.log("ENTERING SEARCH")
   let country_user=req.body.country;
   let data_country
-  country_user=country_user.toLowerCase()
+  country_user=country_user.toLowerCase().trim()
   country_user=country_user.charAt(0).toUpperCase() + country_user.slice(1).toLowerCase();
-
-
-      data_country=covid_locations[country_user]
-      console.log(typeof data_country==='undefined')
+  data_country=covid_locations[country_user]
   if(typeof data_country==='undefined'){
     res.send({status:'success', message:data_country, unknown:true})
   }
@@ -534,7 +420,6 @@ app.post("/search", function(req, res) {
   }
   
 });
-
 // export the express app we created to make it available to other modules
 module.exports = app;
 
