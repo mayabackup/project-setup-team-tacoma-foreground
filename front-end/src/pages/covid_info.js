@@ -14,13 +14,15 @@ const CovidInfo = ({ props }) => {
     const [cases, setCases] = useState(0);
     const [current_cases, setCurrent] = useState(0);
     const [vac, setVac] = useState(0);
+    const [vaccination, setVaccination] = useState(0);
     const [mort, setMort] = useState(0);
-    const [quarantine, setQuarantine] = useState("Unknown");
+
     const [gstringency, setGstringency] = useState(0);
     const [work, setWork] = useState("Unknown");
     const [travel, setTravel] = useState("");
     const [move, setMove] = useState("");
     const [location, setLocation] = useState({});
+    const [score, setScore] = useState('');
     const [errorMessage, setErrorMessage] = useState();
     let history = useHistory();
 
@@ -28,6 +30,7 @@ const CovidInfo = ({ props }) => {
         const getItems= async()=>{
         const resp= await axios.get("http://localhost:5000/covid_info");
         const data_covid=resp.data.message[Object.keys(resp.data.message)[0]];
+        console.log(data_covid)
         if(data_covid!=null){
         if(data_covid.data.total_cases!=null){
             setCases(data_covid.data.total_cases);
@@ -41,7 +44,7 @@ const CovidInfo = ({ props }) => {
         else{
             setDestination("Data Unknown");
         }
-        if(data_covid.data.total_cases!=null){
+        if(data_covid.data.new_cases!=null){
             setCurrent(data_covid.data.new_cases);
         }
         else{
@@ -52,6 +55,12 @@ const CovidInfo = ({ props }) => {
         }
         else{
             setVac("Data Unknown");
+        }
+        if(data_covid.ranking.vaccination!=null){
+            setVaccination(data_covid.ranking.vaccination);
+        }
+        else{
+            setVaccination("Data Unknown");
         }
         if(data_covid.data.stringency_index){
             setGstringency(data_covid.data.stringency_index);
@@ -77,6 +86,19 @@ const CovidInfo = ({ props }) => {
         else{
             setMove("Data Unknown");
         }
+        if (data_covid.ranking.mortality){
+            setMort(data_covid.ranking.mortality);
+        }
+        else{
+            setMort("Data Unknown");
+        } 
+        if (data_covid.ranking.overall){
+            setScore(data_covid.ranking.overall);
+        }
+        else{
+            setScore("Data Unknown");
+        }
+        
             setLocation(data_covid);
         
         
@@ -127,6 +149,13 @@ const CovidInfo = ({ props }) => {
                 </div>
                 <div className = "space_between">
                     <span class="field-tip">
+                    <h3>Overall Country Score</h3>
+                    <span class="tip-content">Put help text in here!</span>
+                    </span>
+                    <button className="data"><b>{score} cases</b></button>
+                </div>
+                <div className = "space_between">
+                    <span class="field-tip">
                     <h3>ⓘ Total number of cases:</h3>
                     <span class="tip-content">Put help text in here!</span>
                     </span>
@@ -134,31 +163,31 @@ const CovidInfo = ({ props }) => {
                 </div>
                 <div className = "space_between">
                     <span class="field-tip">
-                    <h3>ⓘ Current number of cases:</h3>
+                    <h3>ⓘ Current number of new cases:</h3>
                     <span class="tip-content">Put help text in here!</span>
                     </span>
                     <button className="data"><b>{current_cases} cases</b></button>
                 </div>
                 <div className = "space_between">
                     <span class="field-tip">
-                    <h3>ⓘ Population vaccinated:</h3>
+                    <h3>ⓘ Population vaccinated per hundred:</h3>
                     <span class="tip-content">Number of people vaccinated per 100</span>
                     </span>
                     <button className="data"><b>{vac} %</b></button>
                 </div>
                 <div className = "space_between">
                     <span class="field-tip">
-                    <h3>ⓘ Mortality risk:</h3>
-                    <span class="tip-content">Covid-related deaths per 100 cases</span>
+                    <h3>Vacination Score:</h3>
+                    <span class="tip-content"></span>
                     </span>
-                    <button className="data"><b>{mort} %</b></button>
+                    <button className="data"><b>{vaccination}</b></button>
                 </div>
                 <div className = "space_between">
                     <span class="field-tip">
-                    <h3>ⓘ Quarantine periods:</h3>
-                    <span class="tip-content">Days of mandatory quarantine required upon arrival</span>
+                    <h3>ⓘ Mortality risk:</h3>
+                    <span class="tip-content">Covid-related deaths per 100 cases</span>
                     </span>
-                    <button className="data"><b>{quarantine} days</b></button>
+                    <button className="data"><b>{mort}</b></button>
                 </div>
                 <div className = "space_between">
                     <span class="field-tip">

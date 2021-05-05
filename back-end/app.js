@@ -158,7 +158,7 @@ app.post("/login",
   }
 );
 
-api2.api();
+api2;
 let covid_locations=algorithm.algorithm();
 let result=[];
 let user_location

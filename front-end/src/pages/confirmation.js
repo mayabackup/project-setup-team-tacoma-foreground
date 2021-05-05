@@ -38,6 +38,7 @@ const Confirmation = ({ props }) => {
       getItems();
     }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function handelClick(){
@@ -60,11 +61,7 @@ const Confirmation = ({ props }) => {
     locationMap +
     "&t=&z=13&ie=UTF8&iwloc=&output=embed";
   let history = useHistory();
-  // transfer pages after confirmation 
-  function setConfirm() {
-    history.push("/top_locations");
-  }
-
+  
   // go back to home
   function setHome() {
     history.push("/");
