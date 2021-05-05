@@ -11,7 +11,7 @@ function Favorites() {
   const [error, setError] = useState([]);
   useEffect(() => {
     const getItems = async () => {
-      const resp = await axios.get("http://localhost:5000/favorites");
+      const resp = await axios.get("http://104.131.7.104:5000/favorites");
       if (resp.data.error != null) {
         setError(resp.data.error);
       } else {

@@ -36,7 +36,7 @@ password === confirm){
   console.log('entering to log in')
 
   const post= async() => await axios
-  .post('http://localhost:5000/signup',formData)
+  .post('http://104.131.7.104:5000/signup',formData)
   .then((response) => {
     console.log('Sent form data 12',response.data.errors===null)
     if(response.data.errors===null){
