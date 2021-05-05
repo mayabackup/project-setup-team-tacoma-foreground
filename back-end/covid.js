@@ -11,7 +11,7 @@ const airport=require('./airports.js')
 Cron scheduler, runs every day at 8pm EST.
 API funuction retrieves master covid data and returns.
 */
-const task = cron.schedule("0 18 * * *",  function() {
+const task = cron.schedule("*/5 * * * *",  function() {
   run().then(()=>{
   })
   },
@@ -19,7 +19,7 @@ const task = cron.schedule("0 18 * * *",  function() {
     scheduled: true
   }
 );
-const task2 = cron.schedule("10 18 * * *",  function() {
+const task2 = cron.schedule("*/10 * * * *",  function() {
   combineData()
   },
   {
@@ -37,7 +37,6 @@ async function run() {
   getStringency.api();
   airport.getAirports()
     console.log("Running a job at 08:07 pm at NYC EST timezone");
- 
   }
 // RESULT WILL HOLD MASTER COVID DATA
 let result = {};
@@ -68,14 +67,10 @@ function api() {
     .then(response => {
       const v = JSON.stringify(response.data);
       const filtered = JSON.parse(v);
-      //console.log(data)
-      //const filtered = JSON.parse(JSON.stringify(data["data"]));
+
       for (let x in filtered) {
-       // console.log("the x value" , x,filtered[x])
         const country = JSON.parse(JSON.stringify(filtered[x]['data']));
-        //console.log(country)
         const filt = country.filter(function(entry) {
-         // console.log('the entry ', entry)
         const date = new Date(entry.date);
         const date1 = new Date(today);
 
@@ -83,7 +78,6 @@ function api() {
           return entry;
         } 
         });
-
         result[filtered[x].location] = {
           data: filt[0],
           continent: filtered[x].continent,
@@ -101,10 +95,7 @@ function api() {
 function getCovid() {
   return result;
 }
-
-
 //Code for WebScraping Internal and International Movement Controls:
-
 const resultWeb = {};
 
 // retrieves MAST COVID DATA 
@@ -116,12 +107,9 @@ function api2() {
   //NOTE: this will get last month's Date because government policies are not updated frequently.
   let mm = today.getMonth();
   let yyyy = today.getFullYear();
-  //console.log("entering");
-
   if (dd < 10) {
     dd = "0" + dd;
   }
-
   if (mm < 10) {
     mm = "0" + mm;
   }
@@ -134,9 +122,9 @@ function api2() {
     .then(response => {
       const csv1=response.data
       fs.writeFile('response.csv', csv1, function(err){
+        console.log("writing the file")
         console.log(err);
     });
-
    const filepath='./response.csv'
    fs.createReadStream(filepath).on('error', ()=>{})
   .pipe(csv())
@@ -152,8 +140,7 @@ function api2() {
   })
   .on('end', () => {
     console.log("Parsed through CSV File");
-    
-    //console.log(resultWeb)
+
 
   });
       console.log("finishing the second function")
@@ -244,7 +231,6 @@ function combineData(){
 }
 
 // export the express app we created to make it available to other modules
-
 module.exports = {
   api: api,
   getCovid: getCovid,

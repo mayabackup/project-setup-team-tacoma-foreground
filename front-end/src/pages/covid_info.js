@@ -141,7 +141,7 @@ const CovidInfo = ({ props }) => {
                 </div>
                 <div className = "space_between">
                     <span class="field-tip">
-                    <h3>ⓘ Percentage of population vaccinated:</h3>
+                    <h3>ⓘ Population vaccinated:</h3>
                     <span class="tip-content">Number of people vaccinated per 100</span>
                     </span>
                     <button className="data"><b>{vac} %</b></button>
