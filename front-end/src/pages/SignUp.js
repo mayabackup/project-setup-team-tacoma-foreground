@@ -14,12 +14,12 @@ const[email, setEmail] = useState(null);
 const[password, setPassword] = useState(null);
 const[confirm, setConfirm] = useState(null);
 
-const[set, doSet] = useState(null);
+// const[set, doSet] = useState(null);
 
 const [incorrect, setIncorrect] = useState()
 const [feedback, setFeedback] = useState()
 const [error, setError] = useState(null)
-const [next, setNext] = useState()
+// const [next, setNext] = useState()
 
 const handleChange = selected => {
 
