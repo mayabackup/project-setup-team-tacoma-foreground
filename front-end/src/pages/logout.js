@@ -9,7 +9,7 @@ const Logout = () => {
     useEffect(() => {
     
         const getItems= async()=>{
-        const resp= await axios.get("http://104.131.7.104:5000/logout");
+        const resp= await axios.get("http://localhost:5000/logout");
         console.log(resp.data)
 
             history.push('/login')

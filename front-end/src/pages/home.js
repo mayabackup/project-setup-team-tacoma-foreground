@@ -54,7 +54,7 @@ const HomePage = ({ props }) => {
     }
     console.log(formData)
     const post= async() => await axios
-    .post('http://104.131.7.104:5000/',formData)
+    .post('http://localhost:5000/',formData)
     .then(() => console.log('Sent form data'))
     .catch(err => {
       console.error(err);
@@ -140,7 +140,7 @@ const HomePage = ({ props }) => {
 
   useEffect(() => {
     const getItems= async()=>{
-     const resp= await axios.get("http://104.131.7.104:5000/")
+     const resp= await axios.get("http://localhost:5000/")
      let optionItems;
      /*
        optionItems = Object.keys(resp.data.message).map((el) => ({

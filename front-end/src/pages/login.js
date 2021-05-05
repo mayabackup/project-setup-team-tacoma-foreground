@@ -22,7 +22,7 @@ const Login = () => {
       password,
     }
     const post= async() => await axios
-    .post('http://104.131.7.104:5000/login',formData)
+    .post('http://localhost:5000/login',formData)
     .then((response) => {
       console.log('Sent form data',response.data)
       if(response.data.error===true){
@@ -46,7 +46,7 @@ const Login = () => {
   useEffect(() => {
     
       const getItems= async()=>{
-      const resp= await axios.get("http://104.131.7.104:5000/login");
+      const resp= await axios.get("http://localhost:5000/login");
       console.log(resp.data)
         if(resp.data.user!=null && resp.data.user!=""){
           history.push('/')
